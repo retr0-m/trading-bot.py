@@ -1,6 +1,0 @@
-	•	python-binance
-	•	pandas
-	•	numpy
-	•	ta or pandas-ta
-	•	xgboost (later)
-	•	asyncio (important)
