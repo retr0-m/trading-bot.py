@@ -1,0 +1,9 @@
+market data
+↓
+feature engineering
+↓
+signal generator
+↓
+risk manager
+↓
+order execution
