@@ -768,3 +768,33 @@
 [2026-02-04 11:46:31.167]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=58.70%)
 [2026-02-04 11:46:31.167]	[logic.py - should_long():20]		should_long decision: False
 [2026-02-04 11:46:31.168]	[main.py - <module>():97]		Sleeping for 2 seconds
+[2026-02-04 11:56:15.738]	[portfolio.py - __init__():10]		Created PaperPortfolio with starting balance: 50.00
+[2026-02-04 11:56:15.739]	[main.py - <module>():29]		Initialized PaperPortfolio with starting balance: 50.00
+[2026-02-04 11:56:15.739]	[main.py - <module>():30]		Entering main loop
+[2026-02-04 11:56:15.739]	[main.py - <module>():35]		Fetching klines
+[2026-02-04 11:56:16.009]	[main.py - <module>():41]		Fetched 300 klines
+[2026-02-04 11:56:16.019]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
+[2026-02-04 11:56:16.032]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-04 11:56:16.033]	[main.py - <module>():58]		Indicators added to DataFrame
+[2026-02-04 11:56:16.033]	[main.py - <module>():60]		Last row - close: 76299.00, atr: 37.578397
+[2026-02-04 11:56:16.033]	[main.py - <module>():63]		Checking exit logic
+[2026-02-04 11:56:16.033]	[main.py - <module>():75]		Checking entry logic
+[2026-02-04 11:56:16.034]	[main.py - <module>():97]		Sleeping for 2 seconds
+[2026-02-04 11:56:18.035]	[main.py - <module>():35]		Fetching klines
+[2026-02-04 11:56:18.338]	[main.py - <module>():41]		Fetched 300 klines
+[2026-02-04 11:56:18.342]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
+[2026-02-04 11:56:18.347]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-04 11:56:18.348]	[main.py - <module>():58]		Indicators added to DataFrame
+[2026-02-04 11:56:18.348]	[main.py - <module>():60]		Last row - close: 76299.00, atr: 37.578397
+[2026-02-04 11:56:18.348]	[main.py - <module>():63]		Checking exit logic
+[2026-02-04 11:56:18.349]	[main.py - <module>():75]		Checking entry logic
+[2026-02-04 11:56:18.350]	[main.py - <module>():97]		Sleeping for 2 seconds
+[2026-02-04 11:56:20.373]	[main.py - <module>():35]		Fetching klines
+[2026-02-04 11:56:20.743]	[main.py - <module>():41]		Fetched 300 klines
+[2026-02-04 11:56:20.747]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
+[2026-02-04 11:56:20.752]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-04 11:56:20.753]	[main.py - <module>():58]		Indicators added to DataFrame
+[2026-02-04 11:56:20.753]	[main.py - <module>():60]		Last row - close: 76299.00, atr: 37.578397
+[2026-02-04 11:56:20.753]	[main.py - <module>():63]		Checking exit logic
+[2026-02-04 11:56:20.754]	[main.py - <module>():75]		Checking entry logic
+[2026-02-04 11:56:20.754]	[main.py - <module>():97]		Sleeping for 2 seconds
