@@ -22,7 +22,7 @@ def build_portfolio_from_trades(trades):
     trade_history = []
 
     for t in trades:
-        trade_id, side, price, amount, fee, balance_after, timestamp = t
+        trade_id, symbol, side, price, amount, fee, balance_after, timestamp = t
 
         balance = balance_after
         equity = balance_after  # for now: no unrealized PnL
@@ -30,7 +30,7 @@ def build_portfolio_from_trades(trades):
         trade_history.append({
             "time": timestamp,
             "type": side,
-            "symbol": "BTCUSDT",  # hardcoded for now
+            "symbol": symbol,
             "qty": amount,
             "price": price,
             "pnl": None

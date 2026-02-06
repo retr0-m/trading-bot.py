@@ -1,9 +1,7 @@
-trades
-------
-id              INTEGER (PK)
-side            TEXT        ("BUY" or "SELL")
-price           REAL
-amount          REAL
-fee             REAL
-balance_after   REAL
-timestamp       TEXT
+symbol   (BTCUSDT, ETHUSDT, etc)
+side
+price
+amount
+fee
+balance_after
+timestamp

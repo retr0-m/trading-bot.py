@@ -13,25 +13,26 @@ class TempConnection:
         with sqlite3.connect(DB_PATH) as conn:
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT id, side, price, amount, fee, balance_after, timestamp
+                SELECT id, symbol, side, price, amount, fee, balance_after, timestamp
                 FROM trades
                 ORDER BY id ASC
             """)
             return cursor.fetchall()
 
     @staticmethod
-    def get_last_trade():
+    def get_last_trade(symbol: str):
         with sqlite3.connect(DB_PATH) as conn:
             cursor = conn.cursor()
             cursor.execute("""
                 SELECT side, price, amount, balance_after, timestamp
                 FROM trades
+                WHERE symbol = ?
                 ORDER BY id DESC
                 LIMIT 1
-            """)
+            """, (symbol,))
             return cursor.fetchone()
 
-    @staticmethod
+    @staticmethod   #! not used currently, DEPRECATED
     def get_equity_curve():
         with sqlite3.connect(DB_PATH) as conn:
             cursor = conn.cursor()
@@ -56,20 +57,22 @@ class PortfolioDB:
     def _create_tables(self):
         cursor = self.conn.cursor()
         cursor.execute("""
-            CREATE TABLE IF NOT EXISTS trades (
+            CREATE TABLE trades (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
+                symbol TEXT NOT NULL,
                 side TEXT NOT NULL,
                 price REAL NOT NULL,
                 amount REAL NOT NULL,
                 fee REAL NOT NULL,
                 balance_after REAL NOT NULL,
                 timestamp TEXT DEFAULT CURRENT_TIMESTAMP
-            )
+            );
         """)
         self.conn.commit()
 
     def log_trade(
         self,
+        symbol: str,
         side: str,
         price: float,
         amount: float,
@@ -79,9 +82,9 @@ class PortfolioDB:
         log(f"inserting query in db with following data: side={side}, price={price}, amount={amount}, fee={fee}, balance_after={balance_after}")
         cursor = self.conn.cursor()
         cursor.execute("""
-            INSERT INTO trades (side, price, amount, fee, balance_after)
-            VALUES (?, ?, ?, ?, ?)
-        """, (side, price, amount, fee, balance_after))
+            INSERT INTO trades (symbol, side, price, amount, fee, balance_after)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (symbol, side, price, amount, fee, balance_after))
         self.conn.commit()
         log(
             f"DB | {side} | price={price:.2f} "
