@@ -91,3 +91,4 @@ class PortfolioDB:
 
     def close(self):
         self.conn.close()
+        

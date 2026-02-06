@@ -614,3 +614,425 @@
 [2026-02-06 12:21:59.158]	[exits.py - should_exit():15]		should_exit decision: None
 [2026-02-06 12:21:59.158]	[main.py - <module>():99]		Checking entry logic
 [2026-02-06 12:21:59.158]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:15.858]	[database.py - __init__():54]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:27:16.048]	[main.py - <module>():25]		Starting bot...
+[2026-02-06 12:27:16.349]	[database.py - __init__():54]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:27:16.350]	[main.py - <module>():32]		Initialized DB
+[2026-02-06 12:27:16.350]	[portfolio.py - __init__():14]		Created PaperPortfolio with starting balance: 50.00
+[2026-02-06 12:27:16.350]	[main.py - <module>():37]		Initialized PaperPortfolio with starting balance: 50.00
+[2026-02-06 12:27:16.350]	[main.py - <module>():38]		Entering main loop
+[2026-02-06 12:27:16.351]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:16.604]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:16.613]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:16.621]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:16.621]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:16.622]	[main.py - <module>():84]		Last row - close: 66023.73, atr: 77.755594
+[2026-02-06 12:27:16.622]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:16.622]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:17.139]	[main.py - <module>():102]		Calculated stop: 65945.97
+[2026-02-06 12:27:17.141]	[position.py - position_size():4]		position_size inputs -> balance=50.00, entry_price=66023.73, stop_price=65945.97, risk_pct=0.01
+[2026-02-06 12:27:17.141]	[position.py - position_size():8]		position_size result -> size=0.006430 (risk_amount=0.50, stop_distance=77.755594)
+[2026-02-06 12:27:17.142]	[main.py - <module>():109]		Raw position size (units): 0.006430
+[2026-02-06 12:27:17.142]	[main.py - <module>():113]		Adjusted qty after max position cap: 0.000151
+[2026-02-06 12:27:17.143]	[portfolio.py - buy():32]		BUY executed at 66023.73, amount: 0.000151, remaining balance: 39.99
+[2026-02-06 12:27:17.143]	[database.py - log_trade():79]		inserting query in db with following data: side=BUY, price=66023.73, amount=0.00015146069451089784, fee=0.01, balance_after=39.99
+[2026-02-06 12:27:17.146]	[database.py - log_trade():86]		DB | BUY | price=66023.73 amount=0.000151 fee=0.0100 balance=39.99
+[2026-02-06 12:27:17.146]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:19.151]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:19.412]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:19.422]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:19.430]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:19.431]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:19.431]	[main.py - <module>():84]		Last row - close: 66005.69, atr: 77.755594
+[2026-02-06 12:27:19.431]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:19.432]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.97, take_profit=66140.36, current_price=66005.69
+[2026-02-06 12:27:19.432]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:19.432]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:19.433]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:21.438]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:21.736]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:21.744]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:21.753]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:21.754]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:21.755]	[main.py - <module>():84]		Last row - close: 66014.00, atr: 77.755594
+[2026-02-06 12:27:21.755]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:21.755]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.97, take_profit=66140.36, current_price=66014.00
+[2026-02-06 12:27:21.755]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:21.756]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:21.756]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:23.762]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:24.011]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:24.013]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:24.016]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:24.016]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:24.016]	[main.py - <module>():84]		Last row - close: 66016.15, atr: 77.755594
+[2026-02-06 12:27:24.016]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:24.016]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.97, take_profit=66140.36, current_price=66016.15
+[2026-02-06 12:27:24.016]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:24.016]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:24.017]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:26.022]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:26.498]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:26.507]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:26.516]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:26.516]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:26.517]	[main.py - <module>():84]		Last row - close: 66023.26, atr: 77.755594
+[2026-02-06 12:27:26.517]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:26.517]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.97, take_profit=66140.36, current_price=66023.26
+[2026-02-06 12:27:26.518]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:26.518]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:26.518]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:28.524]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:29.027]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:29.034]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:29.042]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:29.043]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:29.043]	[main.py - <module>():84]		Last row - close: 66037.24, atr: 78.395594
+[2026-02-06 12:27:29.044]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:29.044]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66037.24
+[2026-02-06 12:27:29.044]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:29.045]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:29.045]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:31.051]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:31.309]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:31.315]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:31.321]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:31.321]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:31.321]	[main.py - <module>():84]		Last row - close: 66017.56, atr: 78.395594
+[2026-02-06 12:27:31.321]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:31.322]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66017.56
+[2026-02-06 12:27:31.322]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:31.322]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:31.323]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:33.329]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:33.576]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:33.579]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:33.583]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:33.583]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:33.583]	[main.py - <module>():84]		Last row - close: 66012.47, atr: 78.395594
+[2026-02-06 12:27:33.583]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:33.584]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66012.47
+[2026-02-06 12:27:33.584]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:33.584]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:33.584]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:35.590]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:35.884]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:35.891]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:35.894]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:35.895]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:35.896]	[main.py - <module>():84]		Last row - close: 66023.27, atr: 78.395594
+[2026-02-06 12:27:35.897]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:35.897]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66023.27
+[2026-02-06 12:27:35.898]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:35.898]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:35.898]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:37.904]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:38.152]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:38.157]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:38.163]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:38.163]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:38.164]	[main.py - <module>():84]		Last row - close: 66030.98, atr: 78.395594
+[2026-02-06 12:27:38.164]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:38.164]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66030.98
+[2026-02-06 12:27:38.165]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:38.165]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:38.165]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:40.170]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:40.432]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:40.434]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:40.439]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:40.439]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:40.439]	[main.py - <module>():84]		Last row - close: 66033.78, atr: 78.395594
+[2026-02-06 12:27:40.439]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:40.439]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66033.78
+[2026-02-06 12:27:40.439]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:40.439]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:40.440]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:42.445]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:42.876]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:42.878]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:42.881]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:42.882]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:42.882]	[main.py - <module>():84]		Last row - close: 66029.22, atr: 78.395594
+[2026-02-06 12:27:42.882]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:42.882]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66029.22
+[2026-02-06 12:27:42.882]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:42.882]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:42.882]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:44.888]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:45.136]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:45.139]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:45.145]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:45.145]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:45.145]	[main.py - <module>():84]		Last row - close: 66033.77, atr: 78.395594
+[2026-02-06 12:27:45.145]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:45.145]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66033.77
+[2026-02-06 12:27:45.146]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:45.146]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:45.146]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:47.150]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:47.394]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:47.397]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:47.401]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:47.401]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:47.402]	[main.py - <module>():84]		Last row - close: 66033.78, atr: 78.395594
+[2026-02-06 12:27:47.402]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:47.402]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66033.78
+[2026-02-06 12:27:47.402]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:47.402]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:47.402]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:49.408]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:49.652]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:49.655]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:49.660]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:49.660]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:49.660]	[main.py - <module>():84]		Last row - close: 66033.78, atr: 78.395594
+[2026-02-06 12:27:49.661]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:49.661]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66033.78
+[2026-02-06 12:27:49.661]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:49.661]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:49.661]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:51.663]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:51.919]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:51.923]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:51.928]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:51.928]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:51.928]	[main.py - <module>():84]		Last row - close: 66027.89, atr: 78.395594
+[2026-02-06 12:27:51.929]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:51.929]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66027.89
+[2026-02-06 12:27:51.929]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:51.929]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:51.930]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:53.935]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:54.247]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:54.254]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:54.262]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:54.262]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:54.263]	[main.py - <module>():84]		Last row - close: 66019.80, atr: 78.395594
+[2026-02-06 12:27:54.263]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:54.263]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66019.80
+[2026-02-06 12:27:54.263]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:54.264]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:54.264]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:56.267]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:56.513]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:56.517]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:56.522]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:56.522]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:56.522]	[main.py - <module>():84]		Last row - close: 66019.81, atr: 78.395594
+[2026-02-06 12:27:56.522]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:56.527]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66019.81
+[2026-02-06 12:27:56.527]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:56.527]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:56.528]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:27:58.534]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:27:58.789]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:27:58.796]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:27:58.804]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:27:58.805]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:27:58.805]	[main.py - <module>():84]		Last row - close: 66019.81, atr: 78.395594
+[2026-02-06 12:27:58.806]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:27:58.806]	[exits.py - should_exit():6]		should_exit -> stop_loss=65945.33, take_profit=66141.32, current_price=66019.81
+[2026-02-06 12:27:58.806]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:27:58.806]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:27:58.807]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:28:00.813]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:28:01.207]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:28:01.209]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:28:01.212]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:28:01.212]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:28:01.212]	[main.py - <module>():84]		Last row - close: 66014.16, atr: 72.937337
+[2026-02-06 12:28:01.212]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:28:01.213]	[exits.py - should_exit():6]		should_exit -> stop_loss=65950.79, take_profit=66133.14, current_price=66014.16
+[2026-02-06 12:28:01.213]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:28:01.213]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:28:01.213]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:28:03.218]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:28:03.499]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:28:03.502]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:28:03.506]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:28:03.506]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:28:03.507]	[main.py - <module>():84]		Last row - close: 66052.99, atr: 75.570194
+[2026-02-06 12:28:03.507]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:28:03.507]	[exits.py - should_exit():6]		should_exit -> stop_loss=65948.16, take_profit=66137.09, current_price=66052.99
+[2026-02-06 12:28:03.507]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:28:03.507]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:28:03.507]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:28:05.511]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:28:05.773]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:28:05.775]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:28:05.778]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:28:05.778]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:28:05.778]	[main.py - <module>():84]		Last row - close: 66053.00, atr: 75.570194
+[2026-02-06 12:28:05.778]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:28:05.778]	[exits.py - should_exit():6]		should_exit -> stop_loss=65948.16, take_profit=66137.09, current_price=66053.00
+[2026-02-06 12:28:05.779]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:28:05.779]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:28:05.779]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:28:07.784]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:28:08.056]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:28:08.060]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:28:08.064]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:28:08.064]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:28:08.064]	[main.py - <module>():84]		Last row - close: 66052.99, atr: 75.570194
+[2026-02-06 12:28:08.064]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:28:08.065]	[exits.py - should_exit():6]		should_exit -> stop_loss=65948.16, take_profit=66137.09, current_price=66052.99
+[2026-02-06 12:28:08.065]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:28:08.065]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:28:08.065]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:28:10.067]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:28:10.316]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:28:10.322]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:28:10.330]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:28:10.330]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:28:10.331]	[main.py - <module>():84]		Last row - close: 66052.99, atr: 75.570194
+[2026-02-06 12:28:10.331]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:28:10.331]	[exits.py - should_exit():6]		should_exit -> stop_loss=65948.16, take_profit=66137.09, current_price=66052.99
+[2026-02-06 12:28:10.332]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:28:10.332]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:28:10.332]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:28:12.338]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:28:12.587]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:28:12.592]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:28:12.597]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:28:12.598]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:28:12.598]	[main.py - <module>():84]		Last row - close: 66039.90, atr: 75.570194
+[2026-02-06 12:28:12.598]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:28:12.598]	[exits.py - should_exit():6]		should_exit -> stop_loss=65948.16, take_profit=66137.09, current_price=66039.90
+[2026-02-06 12:28:12.599]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:28:12.599]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:28:12.599]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:28:14.604]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:28:14.868]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:28:14.871]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:28:14.875]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:28:14.875]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:28:14.875]	[main.py - <module>():84]		Last row - close: 66039.46, atr: 75.570194
+[2026-02-06 12:28:14.876]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:28:14.876]	[exits.py - should_exit():6]		should_exit -> stop_loss=65948.16, take_profit=66137.09, current_price=66039.46
+[2026-02-06 12:28:14.876]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:28:14.876]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:28:14.876]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:28:16.877]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:28:17.126]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:28:17.129]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:28:17.132]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:28:17.132]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:28:17.133]	[main.py - <module>():84]		Last row - close: 66039.46, atr: 75.570194
+[2026-02-06 12:28:17.133]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:28:17.133]	[exits.py - should_exit():6]		should_exit -> stop_loss=65948.16, take_profit=66137.09, current_price=66039.46
+[2026-02-06 12:28:17.133]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:28:17.133]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:28:17.134]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:34:30.173]	[database.py - __init__():54]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:34:30.349]	[main.py - <module>():25]		Starting bot...
+[2026-02-06 12:34:30.662]	[database.py - __init__():54]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:34:30.662]	[main.py - <module>():32]		Initialized DB
+[2026-02-06 12:34:30.662]	[portfolio.py - __init__():14]		Created PaperPortfolio with starting balance: 50.00
+[2026-02-06 12:34:30.662]	[main.py - <module>():37]		Initialized PaperPortfolio with starting balance: 50.00
+[2026-02-06 12:34:30.663]	[main.py - <module>():38]		Entering main loop
+[2026-02-06 12:34:30.663]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:34:30.917]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:34:30.924]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:34:30.931]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:34:30.931]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:34:30.931]	[main.py - <module>():84]		Last row - close: 66230.30, atr: 72.334227
+[2026-02-06 12:34:30.931]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:34:30.931]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:34:31.447]	[main.py - <module>():102]		Calculated stop: 66157.97
+[2026-02-06 12:34:31.448]	[position.py - position_size():4]		position_size inputs -> balance=50.00, entry_price=66230.30, stop_price=66157.97, risk_pct=0.01
+[2026-02-06 12:34:31.448]	[position.py - position_size():8]		position_size result -> size=0.006912 (risk_amount=0.50, stop_distance=72.334227)
+[2026-02-06 12:34:31.448]	[main.py - <module>():109]		Raw position size (units): 0.006912
+[2026-02-06 12:34:31.449]	[main.py - <module>():113]		Adjusted qty after max position cap: 0.000151
+[2026-02-06 12:34:31.449]	[portfolio.py - buy():32]		BUY executed at 66230.30, amount: 0.000151, remaining balance: 39.99
+[2026-02-06 12:34:31.449]	[database.py - log_trade():79]		inserting query in db with following data: side=BUY, price=66230.3, amount=0.00015098829387757566, fee=0.01, balance_after=39.99
+[2026-02-06 12:34:31.450]	[database.py - log_trade():86]		DB | BUY | price=66230.30 amount=0.000151 fee=0.0100 balance=39.99
+[2026-02-06 12:34:31.450]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:34:33.455]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:34:33.920]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:34:33.944]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:34:33.948]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:34:33.948]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:34:33.948]	[main.py - <module>():84]		Last row - close: 66230.31, atr: 72.334227
+[2026-02-06 12:34:33.948]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:34:33.953]	[exits.py - should_exit():6]		should_exit -> stop_loss=66157.97, take_profit=66338.80, current_price=66230.31
+[2026-02-06 12:34:33.953]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:34:33.954]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:34:33.955]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:34:35.962]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:34:36.222]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:34:36.228]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:34:36.234]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:34:36.235]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:34:36.235]	[main.py - <module>():84]		Last row - close: 66217.55, atr: 72.334227
+[2026-02-06 12:34:36.235]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:34:36.236]	[exits.py - should_exit():6]		should_exit -> stop_loss=66157.97, take_profit=66338.80, current_price=66217.55
+[2026-02-06 12:34:36.236]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:34:36.236]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:34:36.237]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:34:38.242]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:34:38.504]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:34:38.507]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:34:38.510]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:34:38.511]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:34:38.511]	[main.py - <module>():84]		Last row - close: 66217.56, atr: 72.334227
+[2026-02-06 12:34:38.511]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:34:38.511]	[exits.py - should_exit():6]		should_exit -> stop_loss=66157.97, take_profit=66338.80, current_price=66217.56
+[2026-02-06 12:34:38.512]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:34:38.512]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:34:38.512]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:34:40.518]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:34:40.836]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:34:40.840]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:34:40.844]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:34:40.844]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:34:40.844]	[main.py - <module>():84]		Last row - close: 66217.55, atr: 72.334227
+[2026-02-06 12:34:40.844]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:34:40.845]	[exits.py - should_exit():6]		should_exit -> stop_loss=66157.97, take_profit=66338.80, current_price=66217.55
+[2026-02-06 12:34:40.845]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:34:40.845]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:34:40.845]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:34:42.851]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:34:43.172]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:34:43.177]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:34:43.183]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:34:43.183]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:34:43.183]	[main.py - <module>():84]		Last row - close: 66210.26, atr: 72.334227
+[2026-02-06 12:34:43.183]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:34:43.184]	[exits.py - should_exit():6]		should_exit -> stop_loss=66157.97, take_profit=66338.80, current_price=66210.26
+[2026-02-06 12:34:43.184]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:34:43.184]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:34:43.184]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:34:45.187]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:34:45.434]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:34:45.436]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:34:45.439]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:34:45.439]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:34:45.439]	[main.py - <module>():84]		Last row - close: 66208.00, atr: 72.334227
+[2026-02-06 12:34:45.439]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:34:45.439]	[exits.py - should_exit():6]		should_exit -> stop_loss=66157.97, take_profit=66338.80, current_price=66208.00
+[2026-02-06 12:34:45.439]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:34:45.439]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:34:45.440]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:34:47.445]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:34:47.691]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:34:47.693]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:34:47.696]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:34:47.697]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:34:47.697]	[main.py - <module>():84]		Last row - close: 66216.88, atr: 72.334227
+[2026-02-06 12:34:47.697]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:34:47.697]	[exits.py - should_exit():6]		should_exit -> stop_loss=66157.97, take_profit=66338.80, current_price=66216.88
+[2026-02-06 12:34:47.697]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:34:47.697]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:34:47.697]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:34:49.703]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:34:49.952]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:34:49.955]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:34:49.960]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:34:49.960]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:34:49.961]	[main.py - <module>():84]		Last row - close: 66216.89, atr: 72.334227
+[2026-02-06 12:34:49.961]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:34:49.961]	[exits.py - should_exit():6]		should_exit -> stop_loss=66157.97, take_profit=66338.80, current_price=66216.89
+[2026-02-06 12:34:49.961]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:34:49.961]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:34:49.962]	[main.py - <module>():121]		Sleeping for 2 seconds

@@ -62,4 +62,4 @@ class PaperPortfolio:
         
         self.position = 0
         self.entry_price = None
-        
+    
