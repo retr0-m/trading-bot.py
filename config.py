@@ -19,3 +19,6 @@ MAX_POSITION_USDT = 10  # cap position size
 
 
 SLEEP_INTERVAL = 2 # seconds between each loop iteration
+
+# less strict for testing ONlY
+LESS_STRICT = True

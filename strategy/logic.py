@@ -1,5 +1,6 @@
 from log.logger import log
 from time import sleep
+from config import LESS_STRICT_SHOULD_LONG
 
 def should_long(df):
     row = df.iloc[-1]
@@ -19,9 +20,10 @@ def should_long(df):
     sleep(0.1)
     print(f"\rshould_long -> volume_ok={volume_ok} (Vol progress={volume_progress:.2f}%)", end="")
     sleep(0.1)
-
-    # decision = trend and rsi_ok and volume_ok
-    decision = trend or rsi_ok or volume_ok
+    if LESS_STRICT_SHOULD_LONG:
+        decision = trend or rsi_ok or volume_ok # ! less strict for testing ONlY
+    else:
+        decision = trend and rsi_ok and volume_ok
     print(f"\rshould_long decision: {decision}                            ", end="")
     sleep(0.2)
 
