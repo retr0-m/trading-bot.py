@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trading Bot Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Auto refresh every 5 seconds -->
+    <meta http-equiv="refresh" content="5" />
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-6">
+      <h1 class="text-3xl font-bold mb-4">Trading Bot Dashboard</h1>
+
+      <div class="bg-white rounded-lg shadow p-4 mb-6">
+        <h2 class="text-xl font-semibold mb-2">Portfolio</h2>
+        <p>
+          <strong>Balance:</strong> ${{ '%.2f'|format(portfolio.balance) }}
+        </p>
+        <p>
+          <strong>Equity:</strong> ${{ '%.2f'|format(portfolio.equity) }}
+        </p>
+
+        <h3 class="text-lg font-semibold mt-3">Open Positions</h3>
+        <ul class="list-disc ml-5">
+          {% if portfolio.positions %}
+            {% for p in portfolio.positions %}
+              <li>{{ p }}</li>
+            {% endfor %}
+          {% else %}
+            <li>No open positions</li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-4">
+        <h2 class="text-xl font-semibold mb-2">Trade History</h2>
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-4 py-2">Time</th>
+              <th class="px-4 py-2">Type</th>
+              <th class="px-4 py-2">Symbol</th>
+              <th class="px-4 py-2">Qty</th>
+              <th class="px-4 py-2">Price</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            {% for t in portfolio.trade_history %}
+              <tr>
+                <td class="px-4 py-2">{{ t.time }}</td>
+                <td class="px-4 py-2">{{ t.type }}</td>
+                <td class="px-4 py-2">{{ t.symbol }}</td>
+                <td class="px-4 py-2">{{ '%.6f'|format(t.qty) }}</td>
+                <td class="px-4 py-2">${{ '%.2f'|format(t.price) }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

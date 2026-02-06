@@ -4,6 +4,8 @@
 from dotenv import load_dotenv
 import os
 
+from log.database import PortfolioDB
+
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 API_SECRET = os.getenv("API_SECRET")
@@ -19,15 +21,37 @@ from strategy.exits import should_exit
 from risk.position import position_size
 from paper.portfolio import PaperPortfolio
 from log.logger import log
+from app.dashboard import start_server_in_thread
+log("Starting bot...")
 
 # Paper trading does not require API keys, but can be set up if needed
 binance = Client(API_KEY, API_SECRET)
 
+# inizialize database
+portfolioDB= PortfolioDB()
+log("Initialized DB")
+
 
 # Initialize paper portfolio
-portfolio = PaperPortfolio(START_BALANCE)
+portfolio = PaperPortfolio(START_BALANCE, portfolioDB)
 log(f"Initialized PaperPortfolio with starting balance: {portfolio.balance:.2f}")
 log("Entering main loop")
+
+# starting dashboard
+start_server_in_thread(portfolioDB)
+
+
+# banner
+banner = r"""
+███╗   ███╗ █████╗ ██╗  ██╗██╗███╗   ██╗ ██████╗ ██████╗  █████╗ ██████╗ ███████╗██████╗ 
+████╗ ████║██╔══██╗██║ ██╔╝██║████╗  ██║██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗
+██╔████╔██║███████║█████╔╝ ██║██╔██╗ ██║██║  ███╗██████╔╝███████║██████╔╝█████╗  ██████╔╝
+██║╚██╔╝██║██╔══██║██╔═██╗ ██║██║╚██╗██║██║   ██║██╔═══╝ ██╔══██║██╔═══╝ ██╔══╝  ██╔══██╗
+██║ ╚═╝ ██║██║  ██║██║  ██╗██║██║ ╚████║╚██████╔╝██║     ██║  ██║██║     ███████╗██║  ██║
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝
+"""
+print(banner)
+
 
 # Main loop
 while True:
@@ -65,7 +89,7 @@ while True:
             exit_reason = should_exit(portfolio, last.close, last.atr)
             if exit_reason:
                 log(f"Exit triggered: {exit_reason}")
-                portfolio.sell(last.close, FEE_RATE)
+                portfolio.sell(last.close, fee_rate = FEE_RATE)
                 log(f"[PAPER SELL] {exit_reason.upper()} @ {last.close:.2f}")
                 log(f"Balance after sell: {portfolio.balance:.2f} USDT")
                 print(f"[PAPER SELL] {exit_reason.upper()} @ {last.close:.2f}")

@@ -1,0 +1,9 @@
+trades
+------
+id              INTEGER (PK)
+side            TEXT        ("BUY" or "SELL")
+price           REAL
+amount          REAL
+fee             REAL
+balance_after   REAL
+timestamp       TEXT

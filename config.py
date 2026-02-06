@@ -1,5 +1,5 @@
 LOG_FILE = "./log/log.txt"
-
+UVICORN_LOG_FILE = "./log/uvicorn_log.txt"
 
 
 # Paper trading mode

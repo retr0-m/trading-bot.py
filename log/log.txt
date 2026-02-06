@@ -1,800 +1,616 @@
-[2026-02-04 11:44:10.290]	[portfolio.py - __init__():10]		Created PaperPortfolio with starting balance: 50.00
-[2026-02-04 11:44:10.291]	[main.py - <module>():29]		Initialized PaperPortfolio with starting balance: 50.00
-[2026-02-04 11:44:10.291]	[main.py - <module>():30]		Entering main loop
-[2026-02-04 11:44:10.291]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:10.562]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:10.568]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:10.574]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:10.574]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:10.575]	[main.py - <module>():60]		Last row - close: 76245.23, atr: 46.434471
-[2026-02-04 11:44:10.575]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:10.575]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:10.575]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:10.576]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=53.74)
-[2026-02-04 11:44:10.576]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=27.19%)
-[2026-02-04 11:44:10.576]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:10.576]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:12.578]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:12.855]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:12.858]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:12.862]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:12.863]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:12.863]	[main.py - <module>():60]		Last row - close: 76245.23, atr: 46.434471
-[2026-02-04 11:44:12.863]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:12.863]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:12.863]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:12.864]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=53.74)
-[2026-02-04 11:44:12.864]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=27.29%)
-[2026-02-04 11:44:12.864]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:12.864]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:14.871]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:15.152]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:15.155]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:15.160]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:15.160]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:15.161]	[main.py - <module>():60]		Last row - close: 76243.90, atr: 46.529471
-[2026-02-04 11:44:15.161]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:15.161]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:15.161]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:15.161]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=53.56)
-[2026-02-04 11:44:15.162]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=28.13%)
-[2026-02-04 11:44:15.162]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:15.162]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:17.166]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:17.443]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:17.446]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:17.452]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:17.452]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:17.453]	[main.py - <module>():60]		Last row - close: 76243.90, atr: 46.529471
-[2026-02-04 11:44:17.453]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:17.454]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:17.454]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:17.454]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=53.56)
-[2026-02-04 11:44:17.456]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=28.14%)
-[2026-02-04 11:44:17.456]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:17.456]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:19.462]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:19.737]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:19.741]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:19.745]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:19.745]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:19.746]	[main.py - <module>():60]		Last row - close: 76243.91, atr: 46.529471
-[2026-02-04 11:44:19.746]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:19.746]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:19.746]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:19.747]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=53.56)
-[2026-02-04 11:44:19.747]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=29.10%)
-[2026-02-04 11:44:19.747]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:19.747]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:21.750]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:22.046]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:22.049]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:22.053]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:22.053]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:22.053]	[main.py - <module>():60]		Last row - close: 76253.36, atr: 46.529471
-[2026-02-04 11:44:22.053]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:22.054]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:22.054]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:22.054]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=54.81)
-[2026-02-04 11:44:22.054]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=37.71%)
-[2026-02-04 11:44:22.054]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:22.055]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:24.059]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:24.332]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:24.336]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:24.340]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:24.341]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:24.341]	[main.py - <module>():60]		Last row - close: 76257.13, atr: 46.529471
-[2026-02-04 11:44:24.341]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:24.341]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:24.342]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:24.342]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.32)
-[2026-02-04 11:44:24.342]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=39.49%)
-[2026-02-04 11:44:24.343]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:24.343]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:26.348]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:26.627]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:26.631]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:26.636]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:26.637]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:26.637]	[main.py - <module>():60]		Last row - close: 76265.33, atr: 46.529471
-[2026-02-04 11:44:26.637]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:26.637]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:26.638]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:26.638]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.47)
-[2026-02-04 11:44:26.638]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=40.82%)
-[2026-02-04 11:44:26.639]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:26.639]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:28.645]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:28.999]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:29.110]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:29.236]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:29.244]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:29.246]	[main.py - <module>():60]		Last row - close: 76265.34, atr: 46.529471
-[2026-02-04 11:44:29.247]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:29.247]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:29.258]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:29.260]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.47)
-[2026-02-04 11:44:29.261]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=41.75%)
-[2026-02-04 11:44:29.261]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:29.262]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:31.268]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:31.612]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:31.623]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:31.662]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:31.706]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:31.707]	[main.py - <module>():60]		Last row - close: 76265.34, atr: 46.529471
-[2026-02-04 11:44:31.708]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:31.712]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:31.713]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:31.714]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.47)
-[2026-02-04 11:44:31.714]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=47.13%)
-[2026-02-04 11:44:31.715]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:31.715]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:33.719]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:34.038]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:34.044]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:34.052]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:34.053]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:34.054]	[main.py - <module>():60]		Last row - close: 76265.34, atr: 46.529471
-[2026-02-04 11:44:34.055]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:34.055]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:34.056]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:34.056]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.47)
-[2026-02-04 11:44:34.057]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=47.20%)
-[2026-02-04 11:44:34.058]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:34.058]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:36.063]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:36.380]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:36.388]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:36.397]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:36.397]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:36.398]	[main.py - <module>():60]		Last row - close: 76265.33, atr: 46.529471
-[2026-02-04 11:44:36.398]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:36.399]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:36.399]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:36.400]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.47)
-[2026-02-04 11:44:36.400]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=47.68%)
-[2026-02-04 11:44:36.401]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:36.401]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:38.406]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:39.023]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:39.027]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:39.033]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:39.033]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:39.033]	[main.py - <module>():60]		Last row - close: 76265.34, atr: 46.529471
-[2026-02-04 11:44:39.034]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:39.034]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:39.034]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:39.034]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.47)
-[2026-02-04 11:44:39.035]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=49.58%)
-[2026-02-04 11:44:39.035]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:39.035]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:41.041]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:41.328]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:41.334]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:41.343]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:41.343]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:41.344]	[main.py - <module>():60]		Last row - close: 76271.78, atr: 46.529471
-[2026-02-04 11:44:41.344]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:41.344]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:41.345]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:41.345]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.41)
-[2026-02-04 11:44:41.346]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=73.60%)
-[2026-02-04 11:44:41.346]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:41.347]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:43.353]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:43.644]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:43.647]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:43.651]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:43.652]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:43.652]	[main.py - <module>():60]		Last row - close: 76272.85, atr: 46.529471
-[2026-02-04 11:44:43.652]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:43.652]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:43.653]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:43.653]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.57)
-[2026-02-04 11:44:43.653]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=73.82%)
-[2026-02-04 11:44:43.653]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:43.653]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:45.659]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:46.008]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:46.013]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:46.019]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:46.020]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:46.020]	[main.py - <module>():60]		Last row - close: 76272.84, atr: 46.529471
-[2026-02-04 11:44:46.020]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:46.021]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:46.021]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:46.022]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.57)
-[2026-02-04 11:44:46.022]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=74.03%)
-[2026-02-04 11:44:46.022]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:46.023]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:48.028]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:48.311]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:48.323]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:48.351]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:48.352]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:48.356]	[main.py - <module>():60]		Last row - close: 76272.84, atr: 46.529471
-[2026-02-04 11:44:48.356]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:48.357]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:48.359]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:48.359]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.57)
-[2026-02-04 11:44:48.360]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=74.12%)
-[2026-02-04 11:44:48.360]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:48.360]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:50.363]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:50.741]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:50.749]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:50.760]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:50.761]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:50.762]	[main.py - <module>():60]		Last row - close: 76272.85, atr: 46.529471
-[2026-02-04 11:44:50.762]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:50.762]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:50.763]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:50.763]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.57)
-[2026-02-04 11:44:50.764]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=74.15%)
-[2026-02-04 11:44:50.764]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:50.764]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:52.770]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:53.058]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:53.062]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:53.071]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:53.071]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:53.072]	[main.py - <module>():60]		Last row - close: 76259.88, atr: 46.529471
-[2026-02-04 11:44:53.072]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:53.072]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:53.072]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:53.073]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.70)
-[2026-02-04 11:44:53.073]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=97.80%)
-[2026-02-04 11:44:53.073]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:53.074]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:55.079]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:55.407]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:55.411]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:55.416]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:55.416]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:55.417]	[main.py - <module>():60]		Last row - close: 76263.72, atr: 46.529471
-[2026-02-04 11:44:55.417]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:55.417]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:55.418]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:55.418]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.24)
-[2026-02-04 11:44:55.418]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=98.03%)
-[2026-02-04 11:44:55.418]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:55.419]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:57.424]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:44:57.734]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:44:57.737]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:44:57.742]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:44:57.742]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:44:57.742]	[main.py - <module>():60]		Last row - close: 76263.73, atr: 46.529471
-[2026-02-04 11:44:57.743]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:44:57.743]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:44:57.743]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:44:57.743]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.24)
-[2026-02-04 11:44:57.744]	[logic.py - should_long():17]		should_long -> volume_ok=True (Vol progress=102.75%)
-[2026-02-04 11:44:57.744]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:44:57.744]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:44:59.749]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:00.064]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:00.068]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:00.075]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:00.076]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:00.076]	[main.py - <module>():60]		Last row - close: 76263.73, atr: 46.529471
-[2026-02-04 11:45:00.077]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:00.077]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:00.078]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:00.078]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.24)
-[2026-02-04 11:45:00.078]	[logic.py - should_long():17]		should_long -> volume_ok=True (Vol progress=105.32%)
-[2026-02-04 11:45:00.079]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:00.079]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:02.085]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:02.668]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:02.673]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:02.681]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:02.681]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:02.682]	[main.py - <module>():60]		Last row - close: 76263.73, atr: 43.206652
-[2026-02-04 11:45:02.682]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:02.682]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:02.683]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:02.683]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.24)
-[2026-02-04 11:45:02.684]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=0.19%)
-[2026-02-04 11:45:02.684]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:02.684]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:04.690]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:05.007]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:05.015]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:05.028]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:05.029]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:05.030]	[main.py - <module>():60]		Last row - close: 76267.47, atr: 43.473081
-[2026-02-04 11:45:05.030]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:05.031]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:05.031]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:05.032]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.68)
-[2026-02-04 11:45:05.032]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=1.12%)
-[2026-02-04 11:45:05.035]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:05.036]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:07.042]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:07.594]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:07.600]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:07.611]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:07.611]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:07.612]	[main.py - <module>():60]		Last row - close: 76267.47, atr: 43.473081
-[2026-02-04 11:45:07.612]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:07.613]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:07.613]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:07.614]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.68)
-[2026-02-04 11:45:07.614]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=1.16%)
-[2026-02-04 11:45:07.614]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:07.615]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:09.617]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:10.051]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:10.055]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:10.061]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:10.062]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:10.062]	[main.py - <module>():60]		Last row - close: 76271.65, atr: 43.772366
-[2026-02-04 11:45:10.062]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:10.063]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:10.063]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:10.063]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.17)
-[2026-02-04 11:45:10.064]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=4.04%)
-[2026-02-04 11:45:10.064]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:10.065]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:12.070]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:12.493]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:12.498]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:12.504]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:12.505]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:12.505]	[main.py - <module>():60]		Last row - close: 76271.65, atr: 43.772366
-[2026-02-04 11:45:12.505]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:12.506]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:12.506]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:12.507]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.17)
-[2026-02-04 11:45:12.507]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=27.57%)
-[2026-02-04 11:45:12.508]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:12.508]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:14.513]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:14.805]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:14.812]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:14.821]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:14.821]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:14.821]	[main.py - <module>():60]		Last row - close: 76271.65, atr: 43.772366
-[2026-02-04 11:45:14.822]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:14.822]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:14.822]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:14.823]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.17)
-[2026-02-04 11:45:14.823]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=32.01%)
-[2026-02-04 11:45:14.823]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:14.824]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:16.829]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:17.175]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:17.180]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:17.184]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:17.185]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:17.185]	[main.py - <module>():60]		Last row - close: 76263.72, atr: 43.773081
-[2026-02-04 11:45:17.185]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:17.185]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:17.186]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:17.186]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.24)
-[2026-02-04 11:45:17.186]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=35.33%)
-[2026-02-04 11:45:17.186]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:17.186]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:19.188]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:19.734]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:19.737]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:19.742]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:19.742]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:19.743]	[main.py - <module>():60]		Last row - close: 76260.98, atr: 43.969509
-[2026-02-04 11:45:19.743]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:19.743]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:19.744]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:19.744]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.83)
-[2026-02-04 11:45:19.744]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=39.43%)
-[2026-02-04 11:45:19.744]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:19.745]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:21.750]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:22.338]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:22.341]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:22.346]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:22.346]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:22.346]	[main.py - <module>():60]		Last row - close: 76260.97, atr: 43.969509
-[2026-02-04 11:45:22.347]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:22.347]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:22.347]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:22.347]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.83)
-[2026-02-04 11:45:22.348]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=39.97%)
-[2026-02-04 11:45:22.348]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:22.348]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:24.354]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:24.683]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:24.687]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:24.692]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:24.692]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:24.692]	[main.py - <module>():60]		Last row - close: 76271.65, atr: 43.969509
-[2026-02-04 11:45:24.692]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:24.693]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:24.693]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:24.693]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.17)
-[2026-02-04 11:45:24.693]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=47.73%)
-[2026-02-04 11:45:24.694]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:24.694]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:26.699]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:26.975]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:26.979]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:26.984]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:26.984]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:26.985]	[main.py - <module>():60]		Last row - close: 76279.28, atr: 44.513795
-[2026-02-04 11:45:26.985]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:26.985]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:26.985]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:26.986]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=58.02)
-[2026-02-04 11:45:26.986]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=48.33%)
-[2026-02-04 11:45:26.986]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:26.986]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:28.996]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:29.331]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:29.353]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:29.381]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:29.381]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:29.382]	[main.py - <module>():60]		Last row - close: 76279.28, atr: 44.514509
-[2026-02-04 11:45:29.382]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:29.383]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:29.386]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:29.387]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=58.02)
-[2026-02-04 11:45:29.388]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=48.78%)
-[2026-02-04 11:45:29.388]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:29.389]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:31.391]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:31.874]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:31.878]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:31.883]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:31.884]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:31.884]	[main.py - <module>():60]		Last row - close: 76279.29, atr: 44.514509
-[2026-02-04 11:45:31.884]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:31.884]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:31.885]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:31.885]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=58.02)
-[2026-02-04 11:45:31.885]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=51.01%)
-[2026-02-04 11:45:31.886]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:31.886]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:33.891]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:34.232]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:34.236]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:34.241]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:34.242]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:34.242]	[main.py - <module>():60]		Last row - close: 76261.14, atr: 44.514509
-[2026-02-04 11:45:34.242]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:34.243]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:34.243]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:34.243]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.85)
-[2026-02-04 11:45:34.244]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=55.49%)
-[2026-02-04 11:45:34.244]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:34.244]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:36.250]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:36.763]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:36.877]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:37.092]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:37.092]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:37.095]	[main.py - <module>():60]		Last row - close: 76261.14, atr: 44.514509
-[2026-02-04 11:45:37.096]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:37.097]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:37.098]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:37.098]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.85)
-[2026-02-04 11:45:37.099]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=56.16%)
-[2026-02-04 11:45:37.099]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:37.100]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:39.105]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:39.615]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:39.630]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:39.647]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:39.647]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:39.648]	[main.py - <module>():60]		Last row - close: 76261.14, atr: 44.514509
-[2026-02-04 11:45:39.648]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:39.649]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:39.649]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:39.650]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.85)
-[2026-02-04 11:45:39.650]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=57.00%)
-[2026-02-04 11:45:39.651]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:39.652]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:41.654]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:41.965]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:41.971]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:41.978]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:41.979]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:41.979]	[main.py - <module>():60]		Last row - close: 76261.13, atr: 44.514509
-[2026-02-04 11:45:41.979]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:41.980]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:41.980]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:41.980]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.85)
-[2026-02-04 11:45:41.981]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=57.78%)
-[2026-02-04 11:45:41.981]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:41.981]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:43.987]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:44.261]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:44.267]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:44.275]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:44.275]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:44.276]	[main.py - <module>():60]		Last row - close: 76263.30, atr: 44.514509
-[2026-02-04 11:45:44.277]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:44.277]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:44.278]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:44.279]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.18)
-[2026-02-04 11:45:44.279]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=58.01%)
-[2026-02-04 11:45:44.280]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:44.290]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:46.296]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:46.578]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:46.583]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:46.589]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:46.590]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:46.590]	[main.py - <module>():60]		Last row - close: 76263.31, atr: 44.514509
-[2026-02-04 11:45:46.591]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:46.591]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:46.591]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:46.592]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.18)
-[2026-02-04 11:45:46.592]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=58.06%)
-[2026-02-04 11:45:46.592]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:46.593]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:48.604]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:49.142]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:49.149]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:49.158]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:49.159]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:49.160]	[main.py - <module>():60]		Last row - close: 76263.31, atr: 44.514509
-[2026-02-04 11:45:49.160]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:49.160]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:49.161]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:49.161]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.18)
-[2026-02-04 11:45:49.162]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=58.11%)
-[2026-02-04 11:45:49.162]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:49.162]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:51.168]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:51.830]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:51.833]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:51.837]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:51.838]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:51.838]	[main.py - <module>():60]		Last row - close: 76263.31, atr: 44.514509
-[2026-02-04 11:45:51.838]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:51.838]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:51.839]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:51.839]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.18)
-[2026-02-04 11:45:51.839]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=58.67%)
-[2026-02-04 11:45:51.839]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:51.840]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:53.843]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:54.139]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:54.143]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:54.149]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:54.149]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:54.149]	[main.py - <module>():60]		Last row - close: 76273.95, atr: 44.514509
-[2026-02-04 11:45:54.150]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:54.150]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:54.150]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:54.150]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.43)
-[2026-02-04 11:45:54.151]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=60.02%)
-[2026-02-04 11:45:54.151]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:54.151]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:56.157]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:56.451]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:56.457]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:56.465]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:56.465]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:56.466]	[main.py - <module>():60]		Last row - close: 76273.94, atr: 44.514509
-[2026-02-04 11:45:56.466]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:56.466]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:56.466]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:56.467]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.42)
-[2026-02-04 11:45:56.467]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=60.03%)
-[2026-02-04 11:45:56.467]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:56.468]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:45:58.531]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:45:59.143]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:45:59.206]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:45:59.225]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:45:59.230]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:45:59.232]	[main.py - <module>():60]		Last row - close: 76273.95, atr: 44.514509
-[2026-02-04 11:45:59.233]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:45:59.233]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:45:59.237]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:45:59.238]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.43)
-[2026-02-04 11:45:59.239]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=60.63%)
-[2026-02-04 11:45:59.239]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:45:59.240]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:01.243]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:01.574]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:01.582]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:01.601]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:01.607]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:01.610]	[main.py - <module>():60]		Last row - close: 76273.95, atr: 41.334901
-[2026-02-04 11:46:01.611]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:01.611]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:01.612]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.10%)
-[2026-02-04 11:46:01.612]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=57.43)
-[2026-02-04 11:46:01.613]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=0.04%)
-[2026-02-04 11:46:01.614]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:01.615]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:03.621]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:04.052]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:04.058]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:04.070]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:04.079]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:04.080]	[main.py - <module>():60]		Last row - close: 76255.64, atr: 42.643473
-[2026-02-04 11:46:04.081]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:04.081]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:04.081]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:46:04.082]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=54.58)
-[2026-02-04 11:46:04.082]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=13.68%)
-[2026-02-04 11:46:04.094]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:04.149]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:06.159]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:06.658]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:06.661]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:06.666]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:06.667]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:06.667]	[main.py - <module>():60]		Last row - close: 76255.64, atr: 42.643473
-[2026-02-04 11:46:06.667]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:06.667]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:06.668]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:46:06.668]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=54.58)
-[2026-02-04 11:46:06.668]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=13.93%)
-[2026-02-04 11:46:06.669]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:06.669]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:08.674]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:09.221]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:09.225]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:09.231]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:09.231]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:09.232]	[main.py - <module>():60]		Last row - close: 76244.21, atr: 43.459901
-[2026-02-04 11:46:09.232]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:09.232]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:09.233]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:46:09.233]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=52.94)
-[2026-02-04 11:46:09.233]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=17.18%)
-[2026-02-04 11:46:09.233]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:09.234]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:11.239]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:11.513]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:11.518]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:11.523]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:11.523]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:11.524]	[main.py - <module>():60]		Last row - close: 76244.21, atr: 43.459901
-[2026-02-04 11:46:11.524]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:11.524]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:11.525]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:46:11.525]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=52.94)
-[2026-02-04 11:46:11.525]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=17.24%)
-[2026-02-04 11:46:11.526]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:11.526]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:13.531]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:13.949]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:13.954]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:13.962]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:13.962]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:13.962]	[main.py - <module>():60]		Last row - close: 76255.48, atr: 43.459901
-[2026-02-04 11:46:13.963]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:13.963]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:13.964]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:46:13.964]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=54.56)
-[2026-02-04 11:46:13.964]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=21.49%)
-[2026-02-04 11:46:13.965]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:13.965]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:15.966]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:16.409]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:16.415]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:16.429]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:16.430]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:16.431]	[main.py - <module>():60]		Last row - close: 76255.49, atr: 43.459901
-[2026-02-04 11:46:16.431]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:16.431]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:16.432]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:46:16.432]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=54.56)
-[2026-02-04 11:46:16.432]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=21.57%)
-[2026-02-04 11:46:16.433]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:16.433]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:18.439]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:18.864]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:18.869]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:18.876]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:18.877]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:18.877]	[main.py - <module>():60]		Last row - close: 76255.48, atr: 43.459901
-[2026-02-04 11:46:18.878]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:18.878]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:18.879]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:46:18.879]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=54.56)
-[2026-02-04 11:46:18.880]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=22.27%)
-[2026-02-04 11:46:18.880]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:18.880]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:20.907]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:21.261]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:21.279]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:21.411]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:21.441]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:21.468]	[main.py - <module>():60]		Last row - close: 76268.85, atr: 43.459901
-[2026-02-04 11:46:21.468]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:21.469]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:21.470]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.10%)
-[2026-02-04 11:46:21.470]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=56.60)
-[2026-02-04 11:46:21.470]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=24.54%)
-[2026-02-04 11:46:21.471]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:21.471]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:23.477]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:24.007]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:24.014]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:24.021]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:24.022]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:24.022]	[main.py - <module>():60]		Last row - close: 76264.68, atr: 43.459901
-[2026-02-04 11:46:24.023]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:24.023]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:24.024]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.10%)
-[2026-02-04 11:46:24.024]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.95)
-[2026-02-04 11:46:24.024]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=28.70%)
-[2026-02-04 11:46:24.025]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:24.025]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:26.026]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:26.339]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:26.348]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:26.359]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:26.360]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:26.361]	[main.py - <module>():60]		Last row - close: 76264.67, atr: 43.459901
-[2026-02-04 11:46:26.361]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:26.362]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:26.363]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.10%)
-[2026-02-04 11:46:26.364]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.95)
-[2026-02-04 11:46:26.364]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=43.91%)
-[2026-02-04 11:46:26.365]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:26.365]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:28.367]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:28.859]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:28.863]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:28.867]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:28.867]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:28.868]	[main.py - <module>():60]		Last row - close: 76262.33, atr: 43.459901
-[2026-02-04 11:46:28.868]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:28.868]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:28.868]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.10%)
-[2026-02-04 11:46:28.868]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=55.59)
-[2026-02-04 11:46:28.869]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=44.17%)
-[2026-02-04 11:46:28.869]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:28.869]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:46:30.874]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:46:31.158]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:46:31.161]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:46:31.166]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:46:31.166]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:46:31.166]	[main.py - <module>():60]		Last row - close: 76252.48, atr: 43.459901
-[2026-02-04 11:46:31.166]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:46:31.166]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:46:31.167]	[logic.py - should_long():15]		should_long -> trend=False (EMA50-EMA200=-0.11%)
-[2026-02-04 11:46:31.167]	[logic.py - should_long():16]		should_long -> rsi_ok=True (RSI=54.12)
-[2026-02-04 11:46:31.167]	[logic.py - should_long():17]		should_long -> volume_ok=False (Vol progress=58.70%)
-[2026-02-04 11:46:31.167]	[logic.py - should_long():20]		should_long decision: False
-[2026-02-04 11:46:31.168]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:56:15.738]	[portfolio.py - __init__():10]		Created PaperPortfolio with starting balance: 50.00
-[2026-02-04 11:56:15.739]	[main.py - <module>():29]		Initialized PaperPortfolio with starting balance: 50.00
-[2026-02-04 11:56:15.739]	[main.py - <module>():30]		Entering main loop
-[2026-02-04 11:56:15.739]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:56:16.009]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:56:16.019]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:56:16.032]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:56:16.033]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:56:16.033]	[main.py - <module>():60]		Last row - close: 76299.00, atr: 37.578397
-[2026-02-04 11:56:16.033]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:56:16.033]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:56:16.034]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:56:18.035]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:56:18.338]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:56:18.342]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:56:18.347]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:56:18.348]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:56:18.348]	[main.py - <module>():60]		Last row - close: 76299.00, atr: 37.578397
-[2026-02-04 11:56:18.348]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:56:18.349]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:56:18.350]	[main.py - <module>():97]		Sleeping for 2 seconds
-[2026-02-04 11:56:20.373]	[main.py - <module>():35]		Fetching klines
-[2026-02-04 11:56:20.743]	[main.py - <module>():41]		Fetched 300 klines
-[2026-02-04 11:56:20.747]	[main.py - <module>():54]		Constructed DataFrame and applied dtypes
-[2026-02-04 11:56:20.752]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
-[2026-02-04 11:56:20.753]	[main.py - <module>():58]		Indicators added to DataFrame
-[2026-02-04 11:56:20.753]	[main.py - <module>():60]		Last row - close: 76299.00, atr: 37.578397
-[2026-02-04 11:56:20.753]	[main.py - <module>():63]		Checking exit logic
-[2026-02-04 11:56:20.754]	[main.py - <module>():75]		Checking entry logic
-[2026-02-04 11:56:20.754]	[main.py - <module>():97]		Sleeping for 2 seconds
+[2026-02-06 10:44:00.088]	[database.py - __init__():13]		Database initialized at log/db/portfolio.db
+[2026-02-06 10:44:00.906]	[portfolio.py - __init__():13]		Created PaperPortfolio with starting balance: 50.00
+[2026-02-06 10:44:00.907]	[main.py - <module>():29]		Initialized PaperPortfolio with starting balance: 50.00
+[2026-02-06 10:44:00.908]	[main.py - <module>():30]		Entering main loop
+[2026-02-06 10:44:00.908]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:44:01.330]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:44:01.343]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:44:01.354]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:44:01.354]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:44:01.355]	[main.py - <module>():73]		Last row - close: 65815.29, atr: 135.106646
+[2026-02-06 10:44:01.355]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:44:01.355]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:44:01.875]	[main.py - <module>():91]		Calculated stop: 65680.18
+[2026-02-06 10:44:01.878]	[position.py - position_size():4]		position_size inputs -> balance=50.00, entry_price=65815.29, stop_price=65680.18, risk_pct=0.01
+[2026-02-06 10:44:01.878]	[position.py - position_size():8]		position_size result -> size=0.003701 (risk_amount=0.50, stop_distance=135.106646)
+[2026-02-06 10:44:01.879]	[main.py - <module>():98]		Raw position size (units): 0.003701
+[2026-02-06 10:44:01.879]	[main.py - <module>():102]		Adjusted qty after max position cap: 0.000152
+[2026-02-06 10:44:01.880]	[portfolio.py - buy():31]		BUY executed at 65815.29, amount: 0.000152, remaining balance: 39.99
+[2026-02-06 10:44:01.880]	[database.py - log_trade():39]		inserting query in db with following data: side=BUY, price=65815.29, amount=0.00015194037738039293, fee=0.01, balance_after=39.99
+[2026-02-06 10:44:01.883]	[database.py - log_trade():47]		DB | BUY | price=65815.29 amount=0.000152 fee=0.0100 balance=39.99
+[2026-02-06 10:44:01.884]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:44:03.886]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:44:04.814]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:44:04.825]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:44:04.835]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:44:04.835]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:44:04.835]	[main.py - <module>():73]		Last row - close: 65832.23, atr: 137.242360
+[2026-02-06 10:44:04.836]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:44:04.836]	[exits.py - should_exit():6]		should_exit -> stop_loss=65678.05, take_profit=66021.15, current_price=65832.23
+[2026-02-06 10:44:04.837]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:44:04.837]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:44:04.837]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:44:06.843]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:44:07.886]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:44:07.889]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:44:07.892]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:44:07.892]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:44:07.892]	[main.py - <module>():73]		Last row - close: 65831.67, atr: 137.408074
+[2026-02-06 10:44:07.892]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:44:07.892]	[exits.py - should_exit():6]		should_exit -> stop_loss=65677.88, take_profit=66021.40, current_price=65831.67
+[2026-02-06 10:44:07.892]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:44:07.892]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:44:07.892]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:44:09.644]	[database.py - __init__():13]		Database initialized at log/db/portfolio.db
+[2026-02-06 10:44:09.898]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:44:10.971]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:44:10.976]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:44:10.982]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:44:10.982]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:44:10.983]	[main.py - <module>():73]		Last row - close: 65832.01, atr: 137.408074
+[2026-02-06 10:44:10.983]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:44:10.983]	[exits.py - should_exit():6]		should_exit -> stop_loss=65677.88, take_profit=66021.40, current_price=65832.01
+[2026-02-06 10:44:10.984]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:44:10.984]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:44:10.984]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:44:12.989]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:44:13.734]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:44:13.741]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:44:13.749]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:44:13.749]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:44:13.749]	[main.py - <module>():73]		Last row - close: 65844.55, atr: 138.122360
+[2026-02-06 10:44:13.750]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:44:13.750]	[exits.py - should_exit():6]		should_exit -> stop_loss=65677.17, take_profit=66022.47, current_price=65844.55
+[2026-02-06 10:44:13.750]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:44:13.750]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:44:13.751]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:44:15.756]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:44:20.434]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:44:20.435]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:44:20.438]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:44:20.438]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:44:20.438]	[main.py - <module>():73]		Last row - close: 65844.56, atr: 138.122360
+[2026-02-06 10:44:20.438]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:44:20.438]	[exits.py - should_exit():6]		should_exit -> stop_loss=65677.17, take_profit=66022.47, current_price=65844.56
+[2026-02-06 10:44:20.438]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:44:20.438]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:44:20.439]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:44:22.444]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:44:29.099]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:44:29.106]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:44:29.113]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:44:29.114]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:44:29.114]	[main.py - <module>():73]		Last row - close: 65847.22, atr: 138.718074
+[2026-02-06 10:44:29.114]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:44:29.115]	[exits.py - should_exit():6]		should_exit -> stop_loss=65676.57, take_profit=66023.37, current_price=65847.22
+[2026-02-06 10:44:29.115]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:44:29.115]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:44:29.116]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:44:31.120]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:44:35.981]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:44:35.988]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:44:35.997]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:44:35.997]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:44:35.998]	[main.py - <module>():73]		Last row - close: 65817.18, atr: 138.795931
+[2026-02-06 10:44:35.998]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:44:35.998]	[exits.py - should_exit():6]		should_exit -> stop_loss=65676.49, take_profit=66023.48, current_price=65817.18
+[2026-02-06 10:44:35.999]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:44:35.999]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:44:35.999]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:44:38.004]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:44:47.037]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:44:47.043]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:44:47.052]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:44:47.053]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:44:47.053]	[main.py - <module>():73]		Last row - close: 65817.17, atr: 138.795931
+[2026-02-06 10:44:47.053]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:44:47.054]	[exits.py - should_exit():6]		should_exit -> stop_loss=65676.49, take_profit=66023.48, current_price=65817.17
+[2026-02-06 10:44:47.054]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:44:47.054]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:44:47.055]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:44:49.060]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:44:52.841]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:44:52.847]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:44:52.855]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:44:52.856]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:44:52.856]	[main.py - <module>():73]		Last row - close: 65844.63, atr: 138.795931
+[2026-02-06 10:44:52.856]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:44:52.857]	[exits.py - should_exit():6]		should_exit -> stop_loss=65676.49, take_profit=66023.48, current_price=65844.63
+[2026-02-06 10:44:52.857]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:44:52.857]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:44:52.857]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:44:54.863]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:45:04.528]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:45:04.533]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:45:04.541]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:45:04.541]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:45:04.541]	[main.py - <module>():73]		Last row - close: 65870.46, atr: 139.973074
+[2026-02-06 10:45:04.542]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:45:04.542]	[exits.py - should_exit():6]		should_exit -> stop_loss=65675.32, take_profit=66025.25, current_price=65870.46
+[2026-02-06 10:45:04.542]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:45:04.543]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:45:04.543]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:45:06.548]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:45:15.368]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:45:15.375]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:45:15.384]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:45:15.384]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:45:15.385]	[main.py - <module>():73]		Last row - close: 65820.01, atr: 133.377855
+[2026-02-06 10:45:15.385]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:45:15.385]	[exits.py - should_exit():6]		should_exit -> stop_loss=65681.91, take_profit=66015.36, current_price=65820.01
+[2026-02-06 10:45:15.386]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:45:15.386]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:45:15.386]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:45:17.388]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:45:20.496]	[main.py - <module>():54]		Fetched 300 klines
+[2026-02-06 10:45:20.504]	[main.py - <module>():67]		Constructed DataFrame and applied dtypes
+[2026-02-06 10:45:20.512]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 10:45:20.512]	[main.py - <module>():71]		Indicators added to DataFrame
+[2026-02-06 10:45:20.513]	[main.py - <module>():73]		Last row - close: 65806.68, atr: 134.765712
+[2026-02-06 10:45:20.513]	[main.py - <module>():76]		Checking exit logic
+[2026-02-06 10:45:20.514]	[exits.py - should_exit():6]		should_exit -> stop_loss=65680.52, take_profit=66017.44, current_price=65806.68
+[2026-02-06 10:45:20.514]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 10:45:20.514]	[main.py - <module>():88]		Checking entry logic
+[2026-02-06 10:45:20.515]	[main.py - <module>():110]		Sleeping for 2 seconds
+[2026-02-06 10:45:22.516]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:45:32.524]	[main.py - <module>():114]		Error in main loop: HTTPSConnectionPool(host='api.binance.com', port=443): Read timed out. (read timeout=10)
+[2026-02-06 10:45:37.528]	[main.py - <module>():48]		Fetching klines
+[2026-02-06 10:46:11.816]	[main.py - <module>():114]		Error in main loop: HTTPSConnectionPool(host='api.binance.com', port=443): Max retries exceeded with url: /api/v3/klines?interval=1m&limit=300&symbol=BTCUSDT (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.binance.com', port=443) at 0x10ec08980>, 'Connection to api.binance.com timed out. (connect timeout=10)'))
+[2026-02-06 11:56:10.502]	[database.py - __init__():13]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:16:03.676]	[database.py - __init__():13]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:16:03.814]	[main.py - <module>():25]		Starting bot...
+[2026-02-06 12:16:04.178]	[database.py - __init__():13]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:16:04.180]	[main.py - <module>():32]		Initialized DB
+[2026-02-06 12:16:04.181]	[portfolio.py - __init__():14]		Created PaperPortfolio with starting balance: 50.00
+[2026-02-06 12:16:04.181]	[main.py - <module>():37]		Initialized PaperPortfolio with starting balance: 50.00
+[2026-02-06 12:16:04.181]	[main.py - <module>():38]		Entering main loop
+[2026-02-06 12:16:04.183]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:16:04.444]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:16:04.456]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:16:04.467]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:16:04.468]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:16:04.468]	[main.py - <module>():84]		Last row - close: 65934.76, atr: 75.046865
+[2026-02-06 12:16:04.469]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:16:04.469]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:16:04.984]	[main.py - <module>():102]		Calculated stop: 65859.71
+[2026-02-06 12:16:04.985]	[position.py - position_size():4]		position_size inputs -> balance=50.00, entry_price=65934.76, stop_price=65859.71, risk_pct=0.01
+[2026-02-06 12:16:04.986]	[position.py - position_size():8]		position_size result -> size=0.006663 (risk_amount=0.50, stop_distance=75.046865)
+[2026-02-06 12:16:04.986]	[main.py - <module>():109]		Raw position size (units): 0.006663
+[2026-02-06 12:16:04.986]	[main.py - <module>():113]		Adjusted qty after max position cap: 0.000152
+[2026-02-06 12:16:04.986]	[portfolio.py - buy():32]		BUY executed at 65934.76, amount: 0.000152, remaining balance: 39.99
+[2026-02-06 12:16:04.987]	[database.py - log_trade():39]		inserting query in db with following data: side=BUY, price=65934.76, amount=0.00015166507013902834, fee=0.01, balance_after=39.99
+[2026-02-06 12:16:04.989]	[database.py - log_trade():47]		DB | BUY | price=65934.76 amount=0.000152 fee=0.0100 balance=39.99
+[2026-02-06 12:16:04.989]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:16:06.995]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:16:07.244]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:16:07.248]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:16:07.253]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:16:07.253]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:16:07.253]	[main.py - <module>():84]		Last row - close: 65942.06, atr: 75.569008
+[2026-02-06 12:16:07.253]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:16:07.254]	[exits.py - should_exit():6]		should_exit -> stop_loss=65859.19, take_profit=66048.11, current_price=65942.06
+[2026-02-06 12:16:07.254]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:16:07.254]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:16:07.254]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:16:09.260]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:16:09.514]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:16:09.518]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:16:09.522]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:16:09.523]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:16:09.523]	[main.py - <module>():84]		Last row - close: 65947.93, atr: 76.135437
+[2026-02-06 12:16:09.523]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:16:09.523]	[exits.py - should_exit():6]		should_exit -> stop_loss=65858.62, take_profit=66048.96, current_price=65947.93
+[2026-02-06 12:16:09.523]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:16:09.523]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:16:09.524]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:16:11.529]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:16:11.775]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:16:11.777]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:16:11.780]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:16:11.780]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:16:11.780]	[main.py - <module>():84]		Last row - close: 65932.45, atr: 76.135437
+[2026-02-06 12:16:11.780]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:16:11.780]	[exits.py - should_exit():6]		should_exit -> stop_loss=65858.62, take_profit=66048.96, current_price=65932.45
+[2026-02-06 12:16:11.780]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:16:11.781]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:16:11.781]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:16:13.786]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:16:14.088]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:16:14.091]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:16:14.095]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:16:14.095]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:16:14.095]	[main.py - <module>():84]		Last row - close: 65932.44, atr: 76.135437
+[2026-02-06 12:16:14.095]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:16:14.097]	[exits.py - should_exit():6]		should_exit -> stop_loss=65858.62, take_profit=66048.96, current_price=65932.44
+[2026-02-06 12:16:14.097]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:16:14.097]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:16:14.097]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:16:16.102]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:16:16.354]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:16:16.358]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:16:16.362]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:16:16.362]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:16:16.362]	[main.py - <module>():84]		Last row - close: 65931.35, atr: 76.135437
+[2026-02-06 12:16:16.363]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:16:16.363]	[exits.py - should_exit():6]		should_exit -> stop_loss=65858.62, take_profit=66048.96, current_price=65931.35
+[2026-02-06 12:16:16.363]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:16:16.363]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:16:16.363]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:20:16.716]	[database.py - __init__():54]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:20:16.914]	[main.py - <module>():25]		Starting bot...
+[2026-02-06 12:20:17.220]	[database.py - __init__():54]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:20:17.220]	[main.py - <module>():32]		Initialized DB
+[2026-02-06 12:20:17.220]	[portfolio.py - __init__():14]		Created PaperPortfolio with starting balance: 50.00
+[2026-02-06 12:20:17.220]	[main.py - <module>():37]		Initialized PaperPortfolio with starting balance: 50.00
+[2026-02-06 12:20:17.220]	[main.py - <module>():38]		Entering main loop
+[2026-02-06 12:20:17.221]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:20:17.486]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:20:17.490]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:20:17.495]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:20:17.495]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:20:17.495]	[main.py - <module>():84]		Last row - close: 65870.00, atr: 78.083262
+[2026-02-06 12:20:17.495]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:20:17.495]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:20:18.011]	[main.py - <module>():102]		Calculated stop: 65791.92
+[2026-02-06 12:20:18.012]	[position.py - position_size():4]		position_size inputs -> balance=50.00, entry_price=65870.00, stop_price=65791.92, risk_pct=0.01
+[2026-02-06 12:20:18.012]	[position.py - position_size():8]		position_size result -> size=0.006403 (risk_amount=0.50, stop_distance=78.083262)
+[2026-02-06 12:20:18.012]	[main.py - <module>():109]		Raw position size (units): 0.006403
+[2026-02-06 12:20:18.012]	[main.py - <module>():113]		Adjusted qty after max position cap: 0.000152
+[2026-02-06 12:20:18.012]	[portfolio.py - buy():32]		BUY executed at 65870.00, amount: 0.000152, remaining balance: 39.99
+[2026-02-06 12:20:18.012]	[database.py - log_trade():79]		inserting query in db with following data: side=BUY, price=65870.0, amount=0.0001518141794443601, fee=0.01, balance_after=39.99
+[2026-02-06 12:20:18.013]	[database.py - log_trade():86]		DB | BUY | price=65870.00 amount=0.000152 fee=0.0100 balance=39.99
+[2026-02-06 12:20:18.013]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:20:20.019]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:20:20.292]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:20:20.296]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:20:20.301]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:20:20.301]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:20:20.301]	[main.py - <module>():84]		Last row - close: 65897.10, atr: 80.018976
+[2026-02-06 12:20:20.301]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:20:20.302]	[exits.py - should_exit():6]		should_exit -> stop_loss=65789.98, take_profit=65990.03, current_price=65897.10
+[2026-02-06 12:20:20.302]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:20:20.302]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:20:20.302]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:20:50.417]	[database.py - __init__():54]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:20:50.603]	[main.py - <module>():25]		Starting bot...
+[2026-02-06 12:20:50.910]	[database.py - __init__():54]		Database initialized at log/db/portfolio.db
+[2026-02-06 12:20:50.910]	[main.py - <module>():32]		Initialized DB
+[2026-02-06 12:20:50.910]	[portfolio.py - __init__():14]		Created PaperPortfolio with starting balance: 50.00
+[2026-02-06 12:20:50.910]	[main.py - <module>():37]		Initialized PaperPortfolio with starting balance: 50.00
+[2026-02-06 12:20:50.910]	[main.py - <module>():38]		Entering main loop
+[2026-02-06 12:20:50.911]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:20:51.162]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:20:51.164]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:20:51.167]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:20:51.168]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:20:51.168]	[main.py - <module>():84]		Last row - close: 65935.64, atr: 84.826833
+[2026-02-06 12:20:51.168]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:20:51.168]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:20:51.685]	[main.py - <module>():102]		Calculated stop: 65850.81
+[2026-02-06 12:20:51.685]	[position.py - position_size():4]		position_size inputs -> balance=50.00, entry_price=65935.64, stop_price=65850.81, risk_pct=0.01
+[2026-02-06 12:20:51.686]	[position.py - position_size():8]		position_size result -> size=0.005894 (risk_amount=0.50, stop_distance=84.826833)
+[2026-02-06 12:20:51.686]	[main.py - <module>():109]		Raw position size (units): 0.005894
+[2026-02-06 12:20:51.686]	[main.py - <module>():113]		Adjusted qty after max position cap: 0.000152
+[2026-02-06 12:20:51.686]	[portfolio.py - buy():32]		BUY executed at 65935.64, amount: 0.000152, remaining balance: 39.99
+[2026-02-06 12:20:51.686]	[database.py - log_trade():79]		inserting query in db with following data: side=BUY, price=65935.64, amount=0.000151663045964216, fee=0.01, balance_after=39.99
+[2026-02-06 12:20:51.687]	[database.py - log_trade():86]		DB | BUY | price=65935.64 amount=0.000152 fee=0.0100 balance=39.99
+[2026-02-06 12:20:51.687]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:20:53.692]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:20:53.950]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:20:53.953]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:20:53.956]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:20:53.956]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:20:53.956]	[main.py - <module>():84]		Last row - close: 65924.14, atr: 84.826833
+[2026-02-06 12:20:53.956]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:20:53.957]	[exits.py - should_exit():6]		should_exit -> stop_loss=65850.81, take_profit=66062.88, current_price=65924.14
+[2026-02-06 12:20:53.957]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:20:53.957]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:20:53.957]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:20:55.962]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:20:56.222]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:20:56.226]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:20:56.232]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:20:56.232]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:20:56.232]	[main.py - <module>():84]		Last row - close: 65924.14, atr: 84.826833
+[2026-02-06 12:20:56.233]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:20:56.233]	[exits.py - should_exit():6]		should_exit -> stop_loss=65850.81, take_profit=66062.88, current_price=65924.14
+[2026-02-06 12:20:56.233]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:20:56.233]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:20:56.234]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:20:58.239]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:20:58.493]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:20:58.499]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:20:58.503]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:20:58.504]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:20:58.508]	[main.py - <module>():84]		Last row - close: 65894.33, atr: 84.826833
+[2026-02-06 12:20:58.509]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:20:58.509]	[exits.py - should_exit():6]		should_exit -> stop_loss=65850.81, take_profit=66062.88, current_price=65894.33
+[2026-02-06 12:20:58.509]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:20:58.510]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:20:58.510]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:00.517]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:00.761]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:00.764]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:00.768]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:00.769]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:00.769]	[main.py - <module>():84]		Last row - close: 65872.68, atr: 78.767773
+[2026-02-06 12:21:00.769]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:00.769]	[exits.py - should_exit():6]		should_exit -> stop_loss=65856.87, take_profit=66053.79, current_price=65872.68
+[2026-02-06 12:21:00.770]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:00.770]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:00.770]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:02.775]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:03.244]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:03.246]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:03.248]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:03.248]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:03.249]	[main.py - <module>():84]		Last row - close: 65895.96, atr: 80.430631
+[2026-02-06 12:21:03.249]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:03.249]	[exits.py - should_exit():6]		should_exit -> stop_loss=65855.21, take_profit=66056.29, current_price=65895.96
+[2026-02-06 12:21:03.249]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:03.249]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:03.249]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:05.255]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:05.502]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:05.506]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:05.510]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:05.510]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:05.510]	[main.py - <module>():84]		Last row - close: 65896.82, atr: 81.247059
+[2026-02-06 12:21:05.510]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:05.510]	[exits.py - should_exit():6]		should_exit -> stop_loss=65854.39, take_profit=66057.51, current_price=65896.82
+[2026-02-06 12:21:05.511]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:05.511]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:05.511]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:07.516]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:07.861]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:07.863]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:07.865]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:07.866]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:07.866]	[main.py - <module>():84]		Last row - close: 65896.81, atr: 81.247059
+[2026-02-06 12:21:07.866]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:07.866]	[exits.py - should_exit():6]		should_exit -> stop_loss=65854.39, take_profit=66057.51, current_price=65896.81
+[2026-02-06 12:21:07.866]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:07.866]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:07.866]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:09.872]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:10.346]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:10.350]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:10.354]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:10.354]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:10.354]	[main.py - <module>():84]		Last row - close: 65896.82, atr: 81.247059
+[2026-02-06 12:21:10.354]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:10.354]	[exits.py - should_exit():6]		should_exit -> stop_loss=65854.39, take_profit=66057.51, current_price=65896.82
+[2026-02-06 12:21:10.354]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:10.355]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:10.355]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:12.360]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:12.967]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:12.969]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:12.972]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:12.972]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:12.972]	[main.py - <module>():84]		Last row - close: 65896.82, atr: 81.247059
+[2026-02-06 12:21:12.972]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:12.972]	[exits.py - should_exit():6]		should_exit -> stop_loss=65854.39, take_profit=66057.51, current_price=65896.82
+[2026-02-06 12:21:12.972]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:12.972]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:12.973]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:14.978]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:15.234]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:15.236]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:15.238]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:15.238]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:15.238]	[main.py - <module>():84]		Last row - close: 65896.82, atr: 81.247059
+[2026-02-06 12:21:15.238]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:15.239]	[exits.py - should_exit():6]		should_exit -> stop_loss=65854.39, take_profit=66057.51, current_price=65896.82
+[2026-02-06 12:21:15.239]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:15.239]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:15.239]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:17.245]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:17.493]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:17.497]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:17.502]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:17.502]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:17.503]	[main.py - <module>():84]		Last row - close: 65890.92, atr: 81.247059
+[2026-02-06 12:21:17.503]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:17.503]	[exits.py - should_exit():6]		should_exit -> stop_loss=65854.39, take_profit=66057.51, current_price=65890.92
+[2026-02-06 12:21:17.503]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:17.503]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:17.504]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:19.504]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:19.756]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:19.759]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:19.763]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:19.763]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:19.763]	[main.py - <module>():84]		Last row - close: 65898.14, atr: 81.247059
+[2026-02-06 12:21:19.763]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:19.764]	[exits.py - should_exit():6]		should_exit -> stop_loss=65854.39, take_profit=66057.51, current_price=65898.14
+[2026-02-06 12:21:19.764]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:19.765]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:19.765]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:21.770]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:22.022]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:22.024]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:22.027]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:22.027]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:22.027]	[main.py - <module>():84]		Last row - close: 65912.01, atr: 81.577059
+[2026-02-06 12:21:22.027]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:22.027]	[exits.py - should_exit():6]		should_exit -> stop_loss=65854.06, take_profit=66058.01, current_price=65912.01
+[2026-02-06 12:21:22.027]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:22.028]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:22.028]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:24.030]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:24.500]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:24.502]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:24.505]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:24.505]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:24.505]	[main.py - <module>():84]		Last row - close: 65912.01, atr: 81.577059
+[2026-02-06 12:21:24.505]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:24.505]	[exits.py - should_exit():6]		should_exit -> stop_loss=65854.06, take_profit=66058.01, current_price=65912.01
+[2026-02-06 12:21:24.505]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:24.505]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:24.505]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:26.511]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:26.988]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:26.990]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:26.993]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:26.993]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:26.993]	[main.py - <module>():84]		Last row - close: 65923.32, atr: 82.384916
+[2026-02-06 12:21:26.993]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:26.993]	[exits.py - should_exit():6]		should_exit -> stop_loss=65853.26, take_profit=66059.22, current_price=65923.32
+[2026-02-06 12:21:26.993]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:26.994]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:26.994]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:28.999]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:29.248]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:29.253]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:29.261]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:29.261]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:29.261]	[main.py - <module>():84]		Last row - close: 65923.43, atr: 82.393488
+[2026-02-06 12:21:29.262]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:29.262]	[exits.py - should_exit():6]		should_exit -> stop_loss=65853.25, take_profit=66059.23, current_price=65923.43
+[2026-02-06 12:21:29.263]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:29.263]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:29.263]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:31.264]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:31.507]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:31.511]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:31.515]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:31.515]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:31.515]	[main.py - <module>():84]		Last row - close: 65923.44, atr: 82.393488
+[2026-02-06 12:21:31.516]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:31.516]	[exits.py - should_exit():6]		should_exit -> stop_loss=65853.25, take_profit=66059.23, current_price=65923.44
+[2026-02-06 12:21:31.516]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:31.516]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:31.516]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:33.517]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:33.774]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:33.778]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:33.783]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:33.783]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:33.783]	[main.py - <module>():84]		Last row - close: 65923.43, atr: 82.393488
+[2026-02-06 12:21:33.783]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:33.784]	[exits.py - should_exit():6]		should_exit -> stop_loss=65853.25, take_profit=66059.23, current_price=65923.43
+[2026-02-06 12:21:33.784]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:33.784]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:33.784]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:35.789]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:36.053]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:36.055]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:36.057]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:36.057]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:36.058]	[main.py - <module>():84]		Last row - close: 65923.43, atr: 82.393488
+[2026-02-06 12:21:36.058]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:36.058]	[exits.py - should_exit():6]		should_exit -> stop_loss=65853.25, take_profit=66059.23, current_price=65923.43
+[2026-02-06 12:21:36.058]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:36.058]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:36.058]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:38.059]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:38.306]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:38.309]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:38.311]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:38.312]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:38.312]	[main.py - <module>():84]		Last row - close: 65927.39, atr: 82.676345
+[2026-02-06 12:21:38.312]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:38.312]	[exits.py - should_exit():6]		should_exit -> stop_loss=65852.96, take_profit=66059.65, current_price=65927.39
+[2026-02-06 12:21:38.312]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:38.312]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:38.312]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:40.318]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:40.566]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:40.570]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:40.575]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:40.576]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:40.576]	[main.py - <module>():84]		Last row - close: 65934.19, atr: 83.162059
+[2026-02-06 12:21:40.576]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:40.576]	[exits.py - should_exit():6]		should_exit -> stop_loss=65852.48, take_profit=66060.38, current_price=65934.19
+[2026-02-06 12:21:40.577]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:40.577]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:40.578]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:42.583]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:42.837]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:42.839]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:42.843]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:42.844]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:42.844]	[main.py - <module>():84]		Last row - close: 65934.20, atr: 83.162059
+[2026-02-06 12:21:42.844]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:42.844]	[exits.py - should_exit():6]		should_exit -> stop_loss=65852.48, take_profit=66060.38, current_price=65934.20
+[2026-02-06 12:21:42.844]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:42.844]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:42.845]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:44.850]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:45.094]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:45.096]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:45.100]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:45.100]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:45.101]	[main.py - <module>():84]		Last row - close: 65943.33, atr: 83.814916
+[2026-02-06 12:21:45.101]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:45.101]	[exits.py - should_exit():6]		should_exit -> stop_loss=65851.83, take_profit=66061.36, current_price=65943.33
+[2026-02-06 12:21:45.101]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:45.101]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:45.102]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:47.107]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:47.366]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:47.369]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:47.372]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:47.372]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:47.373]	[main.py - <module>():84]		Last row - close: 65946.00, atr: 84.004916
+[2026-02-06 12:21:47.373]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:47.373]	[exits.py - should_exit():6]		should_exit -> stop_loss=65851.64, take_profit=66061.65, current_price=65946.00
+[2026-02-06 12:21:47.373]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:47.373]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:47.374]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:49.379]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:49.633]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:49.637]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:49.642]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:49.642]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:49.642]	[main.py - <module>():84]		Last row - close: 65955.50, atr: 84.683488
+[2026-02-06 12:21:49.642]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:49.643]	[exits.py - should_exit():6]		should_exit -> stop_loss=65850.96, take_profit=66062.67, current_price=65955.50
+[2026-02-06 12:21:49.643]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:49.643]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:49.643]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:51.647]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:51.896]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:51.899]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:51.903]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:51.904]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:51.904]	[main.py - <module>():84]		Last row - close: 65931.97, atr: 84.683488
+[2026-02-06 12:21:51.904]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:51.904]	[exits.py - should_exit():6]		should_exit -> stop_loss=65850.96, take_profit=66062.67, current_price=65931.97
+[2026-02-06 12:21:51.904]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:51.905]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:51.905]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:53.908]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:54.178]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:54.182]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:54.188]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:54.188]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:54.189]	[main.py - <module>():84]		Last row - close: 65916.96, atr: 84.683488
+[2026-02-06 12:21:54.189]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:54.189]	[exits.py - should_exit():6]		should_exit -> stop_loss=65850.96, take_profit=66062.67, current_price=65916.96
+[2026-02-06 12:21:54.189]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:54.190]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:54.190]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:56.195]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:56.683]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:56.685]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:56.687]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:56.688]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:56.688]	[main.py - <module>():84]		Last row - close: 65900.00, atr: 84.683488
+[2026-02-06 12:21:56.688]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:56.688]	[exits.py - should_exit():6]		should_exit -> stop_loss=65850.96, take_profit=66062.67, current_price=65900.00
+[2026-02-06 12:21:56.688]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:56.688]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:56.688]	[main.py - <module>():121]		Sleeping for 2 seconds
+[2026-02-06 12:21:58.693]	[main.py - <module>():59]		Fetching klines
+[2026-02-06 12:21:59.153]	[main.py - <module>():65]		Fetched 300 klines
+[2026-02-06 12:21:59.155]	[main.py - <module>():78]		Constructed DataFrame and applied dtypes
+[2026-02-06 12:21:59.157]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-06 12:21:59.157]	[main.py - <module>():82]		Indicators added to DataFrame
+[2026-02-06 12:21:59.158]	[main.py - <module>():84]		Last row - close: 65900.01, atr: 84.683488
+[2026-02-06 12:21:59.158]	[main.py - <module>():87]		Checking exit logic
+[2026-02-06 12:21:59.158]	[exits.py - should_exit():6]		should_exit -> stop_loss=65850.96, take_profit=66062.67, current_price=65900.01
+[2026-02-06 12:21:59.158]	[exits.py - should_exit():15]		should_exit decision: None
+[2026-02-06 12:21:59.158]	[main.py - <module>():99]		Checking entry logic
+[2026-02-06 12:21:59.158]	[main.py - <module>():121]		Sleeping for 2 seconds
