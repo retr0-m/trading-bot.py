@@ -7,6 +7,7 @@ from log.database import PortfolioDB
 from datetime import datetime
 import uvicorn
 from log.logger import log_uvicorn as log
+from config import SYMBOLS
 
 app = FastAPI()
 
@@ -28,19 +29,39 @@ def build_portfolio_from_trades(trades):
         equity = balance_after  # for now: no unrealized PnL
 
         trade_history.append({
+            "id":trade_id,
             "time": timestamp,
             "type": side,
             "symbol": symbol,
             "qty": amount,
             "price": price,
-            "pnl": None
+            "expense": price*amount if side == "BUY" else -price*amount,
+            "balance after": balance_after
         })
 
-    # If last trade is BUY → open position
-    if trades and trades[-1][1] == "BUY":
-        last = trades[-1]
+    # If last trade is BUY for each symbol → open position
+    trades_by_symbol = {sym: [] for sym in SYMBOLS}
+    for t in trades:
+        trade_id, symbol, side, price, amount, fee, balance_after, timestamp = t
+        for sym in SYMBOLS:
+            if symbol == sym:
+                trades_by_symbol[sym].append(t)
+    open_positions = []
+    for sym, last_trades in trades_by_symbol.items():
+        buy_number = 0
+        sell_number = 0
+        for trade in last_trades:
+            if trade[2] == "BUY":  # side == "BUY"
+                buy_number += 1
+            elif trade[2] == "SELL":  # side == "SELL"
+                sell_number += 1
+        if buy_number > sell_number:  # odd number of BUYs → open position
+            open_positions.append(sym)
+            
+    
+    for symbol in open_positions:
         positions.append(
-            f"BTCUSDT | qty={last[3]:.6f} | entry={last[2]:.2f}"
+            f"{symbol}: OPEN"
         )
 
     return {

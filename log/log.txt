@@ -5756,3 +5756,913 @@
 [2026-02-06 17:23:31.472]	[main.py - <module>():130]		Sleeping for 2 seconds
 [2026-02-06 17:23:33.474]	[main.py - <module>():63]		Processing symbol: BTCUSDT
 [2026-02-06 17:23:33.475]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:36.173]	[main.py - <module>():25]		Starting bot...
+[2026-02-07 12:20:36.545]	[database.py - __init__():55]		Database initialized at log/db/portfolio.db
+[2026-02-07 12:20:36.546]	[main.py - <module>():32]		Initialized DB
+[2026-02-07 12:20:36.546]	[portfolio.py - __init__():13]		Created PaperPortfolio with starting balance: 25.00, leverage: 5x
+[2026-02-07 12:20:36.546]	[portfolio.py - load_from_db():38]		No trades in DB, starting fresh
+[2026-02-07 12:20:36.546]	[portfolio.py - __init__():13]		Created PaperPortfolio with starting balance: 25.00, leverage: 5x
+[2026-02-07 12:20:36.547]	[portfolio.py - load_from_db():38]		No trades in DB, starting fresh
+[2026-02-07 12:20:36.547]	[main.py - <module>():40]		Initialized PaperPortfolio with starting balance: 25.00
+[2026-02-07 12:20:36.547]	[main.py - <module>():41]		Entering main loop
+[2026-02-07 12:20:36.547]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:20:36.548]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:37.012]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:37.024]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:37.033]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:37.033]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:37.033]	[main.py - <module>():90]		Last row - close: 68095.95, atr: 75.812369
+[2026-02-07 12:20:37.033]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:37.034]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:37.034]	[logic.py - should_long():17]		should_long -> trend=False (EMA50-EMA200=-0.34%)
+[2026-02-07 12:20:37.035]	[logic.py - should_long():18]		should_long -> rsi_ok=True (RSI=56.85)
+[2026-02-07 12:20:37.035]	[logic.py - should_long():19]		should_long -> volume_ok=False (Vol progress=86.75%)
+[2026-02-07 12:20:37.035]	[logic.py - should_long():24]		should_long decision: True
+[2026-02-07 12:20:37.035]	[main.py - <module>():111]		Calculated stop: 68020.14
+[2026-02-07 12:20:37.036]	[position.py - position_size():15]		position_size inputs -> balance=25.00, entry_price=68095.95, stop_price=68020.14, risk_pct=0.01
+[2026-02-07 12:20:37.036]	[position.py - position_size():32]		position_size result -> qty=0.003298, risk_amount=0.25, stop_distance=75.812369
+[2026-02-07 12:20:37.036]	[main.py - <module>():118]		Raw position size (units): 0.003298
+[2026-02-07 12:20:37.037]	[main.py - <module>():122]		Adjusted qty after max position cap: 0.000147
+[2026-02-07 12:20:37.037]	[portfolio.py - buy():63]		BUY executed at 68095.95, amount: 0.000147, leveraged position: 10.00, remaining balance: 22.99, fee: 0.0100
+[2026-02-07 12:20:37.037]	[database.py - log_trade():82]		inserting query in db with following data: side=BUY, price=68095.95, amount=0.00014685161158629846, fee=0.01, balance_after=22.990000000000002
+[2026-02-07 12:20:37.039]	[database.py - log_trade():89]		DB | BUY | price=68095.95 amount=0.000147 fee=0.0100 balance=22.99
+[2026-02-07 12:20:37.039]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:20:37.039]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:37.281]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:37.283]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:37.287]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:37.287]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:37.287]	[main.py - <module>():90]		Last row - close: 2014.86, atr: 2.280177
+[2026-02-07 12:20:37.287]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:37.287]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:37.287]	[logic.py - should_long():17]		should_long -> trend=False (EMA50-EMA200=-0.38%)
+[2026-02-07 12:20:37.288]	[logic.py - should_long():18]		should_long -> rsi_ok=True (RSI=58.49)
+[2026-02-07 12:20:37.288]	[logic.py - should_long():19]		should_long -> volume_ok=False (Vol progress=67.66%)
+[2026-02-07 12:20:37.288]	[logic.py - should_long():24]		should_long decision: True
+[2026-02-07 12:20:37.288]	[main.py - <module>():111]		Calculated stop: 2012.58
+[2026-02-07 12:20:37.288]	[position.py - position_size():15]		position_size inputs -> balance=25.00, entry_price=2014.86, stop_price=2012.58, risk_pct=0.01
+[2026-02-07 12:20:37.288]	[position.py - position_size():32]		position_size result -> qty=0.109641, risk_amount=0.25, stop_distance=2.280177
+[2026-02-07 12:20:37.289]	[main.py - <module>():118]		Raw position size (units): 0.109641
+[2026-02-07 12:20:37.289]	[main.py - <module>():122]		Adjusted qty after max position cap: 0.004963
+[2026-02-07 12:20:37.289]	[portfolio.py - buy():63]		BUY executed at 2014.86, amount: 0.004963, leveraged position: 10.00, remaining balance: 22.99, fee: 0.0100
+[2026-02-07 12:20:37.289]	[database.py - log_trade():82]		inserting query in db with following data: side=BUY, price=2014.86, amount=0.004963123988763488, fee=0.01, balance_after=22.990000000000002
+[2026-02-07 12:20:37.290]	[database.py - log_trade():89]		DB | BUY | price=2014.86 amount=0.004963 fee=0.0100 balance=22.99
+[2026-02-07 12:20:37.290]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:20:39.296]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:20:39.299]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:39.765]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:39.770]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:39.775]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:39.775]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:39.775]	[main.py - <module>():90]		Last row - close: 68091.21, atr: 75.812369
+[2026-02-07 12:20:39.775]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:39.776]	[exits.py - should_exit():7]		should_exit -> stop_loss=68020.14, take_profit=68247.57, current_price=68091.21
+[2026-02-07 12:20:39.776]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:39.776]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:39.776]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:20:39.777]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:40.142]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:40.147]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:40.151]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:40.151]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:40.152]	[main.py - <module>():90]		Last row - close: 2014.28, atr: 2.280177
+[2026-02-07 12:20:40.152]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:40.152]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.58, take_profit=2019.42, current_price=2014.28
+[2026-02-07 12:20:40.152]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:40.153]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:40.153]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:20:42.159]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:20:42.165]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:42.472]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:42.476]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:42.480]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:42.480]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:42.480]	[main.py - <module>():90]		Last row - close: 68091.21, atr: 75.812369
+[2026-02-07 12:20:42.480]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:42.480]	[exits.py - should_exit():7]		should_exit -> stop_loss=68020.14, take_profit=68247.57, current_price=68091.21
+[2026-02-07 12:20:42.481]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:42.481]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:42.481]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:20:42.481]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:42.948]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:42.956]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:42.965]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:42.965]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:42.966]	[main.py - <module>():90]		Last row - close: 2014.49, atr: 2.280177
+[2026-02-07 12:20:42.966]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:42.966]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.58, take_profit=2019.42, current_price=2014.49
+[2026-02-07 12:20:42.966]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:42.967]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:42.967]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:20:44.973]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:20:44.977]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:45.223]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:45.227]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:45.230]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:45.230]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:45.230]	[main.py - <module>():90]		Last row - close: 68095.50, atr: 75.812369
+[2026-02-07 12:20:45.231]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:45.231]	[exits.py - should_exit():7]		should_exit -> stop_loss=68020.14, take_profit=68247.57, current_price=68095.50
+[2026-02-07 12:20:45.231]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:45.231]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:45.231]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:20:45.231]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:45.491]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:45.493]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:45.496]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:45.496]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:45.497]	[main.py - <module>():90]		Last row - close: 2014.60, atr: 2.280177
+[2026-02-07 12:20:45.497]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:45.497]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.58, take_profit=2019.42, current_price=2014.60
+[2026-02-07 12:20:45.497]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:45.497]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:45.497]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:20:47.503]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:20:47.505]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:47.760]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:47.763]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:47.766]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:47.767]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:47.767]	[main.py - <module>():90]		Last row - close: 68095.50, atr: 75.812369
+[2026-02-07 12:20:47.767]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:47.767]	[exits.py - should_exit():7]		should_exit -> stop_loss=68020.14, take_profit=68247.57, current_price=68095.50
+[2026-02-07 12:20:47.767]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:47.767]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:47.768]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:20:47.768]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:48.232]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:48.235]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:48.237]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:48.237]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:48.238]	[main.py - <module>():90]		Last row - close: 2014.60, atr: 2.280177
+[2026-02-07 12:20:48.238]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:48.238]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.58, take_profit=2019.42, current_price=2014.60
+[2026-02-07 12:20:48.238]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:48.238]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:48.238]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:20:50.244]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:20:50.249]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:50.731]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:50.738]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:50.744]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:50.744]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:50.745]	[main.py - <module>():90]		Last row - close: 68089.54, atr: 75.812369
+[2026-02-07 12:20:50.745]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:50.745]	[exits.py - should_exit():7]		should_exit -> stop_loss=68020.14, take_profit=68247.57, current_price=68089.54
+[2026-02-07 12:20:50.745]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:50.746]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:50.746]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:20:50.746]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:50.992]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:50.994]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:50.996]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:50.996]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:50.997]	[main.py - <module>():90]		Last row - close: 2013.94, atr: 2.280177
+[2026-02-07 12:20:50.997]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:50.997]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.58, take_profit=2019.42, current_price=2013.94
+[2026-02-07 12:20:50.997]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:50.997]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:50.997]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:20:53.002]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:20:53.003]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:53.250]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:53.252]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:53.255]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:53.255]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:53.255]	[main.py - <module>():90]		Last row - close: 68061.16, atr: 75.812369
+[2026-02-07 12:20:53.255]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:53.255]	[exits.py - should_exit():7]		should_exit -> stop_loss=68020.14, take_profit=68247.57, current_price=68061.16
+[2026-02-07 12:20:53.255]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:53.256]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:53.256]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:20:53.256]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:53.514]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:53.517]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:53.523]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:53.523]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:53.523]	[main.py - <module>():90]		Last row - close: 2013.85, atr: 2.280177
+[2026-02-07 12:20:53.523]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:53.523]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.58, take_profit=2019.42, current_price=2013.85
+[2026-02-07 12:20:53.523]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:53.523]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:53.524]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:20:55.530]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:20:55.535]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:55.999]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:56.005]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:56.010]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:56.011]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:56.011]	[main.py - <module>():90]		Last row - close: 68082.35, atr: 75.812369
+[2026-02-07 12:20:56.011]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:56.012]	[exits.py - should_exit():7]		should_exit -> stop_loss=68020.14, take_profit=68247.57, current_price=68082.35
+[2026-02-07 12:20:56.012]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:56.012]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:56.012]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:20:56.012]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:56.256]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:56.259]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:56.262]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:56.262]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:56.262]	[main.py - <module>():90]		Last row - close: 2014.26, atr: 2.280177
+[2026-02-07 12:20:56.262]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:56.262]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.58, take_profit=2019.42, current_price=2014.26
+[2026-02-07 12:20:56.262]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:56.262]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:56.263]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:20:58.268]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:20:58.271]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:58.515]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:58.518]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:58.521]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:58.521]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:58.521]	[main.py - <module>():90]		Last row - close: 68082.35, atr: 75.812369
+[2026-02-07 12:20:58.523]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:58.524]	[exits.py - should_exit():7]		should_exit -> stop_loss=68020.14, take_profit=68247.57, current_price=68082.35
+[2026-02-07 12:20:58.524]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:58.524]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:58.524]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:20:58.524]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:20:58.766]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:20:58.768]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:20:58.771]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:20:58.771]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:20:58.771]	[main.py - <module>():90]		Last row - close: 2014.29, atr: 2.280177
+[2026-02-07 12:20:58.771]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:20:58.772]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.58, take_profit=2019.42, current_price=2014.29
+[2026-02-07 12:20:58.772]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:20:58.772]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:20:58.772]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:00.775]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:00.776]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:01.417]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:01.425]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:01.431]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:01.431]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:01.431]	[main.py - <module>():90]		Last row - close: 68068.00, atr: 70.397200
+[2026-02-07 12:21:01.432]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:01.432]	[exits.py - should_exit():7]		should_exit -> stop_loss=68025.55, take_profit=68236.74, current_price=68068.00
+[2026-02-07 12:21:01.432]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:01.432]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:01.433]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:01.433]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:01.929]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:01.935]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:01.941]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:01.942]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:01.942]	[main.py - <module>():90]		Last row - close: 2013.70, atr: 2.150165
+[2026-02-07 12:21:01.942]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:01.943]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.71, take_profit=2019.16, current_price=2013.70
+[2026-02-07 12:21:01.943]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:01.943]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:01.944]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:03.949]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:03.951]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:04.259]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:04.263]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:04.267]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:04.267]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:04.268]	[main.py - <module>():90]		Last row - close: 68049.86, atr: 71.692914
+[2026-02-07 12:21:04.268]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:04.268]	[exits.py - should_exit():7]		should_exit -> stop_loss=68024.26, take_profit=68239.34, current_price=68049.86
+[2026-02-07 12:21:04.268]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:04.269]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:04.269]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:04.269]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:04.735]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:04.738]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:04.741]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:04.741]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:04.741]	[main.py - <module>():90]		Last row - close: 2013.53, atr: 2.163022
+[2026-02-07 12:21:04.742]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:04.742]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.70, take_profit=2019.19, current_price=2013.53
+[2026-02-07 12:21:04.742]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:04.742]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:04.742]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:06.747]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:06.749]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:06.994]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:06.997]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:07.000]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:07.000]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:07.000]	[main.py - <module>():90]		Last row - close: 68052.90, atr: 72.657914
+[2026-02-07 12:21:07.000]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:07.000]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.29, take_profit=68241.27, current_price=68052.90
+[2026-02-07 12:21:07.001]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:07.001]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:07.001]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:07.001]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:07.245]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:07.247]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:07.250]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:07.250]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:07.250]	[main.py - <module>():90]		Last row - close: 2012.92, atr: 2.206593
+[2026-02-07 12:21:07.251]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:07.251]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.65, take_profit=2019.27, current_price=2012.92
+[2026-02-07 12:21:07.251]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:07.251]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:07.251]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:09.256]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:09.257]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:09.514]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:09.519]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:09.523]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:09.523]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:09.523]	[main.py - <module>():90]		Last row - close: 68035.66, atr: 72.707200
+[2026-02-07 12:21:09.523]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:09.524]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68035.66
+[2026-02-07 12:21:09.524]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:09.524]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:09.524]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:09.524]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:09.767]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:09.770]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:09.773]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:09.773]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:09.773]	[main.py - <module>():90]		Last row - close: 2012.81, atr: 2.218736
+[2026-02-07 12:21:09.773]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:09.774]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2012.81
+[2026-02-07 12:21:09.774]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:09.774]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:09.774]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:11.775]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:11.776]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:12.271]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:12.274]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:12.277]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:12.278]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:12.278]	[main.py - <module>():90]		Last row - close: 68035.67, atr: 72.707200
+[2026-02-07 12:21:12.278]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:12.278]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68035.67
+[2026-02-07 12:21:12.278]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:12.278]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:12.279]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:12.279]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:12.521]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:12.525]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:12.528]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:12.528]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:12.528]	[main.py - <module>():90]		Last row - close: 2012.81, atr: 2.218736
+[2026-02-07 12:21:12.528]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:12.528]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2012.81
+[2026-02-07 12:21:12.528]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:12.528]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:12.529]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:14.534]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:14.537]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:14.786]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:14.789]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:14.793]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:14.793]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:14.793]	[main.py - <module>():90]		Last row - close: 68044.16, atr: 72.707200
+[2026-02-07 12:21:14.794]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:14.794]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68044.16
+[2026-02-07 12:21:14.794]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:14.794]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:14.794]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:14.794]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:15.169]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:15.174]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:15.179]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:15.179]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:15.180]	[main.py - <module>():90]		Last row - close: 2012.83, atr: 2.218736
+[2026-02-07 12:21:15.180]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:15.180]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2012.83
+[2026-02-07 12:21:15.180]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:15.180]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:15.181]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:17.186]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:17.192]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:17.439]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:17.443]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:17.446]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:17.446]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:17.446]	[main.py - <module>():90]		Last row - close: 68044.16, atr: 72.707200
+[2026-02-07 12:21:17.446]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:17.446]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68044.16
+[2026-02-07 12:21:17.446]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:17.447]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:17.447]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:17.447]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:17.911]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:17.914]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:17.917]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:17.917]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:17.917]	[main.py - <module>():90]		Last row - close: 2012.84, atr: 2.218736
+[2026-02-07 12:21:17.917]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:17.917]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2012.84
+[2026-02-07 12:21:17.917]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:17.918]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:17.918]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:19.923]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:19.924]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:20.448]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:20.450]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:20.453]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:20.453]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:20.453]	[main.py - <module>():90]		Last row - close: 68044.16, atr: 72.707200
+[2026-02-07 12:21:20.453]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:20.453]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68044.16
+[2026-02-07 12:21:20.454]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:20.454]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:20.454]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:20.454]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:20.699]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:20.700]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:20.703]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:20.703]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:20.704]	[main.py - <module>():90]		Last row - close: 2013.04, atr: 2.218736
+[2026-02-07 12:21:20.704]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:20.704]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2013.04
+[2026-02-07 12:21:20.704]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:20.704]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:20.704]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:22.710]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:22.711]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:22.953]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:22.955]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:22.958]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:22.958]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:22.958]	[main.py - <module>():90]		Last row - close: 68054.25, atr: 72.707200
+[2026-02-07 12:21:22.958]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:22.958]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68054.25
+[2026-02-07 12:21:22.958]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:22.958]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:22.959]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:22.959]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:23.201]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:23.206]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:23.208]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:23.208]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:23.209]	[main.py - <module>():90]		Last row - close: 2013.05, atr: 2.218736
+[2026-02-07 12:21:23.209]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:23.209]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2013.05
+[2026-02-07 12:21:23.209]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:23.209]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:23.209]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:25.214]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:25.215]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:25.586]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:25.590]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:25.592]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:25.592]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:25.593]	[main.py - <module>():90]		Last row - close: 68054.24, atr: 72.707200
+[2026-02-07 12:21:25.593]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:25.593]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68054.24
+[2026-02-07 12:21:25.593]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:25.593]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:25.593]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:25.593]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:26.094]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:26.097]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:26.100]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:26.100]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:26.100]	[main.py - <module>():90]		Last row - close: 2013.04, atr: 2.218736
+[2026-02-07 12:21:26.100]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:26.101]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2013.04
+[2026-02-07 12:21:26.101]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:26.101]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:26.101]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:28.106]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:28.108]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:28.418]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:28.424]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:28.427]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:28.427]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:28.428]	[main.py - <module>():90]		Last row - close: 68042.18, atr: 72.707200
+[2026-02-07 12:21:28.428]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:28.428]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68042.18
+[2026-02-07 12:21:28.428]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:28.428]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:28.428]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:28.428]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:28.906]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:28.910]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:28.913]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:28.913]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:28.913]	[main.py - <module>():90]		Last row - close: 2012.74, atr: 2.219450
+[2026-02-07 12:21:28.914]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:28.915]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2012.74
+[2026-02-07 12:21:28.915]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:28.915]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:28.915]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:30.921]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:30.924]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:31.398]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:31.407]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:31.416]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:31.416]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:31.417]	[main.py - <module>():90]		Last row - close: 68046.63, atr: 72.707200
+[2026-02-07 12:21:31.417]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:31.418]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68046.63
+[2026-02-07 12:21:31.418]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:31.418]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:31.418]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:31.418]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:31.984]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:31.987]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:31.989]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:31.989]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:31.989]	[main.py - <module>():90]		Last row - close: 2012.81, atr: 2.219450
+[2026-02-07 12:21:31.990]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:31.990]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2012.81
+[2026-02-07 12:21:31.990]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:31.990]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:31.990]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:33.991]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:33.996]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:34.252]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:34.256]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:34.260]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:34.260]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:34.261]	[main.py - <module>():90]		Last row - close: 68046.62, atr: 72.707200
+[2026-02-07 12:21:34.261]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:34.261]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68046.62
+[2026-02-07 12:21:34.261]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:34.262]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:34.262]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:34.262]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:34.521]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:34.525]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:34.527]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:34.528]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:34.528]	[main.py - <module>():90]		Last row - close: 2012.89, atr: 2.219450
+[2026-02-07 12:21:34.528]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:34.528]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2012.89
+[2026-02-07 12:21:34.528]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:34.528]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:34.528]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:36.533]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:36.535]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:36.795]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:36.798]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:36.800]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:36.800]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:36.801]	[main.py - <module>():90]		Last row - close: 68046.62, atr: 72.707200
+[2026-02-07 12:21:36.801]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:36.801]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68046.62
+[2026-02-07 12:21:36.801]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:36.801]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:36.801]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:36.801]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:37.069]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:37.072]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:37.074]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:37.074]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:37.074]	[main.py - <module>():90]		Last row - close: 2012.90, atr: 2.219450
+[2026-02-07 12:21:37.075]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:37.075]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2012.90
+[2026-02-07 12:21:37.075]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:37.075]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:37.075]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:39.081]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:39.082]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:39.324]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:39.327]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:39.330]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:39.330]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:39.330]	[main.py - <module>():90]		Last row - close: 68046.62, atr: 72.707200
+[2026-02-07 12:21:39.330]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:39.330]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68046.62
+[2026-02-07 12:21:39.331]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:39.331]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:39.331]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:39.331]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:39.797]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:39.800]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:39.802]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:39.802]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:39.803]	[main.py - <module>():90]		Last row - close: 2012.90, atr: 2.219450
+[2026-02-07 12:21:39.803]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:39.803]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2012.90
+[2026-02-07 12:21:39.803]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:39.803]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:39.803]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:41.809]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:41.810]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:42.280]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:42.415]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:42.430]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:42.430]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:42.437]	[main.py - <module>():90]		Last row - close: 68054.80, atr: 72.707200
+[2026-02-07 12:21:42.439]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:42.445]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68054.80
+[2026-02-07 12:21:42.446]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:42.446]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:42.446]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:42.446]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:42.706]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:42.714]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:42.725]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:42.725]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:42.726]	[main.py - <module>():90]		Last row - close: 2013.13, atr: 2.219450
+[2026-02-07 12:21:42.726]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:42.727]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2013.13
+[2026-02-07 12:21:42.728]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:42.728]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:42.729]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:44.733]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:44.734]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:45.014]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:45.016]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:45.018]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:45.019]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:45.019]	[main.py - <module>():90]		Last row - close: 68058.27, atr: 72.707200
+[2026-02-07 12:21:45.019]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:45.019]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68058.27
+[2026-02-07 12:21:45.019]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:45.019]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:45.019]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:45.019]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:45.264]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:45.268]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:45.271]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:45.272]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:45.272]	[main.py - <module>():90]		Last row - close: 2013.26, atr: 2.219450
+[2026-02-07 12:21:45.272]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:45.272]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2013.26
+[2026-02-07 12:21:45.273]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:45.273]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:45.273]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:47.278]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:47.279]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:47.523]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:47.526]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:47.528]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:47.529]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:47.529]	[main.py - <module>():90]		Last row - close: 68049.77, atr: 72.707200
+[2026-02-07 12:21:47.529]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:47.529]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68049.77
+[2026-02-07 12:21:47.529]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:47.530]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:47.530]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:47.530]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:47.774]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:47.777]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:47.779]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:47.779]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:47.780]	[main.py - <module>():90]		Last row - close: 2013.20, atr: 2.219450
+[2026-02-07 12:21:47.780]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:47.780]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2013.20
+[2026-02-07 12:21:47.780]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:47.780]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:47.780]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:49.783]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:49.784]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:50.028]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:50.033]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:50.036]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:50.036]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:50.036]	[main.py - <module>():90]		Last row - close: 68049.77, atr: 72.707200
+[2026-02-07 12:21:50.036]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:50.037]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68049.77
+[2026-02-07 12:21:50.037]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:50.037]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:50.037]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:50.037]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:50.509]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:50.512]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:50.514]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:50.514]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:50.515]	[main.py - <module>():90]		Last row - close: 2013.20, atr: 2.219450
+[2026-02-07 12:21:50.515]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:50.515]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2013.20
+[2026-02-07 12:21:50.515]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:50.515]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:50.515]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:52.516]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:52.517]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:52.991]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:52.993]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:52.997]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:52.997]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:52.997]	[main.py - <module>():90]		Last row - close: 68044.00, atr: 72.707200
+[2026-02-07 12:21:52.997]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:52.997]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68044.00
+[2026-02-07 12:21:52.997]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:52.998]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:52.998]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:52.998]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:53.263]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:53.268]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:53.271]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:53.271]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:53.271]	[main.py - <module>():90]		Last row - close: 2013.18, atr: 2.219450
+[2026-02-07 12:21:53.271]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:53.272]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2013.18
+[2026-02-07 12:21:53.272]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:53.272]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:53.272]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:55.275]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:55.276]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:55.538]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:55.541]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:55.544]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:55.544]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:55.544]	[main.py - <module>():90]		Last row - close: 68044.01, atr: 72.707200
+[2026-02-07 12:21:55.544]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:55.545]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.24, take_profit=68241.36, current_price=68044.01
+[2026-02-07 12:21:55.545]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:55.545]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:55.545]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:55.545]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:55.867]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:55.870]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:55.872]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:55.872]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:55.872]	[main.py - <module>():90]		Last row - close: 2013.18, atr: 2.219450
+[2026-02-07 12:21:55.872]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:55.872]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2013.18
+[2026-02-07 12:21:55.873]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:55.873]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:55.873]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:21:57.878]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:21:57.882]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:58.126]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:58.132]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:58.135]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:58.135]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:58.136]	[main.py - <module>():90]		Last row - close: 68034.72, atr: 72.774343
+[2026-02-07 12:21:58.136]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:58.136]	[exits.py - should_exit():7]		should_exit -> stop_loss=68023.18, take_profit=68241.50, current_price=68034.72
+[2026-02-07 12:21:58.136]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:58.136]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:58.136]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:21:58.136]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:21:58.380]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:21:58.382]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:21:58.385]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:21:58.385]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:21:58.385]	[main.py - <module>():90]		Last row - close: 2013.19, atr: 2.219450
+[2026-02-07 12:21:58.385]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:21:58.385]	[exits.py - should_exit():7]		should_exit -> stop_loss=2012.64, take_profit=2019.30, current_price=2013.19
+[2026-02-07 12:21:58.385]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:21:58.386]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:21:58.386]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:22:01.402]	[main.py - <module>():25]		Starting bot...
+[2026-02-07 12:22:11.978]	[main.py - <module>():25]		Starting bot...
+[2026-02-07 12:22:12.293]	[database.py - __init__():55]		Database initialized at log/db/portfolio.db
+[2026-02-07 12:22:12.295]	[main.py - <module>():32]		Initialized DB
+[2026-02-07 12:22:12.295]	[portfolio.py - __init__():13]		Created PaperPortfolio with starting balance: 25.00, leverage: 5x
+[2026-02-07 12:22:12.295]	[portfolio.py - load_from_db():38]		No trades in DB, starting fresh
+[2026-02-07 12:22:12.295]	[portfolio.py - __init__():13]		Created PaperPortfolio with starting balance: 25.00, leverage: 5x
+[2026-02-07 12:22:12.296]	[portfolio.py - load_from_db():38]		No trades in DB, starting fresh
+[2026-02-07 12:22:12.296]	[main.py - <module>():40]		Initialized PaperPortfolio with starting balance: 25.00
+[2026-02-07 12:22:12.296]	[main.py - <module>():41]		Entering main loop
+[2026-02-07 12:22:12.296]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:22:12.296]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:12.541]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:12.545]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:12.548]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:12.548]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:12.548]	[main.py - <module>():90]		Last row - close: 68026.70, atr: 69.486890
+[2026-02-07 12:22:12.548]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:12.548]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:12.549]	[logic.py - should_long():17]		should_long -> trend=False (EMA50-EMA200=-0.33%)
+[2026-02-07 12:22:12.549]	[logic.py - should_long():18]		should_long -> rsi_ok=True (RSI=51.80)
+[2026-02-07 12:22:12.549]	[logic.py - should_long():19]		should_long -> volume_ok=False (Vol progress=18.82%)
+[2026-02-07 12:22:12.549]	[logic.py - should_long():24]		should_long decision: True
+[2026-02-07 12:22:12.549]	[main.py - <module>():111]		Calculated stop: 67957.21
+[2026-02-07 12:22:12.550]	[position.py - position_size():15]		position_size inputs -> balance=25.00, entry_price=68026.70, stop_price=67957.21, risk_pct=0.01
+[2026-02-07 12:22:12.550]	[position.py - position_size():32]		position_size result -> qty=0.003598, risk_amount=0.25, stop_distance=69.486890
+[2026-02-07 12:22:12.550]	[main.py - <module>():118]		Raw position size (units): 0.003598
+[2026-02-07 12:22:12.550]	[main.py - <module>():122]		Adjusted qty after max position cap: 0.000147
+[2026-02-07 12:22:12.550]	[portfolio.py - buy():63]		BUY executed at 68026.70, amount: 0.000147, leveraged position: 10.00, remaining balance: 22.99, fee: 0.0100
+[2026-02-07 12:22:12.550]	[database.py - log_trade():82]		inserting query in db with following data: side=BUY, price=68026.7, amount=0.00014700110397829089, fee=0.01, balance_after=22.990000000000002
+[2026-02-07 12:22:12.551]	[database.py - log_trade():89]		DB | BUY | price=68026.70 amount=0.000147 fee=0.0100 balance=22.99
+[2026-02-07 12:22:12.551]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:22:12.551]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:12.806]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:12.808]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:12.811]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:12.811]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:12.812]	[main.py - <module>():90]		Last row - close: 2013.15, atr: 2.115918
+[2026-02-07 12:22:12.812]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:12.812]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:12.812]	[logic.py - should_long():17]		should_long -> trend=False (EMA50-EMA200=-0.37%)
+[2026-02-07 12:22:12.812]	[logic.py - should_long():18]		should_long -> rsi_ok=True (RSI=53.95)
+[2026-02-07 12:22:12.813]	[logic.py - should_long():19]		should_long -> volume_ok=False (Vol progress=13.14%)
+[2026-02-07 12:22:12.813]	[logic.py - should_long():24]		should_long decision: True
+[2026-02-07 12:22:12.813]	[main.py - <module>():111]		Calculated stop: 2011.03
+[2026-02-07 12:22:12.813]	[position.py - position_size():15]		position_size inputs -> balance=25.00, entry_price=2013.15, stop_price=2011.03, risk_pct=0.01
+[2026-02-07 12:22:12.813]	[position.py - position_size():32]		position_size result -> qty=0.118152, risk_amount=0.25, stop_distance=2.115918
+[2026-02-07 12:22:12.813]	[main.py - <module>():118]		Raw position size (units): 0.118152
+[2026-02-07 12:22:12.813]	[main.py - <module>():122]		Adjusted qty after max position cap: 0.004967
+[2026-02-07 12:22:12.814]	[portfolio.py - buy():63]		BUY executed at 2013.15, amount: 0.004967, leveraged position: 10.00, remaining balance: 22.99, fee: 0.0100
+[2026-02-07 12:22:12.814]	[database.py - log_trade():82]		inserting query in db with following data: side=BUY, price=2013.15, amount=0.0049673397412015995, fee=0.01, balance_after=22.990000000000002
+[2026-02-07 12:22:12.814]	[database.py - log_trade():89]		DB | BUY | price=2013.15 amount=0.004967 fee=0.0100 balance=22.99
+[2026-02-07 12:22:12.815]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:22:14.820]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:22:14.821]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:15.073]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:15.076]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:15.080]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:15.080]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:15.080]	[main.py - <module>():90]		Last row - close: 68019.72, atr: 69.486890
+[2026-02-07 12:22:15.080]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:15.081]	[exits.py - should_exit():7]		should_exit -> stop_loss=67957.21, take_profit=68165.67, current_price=68019.72
+[2026-02-07 12:22:15.081]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:22:15.081]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:15.081]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:22:15.081]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:15.330]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:15.336]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:15.339]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:15.340]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:15.340]	[main.py - <module>():90]		Last row - close: 2012.95, atr: 2.115918
+[2026-02-07 12:22:15.340]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:15.340]	[exits.py - should_exit():7]		should_exit -> stop_loss=2011.03, take_profit=2017.38, current_price=2012.95
+[2026-02-07 12:22:15.341]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:22:15.341]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:15.341]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:22:17.347]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:22:17.349]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:17.649]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:17.654]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:17.659]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:17.659]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:17.660]	[main.py - <module>():90]		Last row - close: 68019.72, atr: 69.486890
+[2026-02-07 12:22:17.660]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:17.660]	[exits.py - should_exit():7]		should_exit -> stop_loss=67957.21, take_profit=68165.67, current_price=68019.72
+[2026-02-07 12:22:17.661]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:22:17.661]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:17.661]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:22:17.661]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:17.933]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:17.936]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:17.938]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:17.938]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:17.939]	[main.py - <module>():90]		Last row - close: 2013.07, atr: 2.115918
+[2026-02-07 12:22:17.939]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:17.939]	[exits.py - should_exit():7]		should_exit -> stop_loss=2011.03, take_profit=2017.38, current_price=2013.07
+[2026-02-07 12:22:17.939]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:22:17.939]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:17.939]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:22:19.942]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:22:19.943]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:20.216]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:20.221]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:20.225]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:20.225]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:20.225]	[main.py - <module>():90]		Last row - close: 68019.72, atr: 69.486890
+[2026-02-07 12:22:20.225]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:20.226]	[exits.py - should_exit():7]		should_exit -> stop_loss=67957.21, take_profit=68165.67, current_price=68019.72
+[2026-02-07 12:22:20.226]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:22:20.226]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:20.226]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:22:20.226]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:20.490]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:20.492]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:20.495]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:20.495]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:20.496]	[main.py - <module>():90]		Last row - close: 2013.07, atr: 2.115918
+[2026-02-07 12:22:20.496]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:20.496]	[exits.py - should_exit():7]		should_exit -> stop_loss=2011.03, take_profit=2017.38, current_price=2013.07
+[2026-02-07 12:22:20.496]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:22:20.496]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:20.496]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:22:22.502]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:22:22.507]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:22.753]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:22.757]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:22.760]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:22.760]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:22.761]	[main.py - <module>():90]		Last row - close: 68019.71, atr: 69.486890
+[2026-02-07 12:22:22.761]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:22.761]	[exits.py - should_exit():7]		should_exit -> stop_loss=67957.21, take_profit=68165.67, current_price=68019.71
+[2026-02-07 12:22:22.761]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:22:22.761]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:22.761]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:22:22.761]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:23.006]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:23.009]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:23.012]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:23.012]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:23.012]	[main.py - <module>():90]		Last row - close: 2013.09, atr: 2.115918
+[2026-02-07 12:22:23.012]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:23.012]	[exits.py - should_exit():7]		should_exit -> stop_loss=2011.03, take_profit=2017.38, current_price=2013.09
+[2026-02-07 12:22:23.012]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:22:23.012]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:23.013]	[main.py - <module>():130]		Sleeping for 2 seconds
+[2026-02-07 12:22:25.018]	[main.py - <module>():63]		Processing symbol: BTCUSDT
+[2026-02-07 12:22:25.019]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:25.281]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:25.284]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:25.287]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:25.287]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:25.287]	[main.py - <module>():90]		Last row - close: 68019.71, atr: 69.486890
+[2026-02-07 12:22:25.287]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:25.287]	[exits.py - should_exit():7]		should_exit -> stop_loss=67957.21, take_profit=68165.67, current_price=68019.71
+[2026-02-07 12:22:25.287]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:22:25.287]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:25.288]	[main.py - <module>():63]		Processing symbol: ETHUSDT
+[2026-02-07 12:22:25.288]	[main.py - <module>():65]		Fetching klines
+[2026-02-07 12:22:25.539]	[main.py - <module>():71]		Fetched 300 klines
+[2026-02-07 12:22:25.542]	[main.py - <module>():84]		Constructed DataFrame and applied dtypes
+[2026-02-07 12:22:25.544]	[indicators.py - add_indicators():11]		Added indicators: ema50, ema200, rsi, atr, vol_ma
+[2026-02-07 12:22:25.544]	[main.py - <module>():88]		Indicators added to DataFrame
+[2026-02-07 12:22:25.545]	[main.py - <module>():90]		Last row - close: 2013.08, atr: 2.115918
+[2026-02-07 12:22:25.545]	[main.py - <module>():92]		Checking exit logic
+[2026-02-07 12:22:25.545]	[exits.py - should_exit():7]		should_exit -> stop_loss=2011.03, take_profit=2017.38, current_price=2013.08
+[2026-02-07 12:22:25.545]	[exits.py - should_exit():18]		should_exit decision: None
+[2026-02-07 12:22:25.545]	[main.py - <module>():108]		Checking entry logic
+[2026-02-07 12:22:25.545]	[main.py - <module>():130]		Sleeping for 2 seconds
