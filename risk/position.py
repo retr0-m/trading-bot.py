@@ -1,3 +1,5 @@
+# ! DEPRECATED
+
 from log.logger import log
 
 def position_size(
@@ -37,3 +39,7 @@ def position_size(
     )
 
     return qty
+
+
+
+

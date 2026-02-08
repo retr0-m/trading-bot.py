@@ -49,3 +49,5 @@ def log_uvicorn(msg: str) -> None:
     # Write log
     with open(UVICORN_LOG_FILE, "a", encoding="utf-8") as f:
         f.write(f"{prefix}{msg}\n")
+        
+        

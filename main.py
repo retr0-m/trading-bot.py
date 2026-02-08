@@ -1,4 +1,5 @@
-# main.py
+
+
 
 # .env support
 from dotenv import load_dotenv
@@ -11,6 +12,7 @@ API_KEY = os.getenv("API_KEY")
 API_SECRET = os.getenv("API_SECRET")
 
 import time
+
 import pandas as pd
 from binance.client import Client
 
@@ -33,11 +35,9 @@ log("Initialized DB")
 
 
 # Initialize paper portfolio
-portfolios = {
-    symbol: PaperPortfolio(symbol=symbol, starting_balance=START_BALANCE / len(SYMBOLS), db_obj=portfolioDB, leverage=5)
-    for symbol in SYMBOLS
-}
-log(f"Initialized PaperPortfolio with starting balance: {list(portfolios.values())[0].balance:.2f}")
+portfolio = PaperPortfolio(starting_balance=START_BALANCE, db_obj=portfolioDB, leverage=LEVERAGE)
+
+log(f"Initialized PaperPortfolio with starting balance: {portfolio.balance:.2f}")
 log("Entering main loop")
 
 # starting dashboard
@@ -59,12 +59,11 @@ print(banner)
 # Main loop
 while True:
     try:
-        for symbol in SYMBOLS:
-            log(f"Processing symbol: {symbol}")
-            portfolio = portfolios[symbol]
+        for symbol_name, symbol in portfolio.symbols.items():
+            log(f"Processing symbol: {symbol_name}")
             log("Fetching klines")
             klines = binance.get_klines(
-                symbol=symbol,
+                symbol=symbol_name,
                 interval=Client.KLINE_INTERVAL_1MINUTE,
                 limit=300
             )
@@ -90,15 +89,15 @@ while True:
             log(f"Last row - close: {last.close:.2f}, atr: {last.atr:.6f}")
             # EXIT LOGIC
             log("Checking exit logic")
-            if portfolio.in_position():
-                if portfolio.check_liquidation(last.close):
+            if symbol.in_position():
+                if symbol.check_liquidation(last.close):
                     log("FORCED LIQUIDATION (paper)")
-                    portfolio.sell(last.close, FEE_RATE)
+                    symbol.sell(last.close, FEE_RATE)
                     
-                exit_reason = should_exit(portfolio.entry_price, portfolio, last.close, last.atr)
+                exit_reason = should_exit(symbol.entry_price, symbol, last.close, last.atr)
                 if exit_reason:
                     log(f"Exit triggered: {exit_reason}")
-                    portfolio.sell(last.close, fee_rate = FEE_RATE)
+                    symbol.sell(last.close, fee_rate = FEE_RATE)
                     log(f"[PAPER SELL] {exit_reason.upper()} @ {last.close:.2f}")
                     log(f"Balance after sell: {portfolio.balance:.2f} USDT")
                     print(f"[PAPER SELL] {exit_reason.upper()} @ {last.close:.2f}")
@@ -106,7 +105,7 @@ while True:
 
             # ENTRY LOGIC
             log("Checking entry logic")
-            if not portfolio.in_position() and should_long(df):
+            if not symbol.in_position() and should_long(df):
                 stop = last.close - last.atr
                 log(f"Calculated stop: {stop:.2f}")
                 qty = position_size(
@@ -121,7 +120,7 @@ while True:
                 qty = min(qty * last.close, MAX_POSITION_USDT) / last.close
                 log(f"Adjusted qty after max position cap: {qty:.6f}")
 
-                if portfolio.buy(last.close, qty, FEE_RATE):
+                if symbol.buy(last.close, qty, FEE_RATE):
                     log(f"[PAPER BUY] {qty:.6f} BTC @ {last.close:.2f}")
                     log(f"Balance after buy: {portfolio.balance:.2f} USDT")
                     print(f"[PAPER BUY] {qty:.6f} BTC @ {last.close:.2f}")

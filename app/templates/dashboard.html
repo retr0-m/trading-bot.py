@@ -6,60 +6,160 @@
     <title>Trading Bot Dashboard</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Auto refresh every 5 seconds -->
     <meta http-equiv="refresh" content="5" />
+
+    <style>
+      body {
+        background: radial-gradient(circle at top, #0f172a, #020617);
+      }
+    </style>
   </head>
-  <body class="bg-gray-100 text-gray-800">
-    <div class="container mx-auto p-6">
-      <h1 class="text-3xl font-bold mb-4">Trading Bot Dashboard</h1>
 
-      <div class="bg-white rounded-lg shadow p-4 mb-6">
-        <h2 class="text-xl font-semibold mb-2">Portfolio</h2>
-        <p>
-          <strong>Balance:</strong> ${{ '%.2f'|format(portfolio.balance) }}
-        </p>
-        <p>
-          <strong>Equity:</strong> ${{ '%.2f'|format(portfolio.equity) }}
-        </p>
+  <body class="text-slate-200 min-h-screen">
+    <div class="container mx-auto p-6 space-y-8">
+      <!-- Header -->
+      <h1 class="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">Trading Bot Dashboard</h1>
 
-        <h3 class="text-lg font-semibold mt-3">Open Positions</h3>
-        <ul class="list-disc ml-5">
-          {% if portfolio.positions %}
-            {% for p in portfolio.positions %}
-              <li>{{ p }}</li>
-            {% endfor %}
-          {% else %}
-            <li>No open positions</li>
-          {% endif %}
-        </ul>
+      <!-- ================= Portfolio ================= -->
+      <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+        <h2 class="text-xl font-semibold mb-4 text-cyan-300">Portfolio</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-black/30 border border-white/10">
+            <p class="text-sm text-slate-400">Balance</p>
+            <p class="text-2xl font-bold text-green-400">${{ '%.2f'|format(portfolio.balance) }}</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-black/30 border border-white/10">
+            <p class="text-sm text-slate-400">Equity</p>
+            <p class="text-2xl font-bold text-purple-400">${{ '%.2f'|format(portfolio.equity) }}</p>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-white rounded-lg shadow p-4">
-        <h2 class="text-xl font-semibold mb-2">Trade History</h2>
-        <table class="min-w-full divide-y divide-gray-200">
-          <thead class="bg-gray-50">
-            <tr>
-              <th class="px-4 py-2">Time</th>
-              <th class="px-4 py-2">Type</th>
-              <th class="px-4 py-2">Symbol</th>
-              <th class="px-4 py-2">Qty</th>
-              <th class="px-4 py-2">Price</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200">
-            {% for t in portfolio.trade_history %}
-              <tr>
-                <td class="px-4 py-2">{{ t.time }}</td>
-                <td class="px-4 py-2">{{ t.type }}</td>
-                <td class="px-4 py-2">{{ t.symbol }}</td>
-                <td class="px-4 py-2">{{ '%.6f'|format(t.qty) }}</td>
-                <td class="px-4 py-2">${{ '%.2f'|format(t.price) }}</td>
+      <!-- ================= Equity Curve ================= -->
+      <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+        <h2 class="text-lg font-semibold mb-3 text-cyan-300">Equity Curve</h2>
+        <canvas id="equityChart" height="120"></canvas>
+      </div>
+
+      <!-- ================= Drawdown ================= -->
+      <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-4">
+        <h2 class="text-sm font-semibold mb-2 text-red-300">Drawdown %</h2>
+        <canvas id="drawdownChart" height="60"></canvas>
+      </div>
+
+      <!-- ================= PnL + Frequency ================= -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- PnL Histogram -->
+        <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+          <h2 class="text-lg font-semibold mb-3 text-purple-300">PnL per Trade</h2>
+          <canvas id="pnlChart"></canvas>
+        </div>
+
+        <!-- Trade Frequency -->
+        <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+          <h2 class="text-lg font-semibold mb-3 text-orange-300">Trade Frequency</h2>
+          <canvas id="freqChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ================= Trade History ================= -->
+      <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+        <h2 class="text-xl font-semibold mb-4 text-purple-300">Trade History</h2>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead>
+              <tr class="text-left text-slate-400 border-b border-white/10">
+                <th class="px-4 py-3">Time</th>
+                <th class="px-4 py-3">Type</th>
+                <th class="px-4 py-3">Symbol</th>
+                <th class="px-4 py-3">Qty</th>
+                <th class="px-4 py-3">Price</th>
+                <th class="px-4 py-3">Expense</th>
+                <th class="px-4 py-3">Fee</th>
+                <th class="px-4 py-3">Balance After</th>
               </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody class="divide-y divide-white/5">
+              {% for t in portfolio.trade_history %}
+                <tr class="hover:bg-white/5">
+                  <td class="px-4 py-2">{{ t.time }}</td>
+                  <td class="px-4 py-2 font-semibold {% if t.type == 'BUY' %}
+                      text-green-400
+                    {% else %}
+                      text-red-400
+                    {% endif %}">{{ t.type }}</td>
+                  <td class="px-4 py-2 text-cyan-300">{{ t.symbol }}</td>
+                  <td class="px-4 py-2">{{ '%.6f'|format(t.qty) }}</td>
+                  <td class="px-4 py-2">${{ '%.2f'|format(t.price) }}</td>
+                  <td class="px-4 py-2 text-orange-400">${{ '%.2f'|format(t.expense) }}</td>
+                  <td class="px-4 py-2 text-red-400">${{ '%.2f'|format(t.fee) }}</td>
+                  <td class="px-4 py-2 text-green-300">${{ '%.2f'|format(t.balance_after) }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
+
+    <!-- ================= Charts JS ================= -->
+    <script>
+      const labels = {{ chart_labels | safe }};
+      const equity = {{ equity_curve | safe }};
+      const drawdown = {{ drawdown_curve | safe }};
+      const pnl = {{ pnl_per_trade | safe }};
+      const freqLabels = {{ trade_freq_labels | safe }};
+      const freqData = {{ trade_freq | safe }};
+
+      new Chart(equityChart, {
+        type: "line",
+        data: {
+          labels,
+          datasets: [{
+            data: equity,
+            borderWidth: 2,
+            tension: 0.3
+          }]
+        },
+        options: { plugins: { legend: { display: false } } }
+      });
+
+      new Chart(drawdownChart, {
+        type: "line",
+        data: {
+          labels,
+          datasets: [{
+            data: drawdown,
+            borderWidth: 1,
+            tension: 0.3
+          }]
+        },
+        options: { plugins: { legend: { display: false } } }
+      });
+
+      new Chart(pnlChart, {
+        type: "bar",
+        data: {
+          labels: pnl.map((_, i) => i + 1),
+          datasets: [{ data: pnl }]
+        },
+        options: { plugins: { legend: { display: false } } }
+      });
+
+      new Chart(freqChart, {
+        type: "bar",
+        data: {
+          labels: freqLabels,
+          datasets: [{ data: freqData }]
+        },
+        options: { plugins: { legend: { display: false } } }
+      });
+    </script>
   </body>
 </html>

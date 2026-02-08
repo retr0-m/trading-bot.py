@@ -19,56 +19,46 @@ db : PortfolioDB  # global variable to hold the database connection
 def build_portfolio_from_trades(trades):
     balance = 0.0
     equity = 0.0
-    positions = []
     trade_history = []
+
+    # Track net position per symbol
+    position_count = {sym: 0 for sym in SYMBOLS}
 
     for t in trades:
         trade_id, symbol, side, price, amount, fee, balance_after, timestamp = t
 
         balance = balance_after
-        equity = balance_after  # for now: no unrealized PnL
+        equity = balance  # unrealized PnL later
+
+        if side == "BUY":
+            position_count[symbol] += 1
+        elif side == "SELL":
+            position_count[symbol] -= 1
 
         trade_history.append({
-            "id":trade_id,
+            "id": trade_id,
             "time": timestamp,
             "type": side,
             "symbol": symbol,
             "qty": amount,
             "price": price,
-            "expense": price*amount if side == "BUY" else -price*amount,
-            "balance after": balance_after
+            "expense": (price * amount) / 5, # approximate, since we don't track leverage here
+            "fee": fee,
+            "balance_after": balance_after
         })
 
-    # If last trade is BUY for each symbol → open position
-    trades_by_symbol = {sym: [] for sym in SYMBOLS}
-    for t in trades:
-        trade_id, symbol, side, price, amount, fee, balance_after, timestamp = t
-        for sym in SYMBOLS:
-            if symbol == sym:
-                trades_by_symbol[sym].append(t)
-    open_positions = []
-    for sym, last_trades in trades_by_symbol.items():
-        buy_number = 0
-        sell_number = 0
-        for trade in last_trades:
-            if trade[2] == "BUY":  # side == "BUY"
-                buy_number += 1
-            elif trade[2] == "SELL":  # side == "SELL"
-                sell_number += 1
-        if buy_number > sell_number:  # odd number of BUYs → open position
-            open_positions.append(sym)
-            
-    
-    for symbol in open_positions:
-        positions.append(
-            f"{symbol}: OPEN"
-        )
+    # Open positions = symbols with net BUYs
+    positions = [
+        f"{sym}: OPEN"
+        for sym, count in position_count.items()
+        if count > 0
+    ]
 
     return {
         "balance": balance,
         "equity": equity,
         "positions": positions,
-        "trade_history": trade_history[::-1]  # newest first
+        "trade_history": trade_history[::-1]
     }
     
     
