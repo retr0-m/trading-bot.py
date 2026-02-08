@@ -6,7 +6,7 @@
     <title>Trading Bot Dashboard</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
     <meta http-equiv="refresh" content="5" />
 
@@ -90,9 +90,21 @@
                 <tr class="hover:bg-white/5">
                   <td class="px-4 py-2">{{ t.time }}</td>
                   <td class="px-4 py-2 font-semibold {% if t.type == 'BUY' %}
+                      
+                      
+                      
                       text-green-400
+
+
+
                     {% else %}
+                      
+                      
+                      
                       text-red-400
+
+
+
                     {% endif %}">{{ t.type }}</td>
                   <td class="px-4 py-2 text-cyan-300">{{ t.symbol }}</td>
                   <td class="px-4 py-2">{{ '%.6f'|format(t.qty) }}</td>
@@ -110,56 +122,77 @@
 
     <!-- ================= Charts JS ================= -->
     <script>
-      const labels = {{ chart_labels | safe }};
-      const equity = {{ equity_curve | safe }};
-      const drawdown = {{ drawdown_curve | safe }};
-      const pnl = {{ pnl_per_trade | safe }};
-      const freqLabels = {{ trade_freq_labels | safe }};
-      const freqData = {{ trade_freq | safe }};
+  const labels = {{ chart_labels | default('[]', true) | safe }};
+  const equity = {{ equity_curve | default('[]', true) | safe }};
+  const drawdown = {{ drawdown_curve | default('[]', true) | safe }};
+  const pnl = {{ pnl_per_trade | default('[]', true) | safe }};
+  const freqLabels = {{ trade_freq_labels | default('[]', true) | safe }};
+  const freqData = {{ trade_freq | default('[]', true) | safe }};
 
-      new Chart(equityChart, {
-        type: "line",
-        data: {
-          labels,
-          datasets: [{
-            data: equity,
-            borderWidth: 2,
-            tension: 0.3
-          }]
-        },
-        options: { plugins: { legend: { display: false } } }
-      });
+  const equityCtx = document.getElementById("equityChart");
+  const drawdownCtx = document.getElementById("drawdownChart");
+  const pnlCtx = document.getElementById("pnlChart");
+  const freqCtx = document.getElementById("freqChart");
 
-      new Chart(drawdownChart, {
-        type: "line",
-        data: {
-          labels,
-          datasets: [{
-            data: drawdown,
-            borderWidth: 1,
-            tension: 0.3
-          }]
-        },
-        options: { plugins: { legend: { display: false } } }
-      });
+  if (equity.length) {
+    new Chart(equityCtx, {
+      type: "line",
+      data: {
+        labels,
+        datasets: [{
+          data: equity,
+          borderColor: "#22d3ee",
+          borderWidth: 2,
+          tension: 0.3
+        }]
+      },
+      options: { plugins: { legend: { display: false } } }
+    });
+  }
 
-      new Chart(pnlChart, {
-        type: "bar",
-        data: {
-          labels: pnl.map((_, i) => i + 1),
-          datasets: [{ data: pnl }]
-        },
-        options: { plugins: { legend: { display: false } } }
-      });
+  if (drawdown.length) {
+    new Chart(drawdownCtx, {
+      type: "line",
+      data: {
+        labels,
+        datasets: [{
+          data: drawdown,
+          borderColor: "#f87171",
+          borderWidth: 1,
+          tension: 0.3
+        }]
+      },
+      options: { plugins: { legend: { display: false } } }
+    });
+  }
 
-      new Chart(freqChart, {
-        type: "bar",
-        data: {
-          labels: freqLabels,
-          datasets: [{ data: freqData }]
-        },
-        options: { plugins: { legend: { display: false } } }
-      });
-    </script>
+  if (pnl.length) {
+    new Chart(pnlCtx, {
+      type: "bar",
+      data: {
+        labels: pnl.map((_, i) => i + 1),
+        datasets: [{
+          data: pnl,
+          backgroundColor: pnl.map(v => v >= 0 ? "#22c55e" : "#ef4444")
+        }]
+      },
+      options: { plugins: { legend: { display: false } } }
+    });
+  }
+
+  if (freqData.length) {
+    new Chart(freqCtx, {
+      type: "bar",
+      data: {
+        labels: freqLabels,
+        datasets: [{
+          data: freqData,
+          backgroundColor: "#fb923c"
+        }]
+      },
+      options: { plugins: { legend: { display: false } } }
+    });
+  }
+</script>
   </body>
 </html>
