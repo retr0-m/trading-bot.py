@@ -13,7 +13,7 @@ class TempConnection:
         with sqlite3.connect(DB_PATH) as conn:
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT id, symbol, side, price, amount, fee, balance_after, timestamp
+                SELECT id, symbol, side, price, amount, fee, balance_after, sl, tp, timestamp
                 FROM trades
                 ORDER BY id ASC
             """)
@@ -24,7 +24,7 @@ class TempConnection:
         with sqlite3.connect(DB_PATH) as conn:
             cursor = conn.cursor()
             cursor.execute("""
-                SELECT side, price, amount, balance_after, timestamp
+                SELECT side, price, amount, balance_after, timestamp, sl, tp
                 FROM trades
                 WHERE symbol = ?
                 ORDER BY id DESC
@@ -35,6 +35,7 @@ class TempConnection:
     @staticmethod   #! not used currently, DEPRECATED
     def get_equity_curve():
         with sqlite3.connect(DB_PATH) as conn:
+            
             cursor = conn.cursor()
             cursor.execute("""
                 SELECT timestamp, balance_after
@@ -65,6 +66,8 @@ class PortfolioDB:
                 amount REAL NOT NULL,
                 fee REAL NOT NULL,
                 balance_after REAL NOT NULL,
+                sl REAL NOT NULL,
+                tp REAL NOT NULL,
                 timestamp TEXT DEFAULT CURRENT_TIMESTAMP
             );
         """)
@@ -78,19 +81,22 @@ class PortfolioDB:
         amount: float,
         fee: float,
         balance_after: float,
+        sl: float = 0.0,
+        tp: float = 0.0
     ):
-        log(f"inserting query in db with following data: side={side}, price={price}, amount={amount}, fee={fee}, balance_after={balance_after}")
+        log(f"inserting query in db with following data: side={side}, price={price}, amount={amount}, fee={fee}, balance_after={balance_after} sl={sl} tp={tp}")
         cursor = self.conn.cursor()
         cursor.execute("""
-            INSERT INTO trades (symbol, side, price, amount, fee, balance_after)
-            VALUES (?, ?, ?, ?, ?, ?)
-        """, (symbol, side, price, amount, fee, balance_after))
+            INSERT INTO trades (symbol, side, price, amount, fee, balance_after, sl, tp)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """, (symbol, side, price, amount, fee, balance_after, sl, tp)) 
         self.conn.commit()
         log(
             f"DB | {side} | price={price:.2f} "
             f"amount={amount:.6f} fee={fee:.4f} "
             f"balance={balance_after:.2f}"
         )
+        
 
     def close(self):
         self.conn.close()

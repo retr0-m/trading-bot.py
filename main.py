@@ -120,7 +120,7 @@ while True:
                 qty = min(qty * last.close, MAX_POSITION_USDT) / last.close
                 log(f"Adjusted qty after max position cap: {qty:.6f}")
 
-                if symbol.buy(last.close, qty, FEE_RATE):
+                if symbol.buy(last.close, qty, FEE_RATE, atr = last.atr):
                     log(f"[PAPER BUY] {qty:.6f} BTC @ {last.close:.2f}")
                     log(f"Balance after buy: {portfolio.balance:.2f} USDT")
                     print(f"[PAPER BUY] {qty:.6f} BTC @ {last.close:.2f}")

@@ -61,7 +61,7 @@ LEVERAGE = 5.0  # leverage for paper trading (if using leverage in position sizi
 
 
 # less strict for testing ONlY
-LESS_STRICT_SHOULD_LONG = True
+LESS_STRICT_SHOULD_LONG = False
 
 
 # exits configuration
@@ -71,3 +71,12 @@ STOP_LOSS_MULTIPLIER = 1.8
 # or use these for calmer
 # TAKE_PROFIT_MULTIPLIER = 5.0
 # STOP_LOSS_MULTIPLIER = 2.0
+
+
+
+# SL trailing config
+TRAIL_START_PCT = 0.003      # 0.3%
+TRAIL_DISTANCE_PCT = 0.0015 # 0.15%
+
+# to enter minimum expected edge movingforward, to avoid overtrading on noise
+MIN_EDGE_PCT = 0.001  # 0.1%

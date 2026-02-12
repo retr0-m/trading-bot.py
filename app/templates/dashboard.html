@@ -38,6 +38,33 @@
           </div>
         </div>
       </div>
+      <!-- ================= Open Positions ================= -->
+      <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+        <h2 class="text-xl font-semibold mb-4 text-green-300">Open Positions</h2>
+
+        {% if portfolio.positions %}
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {% for pos in portfolio.positions %}
+              <div class="bg-black/30 border border-white/10 rounded-xl p-4">
+                <div class="flex justify-between mb-2">
+                  <div>
+                    <p class="text-lg font-bold text-cyan-400">{{ pos.symbol }}</p>
+                    <p class="text-sm text-slate-400">Entry: ${{ '%.2f'|format(pos.entry) }}</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm text-red-400">SL: ${{ '%.2f'|format(pos.stop_loss) }}</p>
+                    <p class="text-sm text-green-400">TP: ${{ '%.2f'|format(pos.take_profit) }}</p>
+                  </div>
+                </div>
+
+                <canvas id="positionChart{{ loop.index }}" height="120"></canvas>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="text-slate-400">No open positions</p>
+        {% endif %}
+      </div>
 
       <!-- ================= Equity Curve ================= -->
       <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
@@ -93,7 +120,23 @@
                       
                       
                       
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
                       text-green-400
+
+
+
+
+
+
+
+
 
 
 
@@ -101,7 +144,23 @@
                       
                       
                       
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
                       text-red-400
+
+
+
+
+
+
+
+
 
 
 
@@ -122,6 +181,7 @@
 
     <!-- ================= Charts JS ================= -->
     <script>
+  const openPositions = {{ portfolio.positions | safe }};
   const labels = {{ chart_labels | default('[]', true) | safe }};
   const equity = {{ equity_curve | default('[]', true) | safe }};
   const drawdown = {{ drawdown_curve | default('[]', true) | safe }};
@@ -193,6 +253,118 @@
       options: { plugins: { legend: { display: false } } }
     });
   }
+
+  async function fetchKlines(symbol, startTime) {
+    const response = await fetch(
+      `/api/klines?symbol=${symbol}&start_time=${startTime}`
+    );
+    return await response.json();
+  }
+
+  async function fetchCurrentPrice(symbol) {
+    const response = await fetch(
+      `/api/price?symbol=${symbol}`
+    );
+    const data = await response.json();
+    return parseFloat(data.price);
+  }
+
+  function createPositionChart(ctx, labels, prices, entry, sl, tp) {
+    return new Chart(ctx, {
+      type: "line",
+      data: {
+        labels,
+        datasets: [
+          {
+            label: "Price",
+            data: prices,
+            borderColor: "#22d3ee",
+            borderWidth: 2,
+            tension: 0.2,
+            pointRadius: 0
+          },
+          {
+            label: "Entry",
+            data: labels.map(() => entry),
+            borderColor: "#a78bfa",
+            borderDash: [5, 5],
+            pointRadius: 0
+          },
+          {
+            label: "Stop Loss",
+            data: labels.map(() => sl),
+            borderColor: "#ef4444",
+            borderDash: [5, 5],
+            pointRadius: 0
+          },
+          {
+            label: "Take Profit",
+            data: labels.map(() => tp),
+            borderColor: "#22c55e",
+            borderDash: [5, 5],
+            pointRadius: 0
+          }
+        ]
+      },
+      options: {
+        animation: false,
+        scales: {
+          x: { ticks: { color: "#94a3b8" }},
+          y: { ticks: { color: "#94a3b8" }}
+        },
+        plugins: {
+          legend: { labels: { color: "#94a3b8" }}
+        }
+      }
+    });
+  }
+
+  async function initPositionCharts() {
+    if (!openPositions.length) return;
+
+    openPositions.forEach(async (pos, index) => {
+      const ctx = document.getElementById(`positionChart${index + 1}`);
+
+      const symbol = pos.symbol.replace("/", "");
+      const entryTime = pos.entry_time;
+
+      const klines = await fetchKlines(symbol, entryTime);
+
+      const labels = klines.map(k => {
+        const date = new Date(k[0]);
+        return date.toLocaleTimeString();
+      });
+
+      const prices = klines.map(k => parseFloat(k[4])); // close price
+
+      const chart = createPositionChart(
+        ctx,
+        labels,
+        prices,
+        pos.entry,
+        pos.stop_loss,
+        pos.take_profit
+      );
+
+      // 🔥 LIVE UPDATING LOOP
+      setInterval(async () => {
+        const currentPrice = await fetchCurrentPrice(symbol);
+        const nowLabel = new Date().toLocaleTimeString();
+
+        chart.data.labels.push(nowLabel);
+        chart.data.datasets[0].data.push(currentPrice);
+
+        // extend horizontal lines
+        chart.data.datasets[1].data.push(pos.entry);
+        chart.data.datasets[2].data.push(pos.stop_loss);
+        chart.data.datasets[3].data.push(pos.take_profit);
+
+        chart.update();
+      }, 5000); // update every 5s
+    });
+  }
+
+  initPositionCharts();
 </script>
   </body>
 </html>

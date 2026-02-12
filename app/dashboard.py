@@ -15,25 +15,48 @@ templates = Jinja2Templates(directory="app/templates")
 
 db : PortfolioDB  # global variable to hold the database connection
 
+from collections import Counter
+import httpx
+
+@app.get("/api/klines")
+async def get_klines(symbol: str, start_time: int): #camel lower only for front-end 
+    url = "https://api.binance.com/api/v3/klines"
+    params = {
+        "symbol": symbol,
+        "interval": "1m",
+        "startTime": start_time,
+        "limit": 1000
+    }
+
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url, params=params)
+
+    return response.json()
+
+
+@app.get("/api/price")
+async def get_price(symbol: str):
+    url = "https://api.binance.com/api/v3/ticker/price"
+    params = {"symbol": symbol}
+
+    async with httpx.AsyncClient() as client:
+        response = await client.get(url, params=params)
+
+    return response.json()
+    
 
 def build_portfolio_from_trades(trades):
     balance = 0.0
     equity = 0.0
     trade_history = []
 
-    # Track net position per symbol
-    position_count = {sym: 0 for sym in SYMBOLS}
-
+    open_positions = {}
+    
     for t in trades:
-        trade_id, symbol, side, price, amount, fee, balance_after, timestamp = t
+        trade_id, symbol, side, price, amount, fee, balance_after, sl, tp, timestamp = t
 
         balance = balance_after
-        equity = balance  # unrealized PnL later
-
-        if side == "BUY":
-            position_count[symbol] += 1
-        elif side == "SELL":
-            position_count[symbol] -= 1
+        equity = balance
 
         trade_history.append({
             "id": trade_id,
@@ -42,28 +65,41 @@ def build_portfolio_from_trades(trades):
             "symbol": symbol,
             "qty": amount,
             "price": price,
-            "expense": (price * amount) / 5, # approximate, since we don't track leverage here
+            "expense": (price * amount) / 5,
             "fee": fee,
-            "balance_after": balance_after
+            "balance_after": balance_after,
+            "stop_loss": sl,
+            "take_profit": tp
         })
+        
+        
+        entry_dt = datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S")
+        entry_ms = int(entry_dt.timestamp() * 1000)
 
-    # Open positions = symbols with net BUYs
-    positions = [
-        f"{sym}: OPEN"
-        for sym, count in position_count.items()
-        if count > 0
-    ]
+        # Track open positions
+        if side == "BUY":
+            open_positions[symbol] = {
+                "symbol": symbol,
+                "entry": price,
+                "qty": amount,
+                "stop_loss": sl,
+                "take_profit": tp,
+                "entry_price": price,
+                "entry_time": entry_ms    # milliseconds for frontend - js expects ms instead of date 
+            }
+
+        elif side == "SELL" and symbol in open_positions:
+            del open_positions[symbol]
+            
+            
 
     return {
         "balance": balance,
         "equity": equity,
-        "positions": positions,
+        "positions": list(open_positions.values()),
         "trade_history": trade_history[::-1]
     }
     
-    
-    
-from collections import Counter
 
 def build_charts(trade_history):
     """

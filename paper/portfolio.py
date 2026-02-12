@@ -1,8 +1,10 @@
 
 
+from tracemalloc import stop
 from config import SYMBOLS
 from log.logger import log
 from log.database import PortfolioDB
+from strategy.exits import get_tp_sl
 
 
 class PaperPortfolio:
@@ -37,11 +39,11 @@ class Symbol:
     def in_position(self):
         return self.position > 0
         
-    def buy(self, price: float, amount: float = 0, fee_rate: float = 0.01):
+    def buy(self, price: float, amount: float = 0, fee_rate: float = 0.01, atr: float = 0.0):
         if self.in_position():
             log("Already in position, cannot buy")
             return
-
+    
         # If amount == 0, buy with 1/10 of margin
         if amount == 0:
             amount = ((self.portfolio.balance * self.leverage) / 10) / price  # full leveraged amount
@@ -61,10 +63,10 @@ class Symbol:
         self.portfolio.balance -= fee
         self.portfolio.balance -= margin_required  # margin is now locked
         
+        sl, tp = get_tp_sl(price, atr=atr)  # example ATR as 1% of price, adjust as needed
         
         self.position = amount
         self.entry_price: float = price
-
         log(f"BUY executed at {price:.2f}, amount: {amount:.6f}, leveraged position: {position_value:.2f}, remaining balance: {self.portfolio.balance:.2f}, fee: {fee:.4f}")
         if self.db:
             self.db.log_trade(
@@ -74,6 +76,8 @@ class Symbol:
                 amount=amount,
                 fee=fee,
                 balance_after=self.portfolio.balance,
+                sl = sl,
+                tp = tp
             )
         else:
             log("No database connection, trade not logged")
