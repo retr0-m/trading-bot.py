@@ -2,7 +2,9 @@
 .env
 */*.env
 .venv/
+.vvv/
 __pycache__/
 venv/
+vvv/
 instance/
 .envrc
