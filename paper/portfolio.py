@@ -3,6 +3,8 @@ from log.logger import log, log_position
 from log.database import PortfolioDB
 from time import time
 
+from strategy.exits import get_tp_sl
+
 class PaperPortfolio:
     def __init__(self, starting_balance: float = 100.0, db_obj: PortfolioDB | None = None, leverage: float = 1.0):
         self.balance     = starting_balance
@@ -23,9 +25,9 @@ class DCASymbol:
     Supports multiple buy entries and computes a true weighted average entry price.
 
     Bugs fixed:
-      - buy() is now the single place that updates dca_state["last_trigger_pct"]
-      - sell() resets all state correctly (was already correct, confirmed)
-      - log_position.buy/sell now log avg_entry which is always the weighted average
+    - buy() is now the single place that updates dca_state["last_trigger_pct"]
+    - sell() resets all state correctly (was already correct, confirmed)
+    - log_position.buy/sell now log avg_entry which is always the weighted average
     """
 
     def __init__(self, symbol: str, portfolio: PaperPortfolio, leverage: float, db_obj: PortfolioDB | None = None):
@@ -65,7 +67,7 @@ class DCASymbol:
     #  DCA Buy                                                             #
     # ------------------------------------------------------------------ #
 
-    def buy(self, price: float, spend_usd: float, high_24h: float, fee_rate: float = 0.001) -> bool:
+    def buy(self, price: float, spend_usd: float, high_24h: float, atr: float, fee_rate: float = 0.001) -> bool:
         """
         Buy `spend_usd` worth of the asset at `price`.
         Updates the weighted average entry price across all DCA levels.
@@ -107,7 +109,7 @@ class DCASymbol:
             f"balance={self.portfolio.balance:.2f}"
         )
         log_position.buy(self.symbol, price, qty, self.average_entry_price, self.portfolio.balance)
-
+        sl, tp = get_tp_sl(self.average_entry_price, price, atr=atr) 
         if self.db:
             self.db.log_trade(
                 symbol=self.symbol,
@@ -116,8 +118,8 @@ class DCASymbol:
                 amount=qty,
                 fee=fee,
                 balance_after=self.portfolio.balance,
-                sl=0.0,
-                tp=0.0,
+                sl=sl,
+                tp=tp,
             )
         return True
 

@@ -147,7 +147,7 @@ def read_dashboard(request: Request):
     log("\t[GET] dashboard")
     trades = db.temp_connection.get_all_trades()
     portfolio = build_portfolio_from_trades(trades)
-    chart_data = build_charts(portfolio["trade_history"])  # <-- new
+    chart_data = build_charts(portfolio["trade_history"])
 
     log("\t[GET] -> rendering template with portfolio data + chart data")
     return templates.TemplateResponse(

@@ -170,14 +170,18 @@ def should_long_dca(
 
     # ── Gate 1: DCA level ─────────────────────────────────────────────── #
     new_level, spend_usd, dca_msg = _check_dca_level(current_price, high_24h, symbol_state)
+    
+    
+    # -- Gate 1.1: if LESS_STRICT_SHOULD_LONG, allow same level re-entry if confluence is very strong (score 4/5) ---
+    if LESS_STRICT_SHOULD_LONG: #! FOR TESTING ONLY: skips all gates except, and ignores HTF bias even if required. Use to generate more trades and test exit logic.
+        log(f"[ENTRY] [LESS STRICT SHOULD LONG ENABLED]✓  -> spend=${spend_usd:.2f}")
+        return True, 10.0  # fixed spend for testing
+    
+    
     log(f"[DCA] {dca_msg}")
     if not new_level:
         return False, 0.0
 
-    # -- Gate 1.1: if LESS_STRICT_SHOULD_LONG, allow same level re-entry if confluence is very strong (score 4/5) ---
-    if LESS_STRICT_SHOULD_LONG: #! FOR TESTING ONLY: skips all gates except, and ignores HTF bias even if required. Use to generate more trades and test exit logic.
-        log(f"[ENTRY] [LESS STRICT SHOULD LONG ENABLED]✓  -> spend=${spend_usd:.2f}")
-        return True, spend_usd
 
 
     # ── Gate 2: ATR edge ──────────────────────────────────────────────── #

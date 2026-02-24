@@ -30,10 +30,11 @@ DCA_COOLDOWN_SECONDS    = 300   # seconds to wait after any exit before re-enter
 # ── Exit config ────────────────────────────────────────────────────────── #
 TAKE_PROFIT_MULTIPLIER = 4.0    # ATR multiples above avg entry
 STOP_LOSS_MULTIPLIER   = 1.8    # ATR multiples below avg entry
+BREAKEVEN_TRIGGER_PCT = 0.008  # 0.8% profit before break-even activates
 
 # Trailing stop — give the position room to run
-TRAIL_START_PCT    = 0.012      # start trailing after 1.2% profit (was 0.3% — too tight)
-TRAIL_DISTANCE_PCT = 0.006      # trail 0.6% below peak (was 0.15% — got clipped by noise)
+TRAIL_START_PCT    = 0.015      # start trailing after 1.5% profit 
+TRAIL_DISTANCE_PCT = 0.008      # trail 0.8% below peak 
 
 # ── Indicator lengths ──────────────────────────────────────────────────── #
 # Short-term momentum EMAs (5m)
@@ -83,4 +84,6 @@ MIN_EDGE_PCT    = 0.001  # minimum expected move above fees
 # ── Unused (kept for main branch compat) ───────────────────────────────── #
 RISK_PER_TRADE        = 0.03
 MAX_POSITION_USDT     = 50
-LESS_STRICT_SHOULD_LONG = False
+
+# For testing less strict entry conditions (e.g. for backtesting or more frequent trades)
+LESS_STRICT_SHOULD_LONG = True

@@ -2,16 +2,16 @@
 DCA Branch — main.py
 ────────────────────
 Strategy:
-  - Track the 24h high for each symbol every loop.
-  - Every time price drops another DCA_DROP_STEP_PCT% from the 24h high,
-    buy $drop_pct worth (e.g. 3% drop → $3, 4% drop → $4).
-  - Exit logic: trailing stop from exits.py (applied to avg entry price).
-  - No leverage. Spot only. 3 symbols. $100 balance.
+- Track the 24h high for each symbol every loop.
+- Every time price drops another DCA_DROP_STEP_PCT% from the 24h high,
+buy $drop_pct worth (e.g. 3% drop → $3, 4% drop → $4).
+- Exit logic: trailing stop from exits.py (applied to avg entry price).
+- No leverage. Spot only. 3 symbols. $100 balance.
 
 Bugs fixed vs previous version:
-  1. After a SELL, entry check now skips via `continue` — no same-tick rebuy.
-  2. dca_state is reset inside sell() already; main.py no longer double-updates it.
-  3. dca_state["last_trigger_pct"] is updated inside buy() only — single source of truth.
+1. After a SELL, entry check now skips via `continue` — no same-tick rebuy.
+2. dca_state is reset inside sell() already; main.py no longer double-updates it.
+3. dca_state["last_trigger_pct"] is updated inside buy() only — single source of truth.
 """
 
 from dotenv import load_dotenv
@@ -132,7 +132,7 @@ while True:
             )
 
             if should_buy:
-                ok = symbol.buy(current_price, spend_usd, high_24h, FEE_RATE)
+                ok = symbol.buy(current_price, spend_usd, high_24h, last.atr, fee_rate = FEE_RATE)
                 if ok:
                     print(
                         f"[DCA BUY #{symbol.dca_levels}] {symbol_name} @ {current_price:.4f} | "
