@@ -1,0 +1,1015 @@
+
+./app/dashboard.py
+
+import threading
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Request
+from fastapi.templating import Jinja2Templates
+from log.database import PortfolioDB
+from datetime import datetime
+import uvicorn
+from log.logger import log_uvicorn as log
+from config import SYMBOLS
+
+app = FastAPI()
+
+templates = Jinja2Templates(directory="app/templates")
+
+db : PortfolioDB  # global variable to hold the database connection
+
+
+def build_portfolio_from_trades(trades):
+    balance = 0.0
+    equity = 0.0
+    trade_history = []
+
+    # Track net position per symbol
+    position_count = {sym: 0 for sym in SYMBOLS}
+
+    for t in trades:
+        trade_id, symbol, side, price, amount, fee, balance_after, timestamp = t
+
+        balance = balance_after
+        equity = balance  # unrealized PnL later
+
+        if side == "BUY":
+            position_count[symbol] += 1
+        elif side == "SELL":
+            position_count[symbol] -= 1
+
+        trade_history.append({
+            "id": trade_id,
+            "time": timestamp,
+            "type": side,
+            "symbol": symbol,
+            "qty": amount,
+            "price": price,
+            "expense": (price * amount) / 5, # approximate, since we don't track leverage here
+            "fee": fee,
+            "balance_after": balance_after
+        })
+
+    # Open positions = symbols with net BUYs
+    positions = [
+        f"{sym}: OPEN"
+        for sym, count in position_count.items()
+        if count > 0
+    ]
+
+    return {
+        "balance": balance,
+        "equity": equity,
+        "positions": positions,
+        "trade_history": trade_history[::-1]
+    }
+    
+    
+    
+from collections import Counter
+
+def build_charts(trade_history):
+    """
+    Build chart data arrays from trade_history.
+    Charts are chronological: oldest trades first.
+    """
+    labels = []
+    equity_curve = []
+    drawdown_curve = []
+    pnl_per_trade = []
+    
+    peak = 0.0
+
+    for trade in reversed(trade_history):  # oldest first
+        labels.append(trade["time"])
+        equity_curve.append(trade["balance_after"])
+
+        # Drawdown % relative to peak
+        peak = max(peak, trade["balance_after"])
+        drawdown_curve.append((trade["balance_after"] - peak) / peak * 100)
+
+        # PnL per trade: approximate using SELL trades
+        if trade["type"] == "SELL":
+            pnl_per_trade.append(trade["balance_after"] - trade["expense"] - trade["fee"])
+
+    # Trade frequency per minute
+    minutes = [t["time"][:16] for t in reversed(trade_history)]  # oldest first
+    counter = Counter(minutes)
+    freq_labels = sorted(counter.keys())
+    freq_data = [counter[m] for m in freq_labels]
+
+    return {
+        "chart_labels": labels,
+        "equity_curve": equity_curve,
+        "drawdown_curve": drawdown_curve,
+        "pnl_per_trade": pnl_per_trade,
+        "trade_freq_labels": freq_labels,
+        "trade_freq": freq_data,
+    }
+
+
+
+@app.get("/")
+def read_dashboard(request: Request):
+    log("\t[GET] dashboard")
+    trades = db.temp_connection.get_all_trades()
+    portfolio = build_portfolio_from_trades(trades)
+    chart_data = build_charts(portfolio["trade_history"])  # <-- new
+
+    log("\t[GET] -> rendering template with portfolio data + chart data")
+    return templates.TemplateResponse(
+        "dashboard.html",
+        {
+            "request": request,
+            "portfolio": portfolio,
+            **chart_data  # unpack chart arrays for Jinja
+        }
+    )
+    
+def start_server(db_obj: PortfolioDB):
+    global db
+    db = db_obj
+    uvicorn.run(app, host="127.0.0.1", port=8000)
+    
+def start_server_in_thread(db_obj: PortfolioDB):
+    server_thread = threading.Thread(target=start_server, args=(db_obj,), daemon=True)
+    server_thread.start()
+
+
+if __name__ == "__main__":
+    
+    db = PortfolioDB()
+    start_server_in_thread(db)
+./app/templates/dashboard.html
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trading Bot Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <meta http-equiv="refresh" content="5" />
+
+    <style>
+      body {
+        background: radial-gradient(circle at top, #0f172a, #020617);
+      }
+    </style>
+  </head>
+
+  <body class="text-slate-200 min-h-screen">
+    <div class="container mx-auto p-6 space-y-8">
+      <!-- Header -->
+      <h1 class="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">Trading Bot Dashboard</h1>
+
+      <!-- ================= Portfolio ================= -->
+      <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+        <h2 class="text-xl font-semibold mb-4 text-cyan-300">Portfolio</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-black/30 border border-white/10">
+            <p class="text-sm text-slate-400">Balance</p>
+            <p class="text-2xl font-bold text-green-400">${{ '%.2f'|format(portfolio.balance) }}</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-black/30 border border-white/10">
+            <p class="text-sm text-slate-400">Equity</p>
+            <p class="text-2xl font-bold text-purple-400">${{ '%.2f'|format(portfolio.equity) }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= Equity Curve ================= -->
+      <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+        <h2 class="text-lg font-semibold mb-3 text-cyan-300">Equity Curve</h2>
+        <canvas id="equityChart" height="120"></canvas>
+      </div>
+
+      <!-- ================= Drawdown ================= -->
+      <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-4">
+        <h2 class="text-sm font-semibold mb-2 text-red-300">Drawdown %</h2>
+        <canvas id="drawdownChart" height="60"></canvas>
+      </div>
+
+      <!-- ================= PnL + Frequency ================= -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- PnL Histogram -->
+        <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+          <h2 class="text-lg font-semibold mb-3 text-purple-300">PnL per Trade</h2>
+          <canvas id="pnlChart"></canvas>
+        </div>
+
+        <!-- Trade Frequency -->
+        <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+          <h2 class="text-lg font-semibold mb-3 text-orange-300">Trade Frequency</h2>
+          <canvas id="freqChart"></canvas>
+        </div>
+      </div>
+
+      <!-- ================= Trade History ================= -->
+      <div class="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6">
+        <h2 class="text-xl font-semibold mb-4 text-purple-300">Trade History</h2>
+
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead>
+              <tr class="text-left text-slate-400 border-b border-white/10">
+                <th class="px-4 py-3">Time</th>
+                <th class="px-4 py-3">Type</th>
+                <th class="px-4 py-3">Symbol</th>
+                <th class="px-4 py-3">Qty</th>
+                <th class="px-4 py-3">Price</th>
+                <th class="px-4 py-3">Expense</th>
+                <th class="px-4 py-3">Fee</th>
+                <th class="px-4 py-3">Balance After</th>
+              </tr>
+            </thead>
+
+            <tbody class="divide-y divide-white/5">
+              {% for t in portfolio.trade_history %}
+                <tr class="hover:bg-white/5">
+                  <td class="px-4 py-2">{{ t.time }}</td>
+                  <td class="px-4 py-2 font-semibold {% if t.type == 'BUY' %}
+                      
+                      
+                      
+                      text-green-400
+
+
+
+                    {% else %}
+                      
+                      
+                      
+                      text-red-400
+
+
+
+                    {% endif %}">{{ t.type }}</td>
+                  <td class="px-4 py-2 text-cyan-300">{{ t.symbol }}</td>
+                  <td class="px-4 py-2">{{ '%.6f'|format(t.qty) }}</td>
+                  <td class="px-4 py-2">${{ '%.2f'|format(t.price) }}</td>
+                  <td class="px-4 py-2 text-orange-400">${{ '%.2f'|format(t.expense) }}</td>
+                  <td class="px-4 py-2 text-red-400">${{ '%.2f'|format(t.fee) }}</td>
+                  <td class="px-4 py-2 text-green-300">${{ '%.2f'|format(t.balance_after) }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= Charts JS ================= -->
+    <script>
+  const labels = {{ chart_labels | default('[]', true) | safe }};
+  const equity = {{ equity_curve | default('[]', true) | safe }};
+  const drawdown = {{ drawdown_curve | default('[]', true) | safe }};
+  const pnl = {{ pnl_per_trade | default('[]', true) | safe }};
+  const freqLabels = {{ trade_freq_labels | default('[]', true) | safe }};
+  const freqData = {{ trade_freq | default('[]', true) | safe }};
+
+  const equityCtx = document.getElementById("equityChart");
+  const drawdownCtx = document.getElementById("drawdownChart");
+  const pnlCtx = document.getElementById("pnlChart");
+  const freqCtx = document.getElementById("freqChart");
+
+  if (equity.length) {
+    new Chart(equityCtx, {
+      type: "line",
+      data: {
+        labels,
+        datasets: [{
+          data: equity,
+          borderColor: "#22d3ee",
+          borderWidth: 2,
+          tension: 0.3
+        }]
+      },
+      options: { plugins: { legend: { display: false } } }
+    });
+  }
+
+  if (drawdown.length) {
+    new Chart(drawdownCtx, {
+      type: "line",
+      data: {
+        labels,
+        datasets: [{
+          data: drawdown,
+          borderColor: "#f87171",
+          borderWidth: 1,
+          tension: 0.3
+        }]
+      },
+      options: { plugins: { legend: { display: false } } }
+    });
+  }
+
+  if (pnl.length) {
+    new Chart(pnlCtx, {
+      type: "bar",
+      data: {
+        labels: pnl.map((_, i) => i + 1),
+        datasets: [{
+          data: pnl,
+          backgroundColor: pnl.map(v => v >= 0 ? "#22c55e" : "#ef4444")
+        }]
+      },
+      options: { plugins: { legend: { display: false } } }
+    });
+  }
+
+  if (freqData.length) {
+    new Chart(freqCtx, {
+      type: "bar",
+      data: {
+        labels: freqLabels,
+        datasets: [{
+          data: freqData,
+          backgroundColor: "#fb923c"
+        }]
+      },
+      options: { plugins: { legend: { display: false } } }
+    });
+  }
+</script>
+  </body>
+</html>
+
+./config.py
+
+LOG_FILE = "./log/log.txt"
+UVICORN_LOG_FILE = "./log/uvicorn_log.txt"
+
+
+# Paper trading mode
+PAPER_TRADING = True
+
+START_BALANCE = 100.0 
+FEE_RATE = 0.001  # 0.1% Binance spot fee
+
+
+# Trading Configurations
+
+# Tier 1: more frequent signals, less strict
+# SYMBOLS = [
+#     "BTCUSDT",
+#    "ETHUSDT",
+#]
+
+# Tier 2: less frequent signals, more strict
+# SYMBOLS = [
+#     "BTCUSDT",
+#     "ETHUSDT",
+#     "BNBUSDT",
+#     "SOLUSDT",
+#     "XRPUSDT",
+# ]
+
+
+# Tier 3: high volume, more volatile, more strict
+# SYMBOLS = [
+#     "ADAUSDT",
+#     "DOGEUSDT",
+#     "AVAXUSDT",
+#     "LINKUSDT",
+#     "MATICUSDT",
+# ]
+
+# Tier 4: all 300+ symbols, very strict
+SYMBOLS = [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "ADAUSDT",
+    "DOGEUSDT",
+    "AVAXUSDT",
+    "LINKUSDT",
+    "MATICUSDT",
+    
+]
+
+
+INTERVAL = "5m"  # candlestick interval for indicators and signals
+SLEEP_INTERVAL = 5 # seconds between each loop iteration
+
+RISK_PER_TRADE = 0.03  # 3%
+MAX_POSITION_USDT = 50  # cap position size - divide by leverage in paper portfolio to get actual max position size in USDT
+LEVERAGE = 5.0  # leverage for paper trading (if using leverage in position sizing, also adjust fee calculations accordingly)
+
+
+# less strict for testing ONlY
+LESS_STRICT_SHOULD_LONG = True
+
+
+# exits configuration
+TAKE_PROFIT_MULTIPLIER = 4.0
+STOP_LOSS_MULTIPLIER = 1.8
+
+# or use these for calmer
+# TAKE_PROFIT_MULTIPLIER = 5.0
+# STOP_LOSS_MULTIPLIER = 2.0
+./data/market_stream.py
+
+
+./execution/binance_client.py
+
+from binance.client import Client
+
+class BinanceClient:
+    def __init__(self, api_key, api_secret):
+        self.client = Client(api_key, api_secret)
+
+    def market_buy(self, symbol, qty):
+        return self.client.order_market_buy(
+            symbol=symbol,
+            quantity=qty
+        )
+
+    def market_sell(self, symbol, qty):
+        return self.client.order_market_sell(
+            symbol=symbol,
+            quantity=qty
+        )
+
+    def balance(self, asset="USDT"):
+        balances = self.client.get_asset_balance(asset)
+        return float(balances["free"])
+./log/database.py
+
+# portfolio_db.py
+import sqlite3
+from pathlib import Path
+from log.logger import log
+
+DB_PATH = Path("log/db/portfolio.db")
+
+class TempConnection:
+    """Each method opens a new connection and closes it after execution to be thread-safe."""
+
+    @staticmethod
+    def get_all_trades():
+        with sqlite3.connect(DB_PATH) as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT id, symbol, side, price, amount, fee, balance_after, timestamp
+                FROM trades
+                ORDER BY id ASC
+            """)
+            return cursor.fetchall()
+
+    @staticmethod
+    def get_last_trade(symbol: str):
+        with sqlite3.connect(DB_PATH) as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT side, price, amount, balance_after, timestamp
+                FROM trades
+                WHERE symbol = ?
+                ORDER BY id DESC
+                LIMIT 1
+            """, (symbol,))
+            return cursor.fetchone()
+
+    @staticmethod   #! not used currently, DEPRECATED
+    def get_equity_curve():
+        with sqlite3.connect(DB_PATH) as conn:
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT timestamp, balance_after
+                FROM trades
+                ORDER BY id ASC
+            """)
+            return cursor.fetchall()
+
+
+class PortfolioDB:
+    """Main database class with persistent connection for writes."""
+    
+    def __init__(self):
+        DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+        self.conn = sqlite3.connect(DB_PATH, check_same_thread=False)  # persistent connection for writes
+        self._create_tables()
+        self.temp_connection = TempConnection()  # attach temp connection
+        log(f"Database initialized at {DB_PATH}")
+
+    def _create_tables(self):
+        cursor = self.conn.cursor()
+        cursor.execute("""
+            CREATE TABLE trades (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                symbol TEXT NOT NULL,
+                side TEXT NOT NULL,
+                price REAL NOT NULL,
+                amount REAL NOT NULL,
+                fee REAL NOT NULL,
+                balance_after REAL NOT NULL,
+                timestamp TEXT DEFAULT CURRENT_TIMESTAMP
+            );
+        """)
+        self.conn.commit()
+
+    def log_trade(
+        self,
+        symbol: str,
+        side: str,
+        price: float,
+        amount: float,
+        fee: float,
+        balance_after: float,
+    ):
+        log(f"inserting query in db with following data: side={side}, price={price}, amount={amount}, fee={fee}, balance_after={balance_after}")
+        cursor = self.conn.cursor()
+        cursor.execute("""
+            INSERT INTO trades (symbol, side, price, amount, fee, balance_after)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (symbol, side, price, amount, fee, balance_after))
+        self.conn.commit()
+        log(
+            f"DB | {side} | price={price:.2f} "
+            f"amount={amount:.6f} fee={fee:.4f} "
+            f"balance={balance_after:.2f}"
+        )
+
+    def close(self):
+        self.conn.close()
+        
+
+./log/logger.py
+
+
+from datetime import datetime
+import inspect
+from typing import List
+import os
+from config import LOG_FILE, UVICORN_LOG_FILE
+
+
+def log(*msg: str) -> None:
+    """
+    Logs messages to log.txt, prepending:
+    - timestamp with milliseconds
+    - file name
+    - function name
+    - line number
+    """
+
+    # Caller info (1 level up the stack)
+    frame = inspect.stack()[1]
+    file_name = os.path.basename(frame.filename)
+    func_name = frame.function
+    line_no = frame.lineno
+
+    # Timestamp
+    time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+
+    # Prefix
+    prefix = (
+        f"[{time_str}]\t"
+        f"[{file_name} - {func_name}():{line_no}]\t\t"
+    )
+
+    # Write log
+    with open(LOG_FILE, "a", encoding="utf-8") as f:
+        for m in msg:
+            f.write(f"{prefix}{m}\n")
+            
+def log_uvicorn(msg: str) -> None:
+    """
+    Logs messages to log.txt, prepending uvicorn tag.
+    """
+
+    # Timestamp
+    time_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+
+    # Prefix
+    prefix = f"[{time_str}]\t[uvicorn]\t\t"
+
+    # Write log
+    with open(UVICORN_LOG_FILE, "a", encoding="utf-8") as f:
+        f.write(f"{prefix}{msg}\n")
+        
+        
+
+./main.py
+
+
+
+
+# .env support
+from dotenv import load_dotenv
+import os
+
+from log.database import PortfolioDB
+
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
+API_SECRET = os.getenv("API_SECRET")
+
+import time
+
+import pandas as pd
+from binance.client import Client
+
+from config import *
+from strategy.indicators import add_indicators
+from strategy.logic import should_long
+from strategy.exits import should_exit
+from risk.position import position_size
+from paper.portfolio import PaperPortfolio
+from log.logger import log
+from app.dashboard import start_server_in_thread
+log("Starting bot...")
+
+# Paper trading does not require API keys, but can be set up if needed
+binance = Client(API_KEY, API_SECRET)
+
+# initialize database
+portfolioDB= PortfolioDB()
+log("Initialized DB")
+
+
+# Initialize paper portfolio
+portfolio = PaperPortfolio(starting_balance=START_BALANCE, db_obj=portfolioDB, leverage=LEVERAGE)
+
+log(f"Initialized PaperPortfolio with starting balance: {portfolio.balance:.2f}")
+log("Entering main loop")
+
+# starting dashboard
+start_server_in_thread(portfolioDB)
+
+
+# banner
+banner = r"""
+███╗   ███╗ █████╗ ██╗  ██╗██╗███╗   ██╗ ██████╗ ██████╗  █████╗ ██████╗ ███████╗██████╗ 
+████╗ ████║██╔══██╗██║ ██╔╝██║████╗  ██║██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗
+██╔████╔██║███████║█████╔╝ ██║██╔██╗ ██║██║  ███╗██████╔╝███████║██████╔╝█████╗  ██████╔╝
+██║╚██╔╝██║██╔══██║██╔═██╗ ██║██║╚██╗██║██║   ██║██╔═══╝ ██╔══██║██╔═══╝ ██╔══╝  ██╔══██╗
+██║ ╚═╝ ██║██║  ██║██║  ██╗██║██║ ╚████║╚██████╔╝██║     ██║  ██║██║     ███████╗██║  ██║
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚═╝     ╚══════╝╚═╝  ╚═╝
+"""
+print(banner)
+
+
+# Main loop
+while True:
+    try:
+        for symbol_name, symbol in portfolio.symbols.items():
+            log(f"Processing symbol: {symbol_name}")
+            log("Fetching klines")
+            klines = binance.get_klines(
+                symbol=symbol_name,
+                interval=Client.KLINE_INTERVAL_1MINUTE,
+                limit=300
+            )
+            log(f"Fetched {len(klines)} klines")
+            # Construct DataFrame
+            df = pd.DataFrame(klines, columns=[
+                "time","open","high","low","close","volume",
+                "_","_","_","_","_","_"
+            ])
+            df = df.astype({
+                "open": float,
+                "high": float,
+                "low": float,
+                "close": float,
+                "volume": float
+            })
+            log("Constructed DataFrame and applied dtypes")
+
+            # Add indicators
+            df = add_indicators(df)
+            log("Indicators added to DataFrame")
+            last = df.iloc[-1]
+            log(f"Last row - close: {last.close:.2f}, atr: {last.atr:.6f}")
+            # EXIT LOGIC
+            log("Checking exit logic")
+            if symbol.in_position():
+                if symbol.check_liquidation(last.close):
+                    log("FORCED LIQUIDATION (paper)")
+                    symbol.sell(last.close, FEE_RATE)
+                    
+                exit_reason = should_exit(symbol.entry_price, symbol, last.close, last.atr)
+                if exit_reason:
+                    log(f"Exit triggered: {exit_reason}")
+                    symbol.sell(last.close, fee_rate = FEE_RATE)
+                    log(f"[PAPER SELL] {exit_reason.upper()} @ {last.close:.2f}")
+                    log(f"Balance after sell: {portfolio.balance:.2f} USDT")
+                    print(f"[PAPER SELL] {exit_reason.upper()} @ {last.close:.2f}")
+                    print(f"Balance: {portfolio.balance:.2f} USDT")
+
+            # ENTRY LOGIC
+            log("Checking entry logic")
+            if not symbol.in_position() and should_long(df):
+                stop = last.close - last.atr
+                log(f"Calculated stop: {stop:.2f}")
+                qty = position_size(
+                    portfolio.balance,
+                    last.close,
+                    stop,
+                    RISK_PER_TRADE
+                )
+                log(f"Raw position size (units): {qty:.6f}")
+
+                # Cap max position
+                qty = min(qty * last.close, MAX_POSITION_USDT) / last.close
+                log(f"Adjusted qty after max position cap: {qty:.6f}")
+
+                if symbol.buy(last.close, qty, FEE_RATE):
+                    log(f"[PAPER BUY] {qty:.6f} BTC @ {last.close:.2f}")
+                    log(f"Balance after buy: {portfolio.balance:.2f} USDT")
+                    print(f"[PAPER BUY] {qty:.6f} BTC @ {last.close:.2f}")
+                    print(f"Balance: {portfolio.balance:.2f} USDT")
+
+        log(f"Sleeping for {SLEEP_INTERVAL} seconds")
+        time.sleep(SLEEP_INTERVAL)
+
+    except Exception as e:
+        log(f"Error in main loop: {e}")
+        print(f"Error: {e}")
+        time.sleep(5)
+./paper/portfolio.py
+
+
+
+from config import SYMBOLS
+from log.logger import log
+from log.database import PortfolioDB
+
+
+class PaperPortfolio:
+    def __init__(self, starting_balance=50.0, db_obj: PortfolioDB | None = None, leverage: float = 1.0):
+        self.balance = starting_balance      #  margin / free balance
+        self.used_margin = 0.0                     # margin currently used in open positions
+        self.position: float = 0                      # amount of asset held
+        self.entry_price = 0.0
+        self.db = db_obj
+        self.leverage = leverage
+        self.symbols = {symbol: 
+            Symbol(
+                symbol, 
+                self,
+                self.leverage, 
+                db_obj
+            ) for symbol in SYMBOLS}
+        log(f"Created PaperPortfolio with starting balance: {self.balance:.2f}, leverage: {self.leverage}x")
+
+
+class Symbol:
+    def __init__(self, symbol: str, portfolio: PaperPortfolio, leverage: float, db_obj: PortfolioDB | None = None):
+        self.name = symbol
+        self.symbol = symbol
+        self.position: float = 0
+        self.leverage = leverage
+        self.entry_price = 0.0
+        self.db = db_obj
+        self.portfolio = portfolio
+    
+    
+    def in_position(self):
+        return self.position > 0
+        
+    def buy(self, price: float, amount: float = 0, fee_rate: float = 0.01):
+        if self.in_position():
+            log("Already in position, cannot buy")
+            return
+
+        # If amount == 0, buy with 1/10 of margin
+        if amount == 0:
+            amount = ((self.portfolio.balance * self.leverage) / 10) / price  # full leveraged amount
+
+        # Position is leveraged
+        position_value = amount * price
+        fee = position_value * fee_rate
+
+        # Deduct margin portion from balance
+        margin_required = position_value / self.leverage
+        free_balance = self.portfolio.balance - self.portfolio.used_margin
+        if margin_required + fee > free_balance:
+            log("Not enough free margin")
+            return
+
+        self.portfolio.used_margin += margin_required
+        self.portfolio.balance -= fee
+        self.portfolio.balance -= margin_required  # margin is now locked
+        
+        
+        self.position = amount
+        self.entry_price: float = price
+
+        log(f"BUY executed at {price:.2f}, amount: {amount:.6f}, leveraged position: {position_value:.2f}, remaining balance: {self.portfolio.balance:.2f}, fee: {fee:.4f}")
+        if self.db:
+            self.db.log_trade(
+                symbol=self.symbol,
+                side="BUY",
+                price=price,
+                amount=amount,
+                fee=fee,
+                balance_after=self.portfolio.balance,
+            )
+        else:
+            log("No database connection, trade not logged")
+
+    def sell(self, price: float, fee_rate: float = 0.01):
+        if not self.in_position():
+            log("No position to sell")
+            return
+
+        # Leveraged position value
+        position_value = self.position * price
+        fee = position_value * fee_rate
+
+        # Realized PnL
+        profit = (price - self.entry_price) * self.position
+
+        # Calculate margin released (i.e., the portion of margin that was used to open the position)
+        margin_released = position_value / self.leverage
+        self.portfolio.used_margin -= margin_released
+        self.portfolio.balance += margin_released + profit - fee
+        
+        log(
+            f"SELL executed at {price:.2f}, amount: {self.position:.6f}, "
+            f"leverage: {self.leverage}x, profit: {profit:.2f}, fee: {fee:.4f}, new balance: {self.portfolio.balance:.2f}"
+        )
+        if self.db:
+            self.db.log_trade(
+                symbol=self.symbol,
+                side="SELL",
+                price=price,
+                amount=self.position,
+                fee=fee,
+                balance_after=self.portfolio.balance,
+            )
+        else:
+            log("No database connection, trade not logged")
+
+        # Reset position
+        self.position = 0
+        self.entry_price = 0
+
+    def check_liquidation(self, price: float, liquidation_threshold: float = 0.8):
+        """
+        Check if position is close to liquidation.
+        liquidation_threshold = % of margin loss before liquidation
+        """
+        if not self.in_position():
+            return False
+        # Loss on position relative to margin
+        position_value = self.position * price
+        margin = position_value / self.leverage
+        loss = max(0, (self.entry_price - price) * self.position * self.leverage)  # only if price drops
+        if loss >= margin * liquidation_threshold:
+            log(f"WARNING: Position close to liquidation! unrealized loss: {loss:.2f}, margin: {margin:.2f}")
+            return True
+        return False
+
+
+
+    # ! DEPRECATED !!!!!! --- IGNORE ---
+    # def load_from_db(self):
+    #     """Recover last trade from DB to restore portfolio state"""
+    #     if self.db is None:
+    #         log("No database connection available, starting fresh")
+    #         return
+            
+    #     last_trade = self.db.temp_connection.get_last_trade(self.symbol)
+    #     if last_trade:
+    #         side, price, amount, balance_after, timestamp = last_trade
+    #         self.balance = balance_after
+    #         if side == "BUY":
+    #             self.position = amount
+    #             self.entry_price = price
+    #             log(f"Recovered open position from last BUY: amount={amount:.6f} at price={price:.2f}")
+    #         else:
+    #             self.position = 0
+    #             self.entry_price = 0
+    #             log("Recovered portfolio: no open position")
+    #     else:
+    #         log("No trades in DB, starting fresh")
+
+
+./risk/position.py
+
+# ! DEPRECATED
+
+from log.logger import log
+
+def position_size(
+    balance: float,
+    entry_price: float,
+    stop_price: float,
+    risk_pct: float,
+):
+    """
+    Futures-safe position sizing.
+    Returns asset quantity (qty), NOT notional.
+    Risk is controlled by stop-loss distance, independent of leverage.
+    """
+
+    log(
+        f"position_size inputs -> "
+        f"balance={balance:.2f}, "
+        f"entry_price={entry_price:.2f}, "
+        f"stop_price={stop_price:.2f}, "
+        f"risk_pct={risk_pct}"
+    )
+
+    # Validation
+    stop_distance = entry_price - stop_price
+    if stop_distance <= 0:
+        log("position_size -> invalid stop (stop >= entry), returning 0")
+        return 0.0
+
+    risk_amount = balance * risk_pct
+    qty = risk_amount / stop_distance
+
+    log(
+        f"position_size result -> "
+        f"qty={qty:.6f}, "
+        f"risk_amount={risk_amount:.2f}, "
+        f"stop_distance={stop_distance:.6f}"
+    )
+
+    return qty
+
+
+
+
+
+./strategy/exits.py
+
+from log.logger import log
+from config import TAKE_PROFIT_MULTIPLIER, STOP_LOSS_MULTIPLIER
+
+def should_exit(entry_price, position, current_price, atr):
+    stop_loss = position.entry_price - (STOP_LOSS_MULTIPLIER * atr)
+    take_profit = position.entry_price + (TAKE_PROFIT_MULTIPLIER * atr)
+    log(f"should_exit -> stop_loss={stop_loss:.2f}, take_profit={take_profit:.2f}, current_price={current_price:.2f}")
+    if current_price > entry_price + atr:
+        stop_loss = entry_price
+        
+    if current_price <= stop_loss:
+        log("should_exit decision: stop")
+        return "stop"
+    if current_price >= take_profit:
+        log("should_exit decision: take_profit")
+        return "take_profit"
+
+    log("should_exit decision: None")
+    return None
+./strategy/indicators.py
+
+import pandas as pd
+import pandas_ta as ta
+from log.logger import log
+
+def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
+    df["ema50"] = ta.ema(df["close"], length=50)
+    df["ema200"] = ta.ema(df["close"], length=200)
+    df["rsi"] = ta.rsi(df["close"], length=14)
+    df["atr"] = ta.atr(df["high"], df["low"], df["close"], length=14)
+    df["vol_ma"] = df["volume"].rolling(20).mean()
+    log("Added indicators: ema50, ema200, rsi, atr, vol_ma")
+    return df
+./strategy/logic.py
+
+from log.logger import log
+from time import sleep
+from config import LESS_STRICT_SHOULD_LONG
+
+def should_long(df):
+    row = df.iloc[-1]
+
+    # Example conditions (adapt to your actual logic)
+    trend = row['ema50'] > row['ema200']
+    rsi_ok = 30 < row['rsi'] < 70
+    volume_ok = row['volume'] > row['vol_ma']
+
+    # Debug with progress
+    trend_progress = (row['ema50'] - row['ema200']) / row['ema200'] * 100  # % difference
+    volume_progress = row['volume'] / row['vol_ma'] * 100                  # % of required volume
+
+    log(f"should_long -> trend={trend} (EMA50-EMA200={trend_progress:.2f}%)")
+    log(f"should_long -> rsi_ok={rsi_ok} (RSI={row['rsi']:.2f})")
+    log(f"should_long -> volume_ok={volume_ok} (Vol progress={volume_progress:.2f}%)")
+    if LESS_STRICT_SHOULD_LONG:
+        decision = trend or rsi_ok or volume_ok # ! less strict for testing ONlY
+    else:
+        decision = trend and rsi_ok and volume_ok
+    log(f"should_long decision: {decision}")
+
+    return decision
+
+
+./strategy/ml_model.py
+
+
+./strategy/signals.py
+
