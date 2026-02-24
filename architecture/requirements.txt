@@ -1,0 +1,10 @@
+python-binance
+pandas
+numpy
+pandas-ta
+asyncio
+dotenv
+fastapi
+uvicorn
+jinja2
+matplotlib
