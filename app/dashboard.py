@@ -1,6 +1,9 @@
+from os import path
 import threading
+from time import sleep
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from pathlib import Path
+from fastapi.responses import FileResponse, HTMLResponse
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from log.database import PortfolioDB
@@ -8,6 +11,7 @@ from datetime import datetime
 import uvicorn
 from log.logger import log_uvicorn as log
 from config import SYMBOLS
+from subprocess import run
 
 app = FastAPI()
 
@@ -158,6 +162,38 @@ def read_dashboard(request: Request):
             **chart_data  # unpack chart arrays for Jinja
         }
     )
+    
+    
+def generate_trade_chart(pdf_name: str):
+    log("Generating PDF report...")
+    result = run(["python3", "analysis/trade_chart.py", "--pdf", "--pdf-name", pdf_name], capture_output=True, text=True)
+    if result.returncode != 0:
+        log(f"Error generating report: {result.stderr}")
+    else:
+        log("Report generated successfully.")    
+    
+    
+@app.get("/generate_report/")
+def generate_report():
+    ts       = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    pdf_name = f"report_{ts}"
+    pdf_path = Path(f"analysis/reports/{pdf_name}.pdf")
+
+    log(f"Generating PDF report → {pdf_path}")
+    generate_trade_chart(pdf_name=pdf_name)
+    sleep(0.5)
+    if not pdf_path.exists():
+        return HTMLResponse(content="<h1>Error: report generation failed</h1>", status_code=500)
+
+    # Stream the PDF directly to the browser — opens inline in a new tab
+    return FileResponse(
+        path=pdf_path,
+        media_type="application/pdf",
+        filename=pdf_path.name,
+        headers={"Content-Disposition": f"inline; filename={pdf_path.name}"}
+    )
+
+
     
 def start_server(db_obj: PortfolioDB):
     global db

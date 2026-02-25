@@ -84,11 +84,11 @@ while True:
             last = df.iloc[-1]
 
             # ── 2. 24h high from fetched data ──────────────────────────── #
-            high_24h = df["high"].max()
-            symbol._last_high = high_24h
+            high = df["high"].iloc[-DCA_HIGH_LOOKBACK_CANDLES:].max()
+            symbol._last_high = high
             current_price = last.close
 
-            log(f"{symbol_name} — price={current_price:.4f}, 24h_high={high_24h:.4f}, atr={last.atr:.6f}")
+            log(f"{symbol_name} — price={current_price:.4f}, 24h_high={high:.4f}, atr={last.atr:.6f}")
 
             # ── 3. Exit logic ──────────────────────────────────────────── #
             if symbol.in_position():
@@ -126,13 +126,13 @@ while True:
 
             should_buy, spend_usd = should_long_dca(
                 current_price=current_price,
-                high_24h=high_24h,
+                high=high,
                 symbol_state=symbol.dca_state,
                 df = df
             )
 
             if should_buy:
-                ok = symbol.buy(current_price, spend_usd, high_24h, last.atr, fee_rate = FEE_RATE)
+                ok = symbol.buy(current_price, spend_usd, high, last.atr, fee_rate = FEE_RATE)
                 if ok:
                     print(
                         f"[DCA BUY #{symbol.dca_levels}] {symbol_name} @ {current_price:.4f} | "

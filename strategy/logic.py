@@ -114,15 +114,15 @@ def _check_atr_edge(row) -> tuple[bool, str]:
 #  DCA level check                                                         #
 # ─────────────────────────────────────────────────────────────────────── #
 
-def _check_dca_level(current_price: float, high_24h: float, symbol_state: dict) -> tuple[bool, float, str]:
+def _check_dca_level(current_price: float, high: float, symbol_state: dict) -> tuple[bool, float, str]:
     """
     Returns (new_level_hit, spend_usd, log_msg).
     Only True when price crosses a new DCA_DROP_STEP_PCT% level below 24h high.
     """
-    if high_24h <= 0:
-        return False, 0.0, "invalid high_24h"
+    if high <= 0:
+        return False, 0.0, "invalid high"
 
-    drop_pct      = (high_24h - current_price) / high_24h * 100
+    drop_pct      = (high - current_price) / high * 100
     last_trigger  = symbol_state.get("last_trigger_pct", 0.0)
     current_level = int(drop_pct / DCA_DROP_STEP_PCT)
     last_level    = int(last_trigger / DCA_DROP_STEP_PCT)
@@ -142,7 +142,7 @@ def _check_dca_level(current_price: float, high_24h: float, symbol_state: dict) 
 
 def should_long_dca(
     current_price: float,
-    high_24h: float,
+    high: float,
     symbol_state: dict,
     df: pd.DataFrame,
 ) -> tuple[bool, float]:
@@ -169,7 +169,7 @@ def should_long_dca(
     prev_row = df.iloc[-2]
 
     # ── Gate 1: DCA level ─────────────────────────────────────────────── #
-    new_level, spend_usd, dca_msg = _check_dca_level(current_price, high_24h, symbol_state)
+    new_level, spend_usd, dca_msg = _check_dca_level(current_price, high, symbol_state)
     
     
     # -- Gate 1.1: if LESS_STRICT_SHOULD_LONG, allow same level re-entry if confluence is very strong (score 4/5) ---

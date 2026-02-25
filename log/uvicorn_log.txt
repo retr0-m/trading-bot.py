@@ -1,1 +1,709 @@
 
+[2026-02-25 07:51:51.342]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:51:51.342]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:51:56.536]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:51:56.536]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:01.673]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:01.673]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:06.781]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:06.783]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:11.973]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:11.974]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:17.175]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:17.176]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:22.283]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:22.283]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:27.389]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:27.390]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:32.522]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:32.522]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:37.672]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:37.673]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:42.777]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:42.778]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:47.882]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:47.884]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:53.009]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:53.010]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:52:58.108]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:52:58.110]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:03.366]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:03.367]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:08.581]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:08.582]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:13.869]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:13.870]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:19.068]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:19.069]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:24.349]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:24.350]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:29.546]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:29.547]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:34.785]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:34.786]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:40.051]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:40.052]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:45.281]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:45.283]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:50.490]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:50.490]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:53:55.602]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:53:55.604]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:00.718]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:00.719]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:05.830]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:05.830]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:10.929]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:10.930]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:16.070]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:16.072]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:21.168]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:21.169]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:26.297]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:26.298]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:31.403]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:31.404]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:36.541]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:36.543]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:41.650]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:41.651]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:46.805]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:46.807]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:51.895]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:51.896]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:54:57.090]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:54:57.091]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:02.553]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:02.555]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:08.118]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:08.120]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:14.322]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:14.323]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:20.992]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:20.993]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:26.495]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:26.497]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:31.971]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:31.971]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:37.351]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:37.351]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:42.755]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:42.758]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:48.225]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:48.227]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:53.616]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:53.617]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:55:59.023]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:55:59.025]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:56:04.838]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:56:04.840]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:56:10.261]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:56:10.263]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:56:15.650]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:56:15.651]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:56:21.059]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:56:21.061]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:56:26.486]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:56:26.487]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:56:31.885]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:56:31.885]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:56:37.339]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:56:37.341]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:56:42.739]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:56:42.740]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:56:48.156]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:56:48.158]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:56:53.645]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:56:53.647]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:00.077]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:00.078]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:05.823]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:05.824]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:11.337]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:11.337]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:16.762]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:16.763]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:22.308]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:22.309]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:27.853]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:27.853]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:33.470]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:33.471]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:38.973]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:38.974]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:44.492]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:44.492]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:49.966]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:49.966]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:57:55.466]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:57:55.469]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:01.000]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:01.000]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:06.672]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:06.673]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:12.215]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:12.216]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:17.799]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:17.802]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:23.327]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:23.330]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:28.874]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:28.877]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:34.413]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:34.414]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:39.922]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:39.923]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:45.463]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:45.466]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:51.011]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:51.014]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:58:56.590]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:58:56.592]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:02.108]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:02.109]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:07.484]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:07.486]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:13.017]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:13.020]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:18.585]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:18.587]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:24.090]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:24.091]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:29.593]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:29.595]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:35.081]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:35.082]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:40.616]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:40.617]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:46.046]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:46.048]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:51.679]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:51.679]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 07:59:57.115]	[uvicorn]			[GET] dashboard
+[2026-02-25 07:59:57.116]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:02.590]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:02.590]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:08.033]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:08.036]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:13.584]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:13.585]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:19.099]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:19.100]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:24.739]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:24.740]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:30.209]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:30.211]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:35.705]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:35.707]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:41.117]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:41.117]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:46.580]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:46.582]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:52.097]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:52.100]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:00:57.733]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:00:57.736]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:03.200]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:03.202]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:09.010]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:09.011]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:14.501]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:14.505]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:20.047]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:20.047]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:25.562]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:25.562]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:31.064]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:31.065]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:36.528]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:36.530]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:42.045]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:42.045]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:47.466]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:47.467]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:52.890]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:52.891]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:01:58.389]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:01:58.390]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:03.934]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:03.935]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:09.427]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:09.428]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:14.853]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:14.854]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:20.370]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:20.371]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:26.043]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:26.043]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:31.630]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:31.632]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:37.243]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:37.246]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:42.745]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:42.746]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:48.277]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:48.277]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:53.752]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:53.753]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:02:59.272]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:02:59.275]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:03:04.924]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:03:04.925]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:03:10.521]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:03:10.523]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:03:16.000]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:03:16.000]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:03:21.555]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:03:21.557]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:03:27.173]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:03:27.175]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:03:32.717]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:03:32.719]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:03:38.295]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:03:38.296]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:03:43.856]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:03:43.859]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:03:49.523]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:03:49.525]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:03:55.019]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:03:55.021]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:00.593]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:00.595]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:06.223]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:06.226]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:11.771]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:11.773]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:17.196]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:17.197]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:22.791]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:22.794]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:28.338]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:28.340]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:33.881]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:33.883]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:39.492]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:39.494]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:45.085]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:45.088]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:50.668]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:50.671]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:04:56.250]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:04:56.252]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:01.783]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:01.784]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:07.388]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:07.390]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:12.947]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:12.949]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:18.417]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:18.420]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:23.873]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:23.876]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:29.404]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:29.405]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:34.898]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:34.899]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:40.404]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:40.405]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:45.913]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:45.914]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:51.471]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:51.472]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:05:57.087]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:05:57.089]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:02.606]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:02.608]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:08.126]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:08.127]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:13.938]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:13.938]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:19.372]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:19.373]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:24.903]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:24.904]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:30.453]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:30.454]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:35.970]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:35.971]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:41.432]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:41.434]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:46.986]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:46.987]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:52.487]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:52.487]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:06:58.110]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:06:58.112]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:03.654]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:03.656]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:09.163]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:09.165]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:14.802]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:14.803]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:20.322]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:20.325]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:25.913]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:25.913]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:31.427]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:31.430]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:37.001]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:37.003]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:42.597]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:42.599]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:48.135]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:48.139]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:53.689]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:53.690]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:07:59.195]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:07:59.197]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:08:04.786]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:08:04.788]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:08:10.305]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:08:10.308]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:08:15.829]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:08:15.832]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:08:21.375]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:08:21.376]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:08:26.893]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:08:26.895]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:08:32.613]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:08:32.613]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:08:38.130]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:08:38.132]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:08:43.689]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:08:43.691]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:08:49.358]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:08:49.360]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:08:54.951]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:08:54.952]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:00.509]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:00.509]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:05.992]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:05.992]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:11.443]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:11.445]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:16.990]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:16.994]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:22.522]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:22.523]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:28.022]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:28.026]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:33.597]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:33.599]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:39.105]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:39.108]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:44.579]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:44.581]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:50.142]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:50.144]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:09:55.651]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:09:55.653]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:01.207]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:01.210]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:06.876]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:06.879]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:12.498]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:12.500]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:18.124]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:18.125]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:23.594]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:23.596]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:29.027]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:29.028]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:34.754]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:34.756]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:40.244]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:40.246]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:45.754]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:45.755]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:51.309]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:51.310]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:10:56.805]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:10:56.807]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:02.345]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:02.347]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:07.909]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:07.911]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:13.474]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:13.478]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:19.308]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:19.311]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:24.966]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:24.970]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:30.409]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:30.410]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:35.893]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:35.896]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:41.442]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:41.445]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:47.059]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:47.062]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:52.574]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:52.577]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:11:58.110]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:11:58.113]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:03.597]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:03.600]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:09.078]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:09.081]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:14.611]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:14.614]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:20.179]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:20.182]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:25.748]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:25.751]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:31.278]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:31.280]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:36.763]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:36.765]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:42.275]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:42.276]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:47.720]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:47.721]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:53.220]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:53.221]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:12:58.685]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:12:58.686]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:04.116]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:04.116]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:09.597]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:09.599]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:15.324]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:15.325]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:20.793]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:20.796]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:26.298]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:26.300]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:31.630]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:31.633]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:37.141]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:37.141]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:42.635]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:42.636]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:48.116]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:48.117]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:53.525]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:53.526]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:13:58.997]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:13:58.999]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:04.467]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:04.469]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:09.943]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:09.944]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:15.327]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:15.330]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:20.823]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:20.826]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:26.264]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:26.265]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:31.728]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:31.730]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:37.217]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:37.219]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:42.643]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:42.643]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:48.062]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:48.063]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:53.527]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:53.528]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:14:58.952]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:14:58.955]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:15:04.459]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:15:04.460]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:15:09.921]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:15:09.924]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:15:15.439]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:15:15.440]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:15:20.898]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:15:20.900]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:15:26.443]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:15:26.444]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:15:31.948]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:15:31.949]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:15:37.319]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:15:37.320]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:15:42.823]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:15:42.826]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:15:48.324]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:15:48.325]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:21:45.698]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:21:45.700]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:21:51.756]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:21:51.757]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:21:57.126]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:21:57.126]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:22:02.510]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:22:02.512]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:22:08.093]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:22:08.095]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:22:13.595]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:22:13.599]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:22:19.191]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:22:19.191]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:22:24.625]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:22:24.630]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:24:42.017]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:24:42.018]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:24:47.467]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:24:47.469]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:24:53.009]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:24:53.011]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:24:58.519]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:24:58.522]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:25:04.007]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:25:04.010]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:25:09.467]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:25:09.470]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:25:14.920]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:25:14.923]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:25:20.505]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:25:20.507]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:25:25.920]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:25:25.922]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:57:18.283]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:57:18.285]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:57:23.677]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:57:23.678]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:57:28.980]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:57:28.983]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:57:34.139]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:57:34.141]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:57:39.319]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:57:39.320]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:57:44.422]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:57:44.422]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:57:49.519]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:57:49.519]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:57:54.733]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:57:54.734]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:57:59.988]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:57:59.989]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:05.240]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:05.242]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:10.435]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:10.436]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:15.547]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:15.549]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:20.674]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:20.677]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:25.827]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:25.829]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:30.978]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:30.980]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:36.115]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:36.117]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:41.264]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:41.265]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:46.376]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:46.379]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:51.522]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:51.524]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:58:56.636]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:58:56.637]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:01.868]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:01.872]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:07.081]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:07.082]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:12.315]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:12.316]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:17.504]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:17.504]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:22.618]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:22.620]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:27.776]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:27.777]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:32.909]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:32.912]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:38.059]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:38.060]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:43.226]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:43.229]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:48.332]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:48.334]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:53.459]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:53.460]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 08:59:58.592]	[uvicorn]			[GET] dashboard
+[2026-02-25 08:59:58.595]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:03.739]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:03.740]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:08.933]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:08.934]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:14.192]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:14.194]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:19.409]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:19.410]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:24.647]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:24.648]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:29.894]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:29.897]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:35.146]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:35.148]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:40.407]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:40.409]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:45.679]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:45.680]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:50.872]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:50.874]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:00:56.104]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:00:56.107]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:01.311]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:01.313]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:06.573]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:06.574]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:11.812]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:11.814]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:17.114]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:17.115]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:22.311]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:22.312]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:27.442]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:27.445]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:32.588]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:32.590]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:37.717]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:37.718]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:42.857]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:42.858]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:48.009]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:48.010]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:53.124]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:53.124]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:01:58.251]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:01:58.253]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:03.462]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:03.464]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:09.036]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:09.039]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:14.551]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:14.551]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:19.904]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:19.906]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:25.618]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:25.619]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:31.129]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:31.131]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:36.565]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:36.566]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:42.166]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:42.168]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:47.700]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:47.703]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:53.186]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:53.188]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:02:58.627]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:02:58.629]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:03:04.139]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:03:04.141]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:03:09.604]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:03:09.607]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:03:15.057]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:03:15.058]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:03:20.555]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:03:20.557]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 09:03:26.055]	[uvicorn]			[GET] dashboard
+[2026-02-25 09:03:26.057]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 11:07:08.300]	[uvicorn]			[GET] dashboard
+[2026-02-25 11:07:08.301]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 11:07:09.184]	[uvicorn]			[GET] dashboard
+[2026-02-25 11:07:09.187]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data
+[2026-02-25 11:07:14.729]	[uvicorn]			[GET] dashboard
+[2026-02-25 11:07:14.730]	[uvicorn]			[GET] -> rendering template with portfolio data + chart data

@@ -42,7 +42,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 # config.py lives one level up (bot root), not inside analysis/
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from config import FEE_RATE, STOP_LOSS_MULTIPLIER, TAKE_PROFIT_MULTIPLIER, TRAIL_START_PCT, TRAIL_DISTANCE_PCT, BREAKEVEN_TRIGGER_PCT
+from config import FEE_RATE, LESS_STRICT_SHOULD_LONG
 # ── Config (keep in sync with your bot's config.py) ───────────────────── #
 PORTFOLIO_DB = Path("log/db/portfolio.db")
 PRICES_DB    = Path("log/db/prices.db")
@@ -221,7 +221,7 @@ def plot_trade(rt: dict, ax_price: plt.Axes, ax_pnl: plt.Axes):
 
     ax_price.set_title(
         f"{symbol}  |  DCA levels: {rt['dca_levels']}  |  "
-        f"Avg entry: ${avg_entry:.4f}  →  Exit: ${sell_price:.4f}  |  P&L: ",
+        f"Avg entry: ${avg_entry:.4f}  →  Exit: ${sell_price:.4f}  |  LESS_STRICT_SHOULD_LONG={LESS_STRICT_SHOULD_LONG}",
         color="#ccc", fontsize=9, pad=4
     )
     ax_price.text(0.98, 1.01,
@@ -349,10 +349,13 @@ def _make_trade_fig(rt: dict) -> plt.Figure:
     return fig
 
 
-def save_pdf(round_trips: list[dict]) -> Path:
+def save_pdf(round_trips: list[dict], custom_name: str | None = None) -> Path:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     ts       = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     out_path = REPORTS_DIR / f"{ts}.pdf"
+
+    if custom_name:
+        out_path = REPORTS_DIR / f"{custom_name}.pdf"
 
     matplotlib.rcParams["pdf.fonttype"] = 42  # embed fonts
 
@@ -433,6 +436,7 @@ def main():
     parser.add_argument("--last",    type=int,            help="Show last N completed round-trips")
     parser.add_argument("--sell-id", type=int,            help="Show trade with this SELL row id")
     parser.add_argument("--pdf",     action="store_true", help="Save to analysis/reports/<datetime>.pdf")
+    parser.add_argument("--pdf-name", type=str,           help="Save to analysis/reports/<name>.pdf")
     args = parser.parse_args()
 
     if not PORTFOLIO_DB.exists():
@@ -458,7 +462,7 @@ def main():
         return
 
     if args.pdf:
-        save_pdf(round_trips)
+        save_pdf(round_trips, custom_name=args.pdf_name)
     else:
         plot_all(round_trips)
 

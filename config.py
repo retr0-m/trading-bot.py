@@ -26,6 +26,7 @@ DCA_DROP_STEP_PCT       = 2.0   # trigger a new buy every X% drop from 24h high
                                 # 1.0 = very frequent, 3.0 = only on real dips
 DCA_MAX_SPEND_PER_LEVEL = 10.0  # max $ per DCA trigger (spend = drop_pct, capped here)
 DCA_COOLDOWN_SECONDS    = 300   # seconds to wait after any exit before re-entering
+DCA_HIGH_LOOKBACK_CANDLES = 72  # 12 × 5m = 1h  |  288 = 24h  |  72 = 6h - max 24 hrs
 
 # ── Exit config ────────────────────────────────────────────────────────── #
 TAKE_PROFIT_MULTIPLIER = 4.0    # ATR multiples above avg entry
@@ -86,4 +87,4 @@ RISK_PER_TRADE        = 0.03
 MAX_POSITION_USDT     = 50
 
 # For testing less strict entry conditions (e.g. for backtesting or more frequent trades)
-LESS_STRICT_SHOULD_LONG = True
+LESS_STRICT_SHOULD_LONG = False
