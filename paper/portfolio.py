@@ -44,6 +44,7 @@ class DCASymbol:
     def _reset_position(self):
         """Reset all position state. Called on init and after full sell."""
         self.position: float            = 0.0
+        self.portfolio.used_margin: float = 0.0
         self.total_cost: float          = 0.0   # cumulative net USDT spent (excl. fee)
         self.average_entry_price: float = 0.0
         self.entry_price: float         = 0.0   # first entry price (for exits.py compat)
@@ -81,14 +82,16 @@ class DCASymbol:
                 log(f"[DCA] {self.symbol} — not enough free balance ({free_balance:.2f}), skipping")
                 return False
 
-        fee = spend_usd * fee_rate
-        qty = (spend_usd - fee) / price  # units received after fee
+        notional = spend_usd * self.leverage
+        fee = notional * fee_rate
+        qty = (notional - fee) / price  # units received after fee
 
         # Deduct from portfolio
-        self.portfolio.balance -= spend_usd
+        self.portfolio.balance -= spend_usd + spend_usd*fee_rate  # deduct spend + fee from balance
+        self.portfolio.used_margin += spend_usd - spend_usd*fee_rate  # deduct spend + fee from balance
 
-        # ✅ Accumulate cost and units for correct weighted average
-        self.total_cost          += spend_usd - fee   # net cost (what we'd recover at avg_entry)
+        # Accumulate cost and units for correct weighted average
+        self.total_cost          += notional - fee   # net cost (what we'd recover at avg_entry)
         self.position            += qty
         self.average_entry_price  = self.total_cost / self.position
         self.dca_levels          += 1
@@ -96,7 +99,6 @@ class DCASymbol:
         if self.dca_levels == 1:
             self.entry_price = price  # first entry — used by exits.py
 
-        # ✅ FIX 2: update dca_state here only (main.py no longer touches it)
         if high_24h > 0:
             drop_pct = (high_24h - price) / high_24h * 100
             self.dca_state["last_trigger_pct"] = drop_pct
@@ -129,16 +131,20 @@ class DCASymbol:
 
     def sell(self, price: float, fee_rate: float = 0.001):
         if not self.in_position():
-            log(f"[DCA] {self.symbol} — no position to sell")
             return
 
         qty_sold       = self.position
         avg_entry_sold = self.average_entry_price
-        position_value = qty_sold * price
-        fee            = position_value * fee_rate
-        profit         = (price - avg_entry_sold) * qty_sold
+        notional       = qty_sold * price
+        fee            = notional * fee_rate
+        pnl            = (price - avg_entry_sold) * qty_sold - fee
 
-        self.portfolio.balance += position_value - fee
+        # margin locked was spend_usd per buy — stored in total_cost / leverage
+        margin_used = self.total_cost / self.leverage
+
+        # return margin + leveraged pnl (can go negative = loss bigger than margin)
+        self.portfolio.balance     += margin_used + pnl
+        self.portfolio.used_margin -= margin_used
 
         log(
             f"[DCA SELL] {self.symbol} | "

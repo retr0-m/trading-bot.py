@@ -7,7 +7,7 @@ LOG_PRICE_RECORDER_FILE = "./log/price_recorder_log.txt"
 PAPER_TRADING = True
 START_BALANCE = 100.0
 FEE_RATE      = 0.001    # 0.1% Binance spot fee
-LEVERAGE      = 3.0      # spot only
+LEVERAGE      = 1.0      # spot only
 
 # ── Symbols ────────────────────────────────────────────────────────────── #
 DCA_SYMBOLS = [
@@ -22,20 +22,20 @@ INTERVAL       = "5m"
 SLEEP_INTERVAL = 10      # seconds between iterations
 
 # ── DCA entry structure ────────────────────────────────────────────────── #
-DCA_DROP_STEP_PCT       = 1.5   # trigger a new buy every X% drop from DCA_HIGH_LOOKBACK_CANDLES / 12 high
+DCA_DROP_STEP_PCT       = 2.0   # trigger a new buy every X% drop from 24h high
                                 # 1.0 = very frequent, 3.0 = only on real dips
-DCA_MAX_SPEND_PER_LEVEL = 15.0  # max $ per DCA trigger (spend = drop_pct, capped here)
-DCA_COOLDOWN_SECONDS    = 180   # seconds to wait after any exit before re-entering
-DCA_HIGH_LOOKBACK_CANDLES = 24  # 12 × 5m = 1h  |  288 = 24h  |  72 = 6h - max 24 hrs
+DCA_MAX_SPEND_PER_LEVEL = 10.0  # max $ per DCA trigger (spend = drop_pct, capped here)
+DCA_COOLDOWN_SECONDS    = 300   # seconds to wait after any exit before re-entering
+DCA_HIGH_LOOKBACK_CANDLES = 72  # 12 × 5m = 1h  |  288 = 24h  |  72 = 6h - max 24 hrs
 
 # ── Exit config ────────────────────────────────────────────────────────── #
-TAKE_PROFIT_MULTIPLIER = 6.0    # ATR multiples above avg entry
-STOP_LOSS_MULTIPLIER   = 3.0    # ATR multiples below avg entry
-BREAKEVEN_TRIGGER_PCT = 0.012  # 0.8% profit before break-even activates
+TAKE_PROFIT_MULTIPLIER = 4.0    # ATR multiples above avg entry
+STOP_LOSS_MULTIPLIER   = 1.8    # ATR multiples below avg entry
+BREAKEVEN_TRIGGER_PCT = 0.008  # 0.8% profit before break-even activates
 
 # Trailing stop — give the position room to run
-TRAIL_START_PCT    = 0.020      # start trailing after x% profit 
-TRAIL_DISTANCE_PCT = 0.010      # trail x% below peak 
+TRAIL_START_PCT    = 0.015      # start trailing after 1.5% profit 
+TRAIL_DISTANCE_PCT = 0.008      # trail 0.8% below peak 
 
 # ── Indicator lengths ──────────────────────────────────────────────────── #
 # Short-term momentum EMAs (5m)
@@ -62,7 +62,7 @@ BB_STD          = 2
 # ── Entry quality filters ──────────────────────────────────────────────── #
 # Confluence score: 4 signals available (EMA, RSI, Volume, MACD) + 1 bonus (BB)
 # Set to 2 for more trades, 3 for balanced, 4 for very selective
-MIN_CONFLUENCE_SCORE = 2
+MIN_CONFLUENCE_SCORE = 3
 
 # RSI zones
 RSI_BULL_ZONE   = 55    # above = bull momentum zone
@@ -80,8 +80,8 @@ BB_SQUEEZE_THRESHOLD = 0.02   # below this = squeeze, breakout above upper = sig
 HTF_TREND_REQUIRED = False
 
 # ── ATR edge ───────────────────────────────────────────────────────────── #
-MIN_EDGE_PCT    = 0.002  # minimum expected move above fees
+MIN_EDGE_PCT    = 0.001  # minimum expected move above fees
 
 
 # For testing less strict entry conditions (e.g. for backtesting or more frequent trades)
-LESS_STRICT_SHOULD_LONG = True
+LESS_STRICT_SHOULD_LONG = False

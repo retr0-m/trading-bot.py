@@ -21,21 +21,21 @@ def should_exit(entry_price: float, position, current_price: float, atr: float, 
     # --- Base stop / take profit (uses average_entry_price for DCA) ---
     avg_entry = getattr(position, "average_entry_price", entry_price)
     stop_loss, take_profit = get_tp_sl(avg_entry, current_price, atr)
-    print(f"[{symbol}]      Base stop loss: {stop_loss:.2f}, take profit: {take_profit:.2f}, current price: {current_price:.2f}")
+    # print(f"[{symbol}]      Base stop loss: {stop_loss:.2f}, take profit: {take_profit:.2f}, current price: {current_price:.2f}")
     
     # Break-even: if price moved 1 ATR above avg entry, floor stop at avg entry
     if current_price > avg_entry * (1 + BREAKEVEN_TRIGGER_PCT):
         breakeven = avg_entry * (1 + 2 * FEE_RATE)  # floor covers fees too
         stop_loss = max(stop_loss, breakeven)
         log(f"Break-even activated for {symbol} — stop_loss floored at {stop_loss:.2f}")
-        print("break-even activated — stop loss floored at avg entry")
+        # print("break-even activated — stop loss floored at avg entry")
     # Trailing stop: kick in after TRAIL_START_PCT profit on avg entry
     profit_pct = (last_highest_price - avg_entry) / avg_entry
     
     if profit_pct >= TRAIL_START_PCT:
         trailing_stop = last_highest_price * (1 - TRAIL_DISTANCE_PCT)
         
-        print(f"stop loss: {stop_loss:.2f}, trailing stop: {trailing_stop:.2f}")
+        # print(f"stop loss: {stop_loss:.2f}, trailing stop: {trailing_stop:.2f}")
         stop_loss = max(stop_loss, trailing_stop)
 
     log(

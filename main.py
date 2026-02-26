@@ -18,6 +18,7 @@ from dotenv import load_dotenv
 import os, time
 import pandas as pd
 from binance.client import Client
+import requests.exceptions
 
 load_dotenv()
 API_KEY    = os.getenv("API_KEY")
@@ -70,6 +71,7 @@ while True:
             log(f"── Processing {symbol_name} ──")
 
             # ── 1. Fetch klines (5m, 300 candles = ~25h) ──────────────── #
+            
             klines = binance.get_klines(
                 symbol=symbol_name,
                 interval=Client.KLINE_INTERVAL_5MINUTE,
@@ -88,7 +90,7 @@ while True:
             symbol._last_high = high
             current_price = last.close
 
-            log(f"{symbol_name} — price={current_price:.4f}, 24h_high={high:.4f}, atr={last.atr:.6f}")
+            log(f"{symbol_name} — price={current_price:.4f}, {DCA_HIGH_LOOKBACK_CANDLES/12}hours high={high:.4f}, atr={last.atr:.6f}")
 
             # ── 3. Exit logic ──────────────────────────────────────────── #
             if symbol.in_position():
@@ -143,6 +145,12 @@ while True:
         log(f"── Sleeping {SLEEP_INTERVAL}s ──")
         time.sleep(SLEEP_INTERVAL)
 
+    except requests.exceptions.ReadTimeout as e:
+        log(f"Connection timeout error")
+        time.sleep(5)
+    except requests.exceptions.ConnectionError as e:
+        log(f"Connection error")
+        time.sleep(5)
     except Exception as e:
         log(f"Error in main loop: {e}")
         import traceback
